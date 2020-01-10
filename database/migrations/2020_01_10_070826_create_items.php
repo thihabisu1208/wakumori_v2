@@ -17,6 +17,7 @@ class CreateItems extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('path');
+            $table->bigInteger('game_id');
             $table->timestamps();
         });
     }

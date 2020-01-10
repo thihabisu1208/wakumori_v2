@@ -14,6 +14,10 @@
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+* {
+   cursor: url('~/img/saruFace12.png'), pointer;
+}
+
 html, body{
   font-size: 62.5%;
   width: 100%;
@@ -56,6 +60,7 @@ p{
         font-size: 1.5rem;
 
         &:hover{
+          cursor: url('~/img/saruFace22.png'), pointer;
           background: #fff;
           border: 1px solid $buttonColor;
           color: $buttonColor;
@@ -63,7 +68,7 @@ p{
     }
     
     input{
-      cursor: url('~/img/saruFace2.png'), pointer;
+      cursor: url('~/img/saruFace22.png'), pointer;
       font-size: 1.5rem;
     }
 }

@@ -11,7 +11,7 @@
 @endsection
 
 @section('game')
-    <div class="gameUsagi">
+    <div class="gameUsagi gameAll">
         <div class="itemContent">
             <img class="usagiGame" src="/img/yasiUsagi.png" alt="ヤシとウサギ">
         </div>

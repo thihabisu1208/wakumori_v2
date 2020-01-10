@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<draggable  class="itemList"
+		<draggable class="itemList"
       >
         <div
           v-for="element in list"
@@ -18,11 +18,12 @@
 		props: ["usagi"],
 		data() {
             return {
-            list: [
-                { name: "yes", id: 0 },
-                { name: "no", id: 1 },
-                { name: "okay", id: 2 }
-            ],
+            // list: [
+            //     { name: "yes", id: 0 },
+            //     { name: "no", id: 1 },
+            //     { name: "okay", id: 2 }
+            // ],
+            list: {!! json_encode($items) !!}
             };
         },
         components: {

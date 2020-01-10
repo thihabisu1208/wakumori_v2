@@ -13,10 +13,7 @@
     <div id="home">
         <div id="topNav">
             <p>
-                <a style="color: #000; text-decoration: none;" href="{{ url('/teacher') }}">{{ config('app.name', 'Laravel') }}</a>
-            </p>
-            <p class="{{ request()->routeIs('teacher.dashboard') ? 'active' : '' }}">
-                <a style="text-decoration: none;" href="{{ url('/teacher') }}">Dashboard</a>
+                <a style="color: #000; text-decoration: none;" href="{{ url('/home') }}">{{ config('app.name', 'Laravel') }}</a>
             </p>
         </div>
 

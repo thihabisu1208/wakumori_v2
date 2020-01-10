@@ -9,9 +9,9 @@
 @endsection
 
 @section('game')
-    <div class="gameUsagi">
+    <div class="gameKuma gameAll">
         <div class="itemContent">
-            <img class="usagiGame" src="img/yasiUsagi.png" alt="ヤシとウサギ">
+            <img class="kumaGame" src="img/biruKuma.png" alt="ビルとくま">
             <div class="itemList">
 
             </div>

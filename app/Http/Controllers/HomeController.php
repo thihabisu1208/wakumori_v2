@@ -20,8 +20,8 @@ class HomeController extends Controller
     public function usagi()
     {
         $gameUsagi = Game::where('id', 1)->first();
-        $items = Item::where('')
-        return view('game.usagi', compact(['gameUsagi']));
+        $items = Item::where('game_id', 1)->get();
+        return view('game.usagi', compact(['gameUsagi', 'items']));
     }
 
     public function kuma()

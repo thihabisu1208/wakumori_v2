@@ -1,6 +1,6 @@
 @section('gameHeader')
         <p class="returnBtn buttons">
-            <a href="#">もどる</a>
+            <a href="{{ url('/home') }}">もどる</a>
         </p>
 
         {{-- ここにタイトル @yield を使うとページごとに違うタイトルの表示ができる --}}

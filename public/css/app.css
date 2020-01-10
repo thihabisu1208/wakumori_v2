@@ -5930,6 +5930,10 @@ readers do not read off random characters that represent icons */
   width: auto;
 }
 
+* {
+  cursor: url("/img/saruFace12.png"), pointer;
+}
+
 html,
 body {
   font-size: 62.5%;
@@ -5978,13 +5982,14 @@ p {
 
 .buttons a:hover,
 .buttons input:hover {
+  cursor: url("/img/saruFace22.png"), pointer;
   background: #fff;
   border: 1px solid #FFB190;
   color: #FFB190;
 }
 
 .buttons input {
-  cursor: url("/img/saruFace2.png"), pointer;
+  cursor: url("/img/saruFace22.png"), pointer;
   font-size: 1.5rem;
 }
 
@@ -6062,12 +6067,12 @@ img {
   border-bottom: 3px solid #000;
 }
 
-.ontent {
+.content {
   width: 100%;
   display: grid;
 }
 
-#Games {
+#contentGames {
   margin: 10px auto;
   width: 100%;
   display: grid;
@@ -6075,17 +6080,17 @@ img {
   grid-template-columns: repeat(3, 1fr);
 }
 
-#Games .GamesContent {
+#contentGames .contentGamesContent {
   position: relative;
   cursor: pointer;
 }
 
-#Games .GamesContent:hover .Game.Game1 {
+#contentGames .contentGamesContent:hover .contentGame.contentGame1 {
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
 }
 
-#Games .GamesContent:hover .Game.Game2 {
+#contentGames .contentGamesContent:hover .contentGame.contentGame2 {
   background: #fff;
   display: -webkit-box;
   display: flex;
@@ -6093,16 +6098,16 @@ img {
           transform: translateY(0px);
 }
 
-#Games .GamesContent:hover .Game.Game1 .GameContent {
+#contentGames .contentGamesContent:hover .contentGame.contentGame1 .contentGameContent {
   opacity: 1;
 }
 
-#Games .GamesContent .Game {
+#contentGames .contentGamesContent .contentGame {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-#Games .GamesContent .Game.Game1 {
+#contentGames .contentGamesContent .contentGame.contentGame1 {
   position: relative;
   background: #fff;
   display: -webkit-box;
@@ -6116,12 +6121,12 @@ img {
           transform: translateY(100px);
 }
 
-#Games .GamesContent .Game.Game1 .GameContent {
+#contentGames .contentGamesContent .contentGame.contentGame1 .contentGameContent {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-#Games .GamesContent .Game.Game1 .GameContent h3 {
+#contentGames .contentGamesContent .contentGame.contentGame1 .contentGameContent h3 {
   width: 70%;
   margin: 10px auto;
   border-bottom: 3px solid #8D6600;
@@ -6129,7 +6134,7 @@ img {
   text-align: center;
 }
 
-#Games .GamesContent .Game.Game2 {
+#contentGames .contentGamesContent .contentGame.contentGame2 {
   position: relative;
   -webkit-box-pack: center;
           justify-content: center;
@@ -6142,7 +6147,7 @@ img {
           transform: translateY(-100px);
 }
 
-#Games .GamesContent .Game.Game2 .GameContent p {
+#contentGames .contentGamesContent .contentGame.contentGame2 .contentGameContent p {
   margin: 0 auto 30px;
   padding: 0;
 }
@@ -6234,20 +6239,20 @@ img {
   width: 100%;
 }
 
-.gameData .gameUsagi {
-  position: relative;
-  background: url("/img/mori.png") 100% center;
-  height: 100%;
-  background-size: cover;
-}
-
-.gameData .gameUsagi .itemContent {
+.gameData .gameAll .itemContent {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 300px;
+}
+
+.gameData .gameUsagi {
+  position: relative;
+  background: url("/img/mori.png") 100% center;
+  height: 100%;
+  background-size: cover;
 }
 
 .gameData .gameUsagi img {
