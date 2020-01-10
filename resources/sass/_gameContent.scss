@@ -1,0 +1,76 @@
+#gameContent {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas: 
+                    "gameHeader gameHeader"
+                    "gameOrders gameData"
+                    "gameOrders gameItems";
+    grid-template-columns: 0.2fr 0.8fr;
+    grid-template-rows: 0.1fr 0.7fr 0.2fr;
+}
+
+.gameHeader{
+    grid-area: gameHeader;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: #FFEBB7;
+
+    p, h1{
+        margin: 0;
+        padding: 0;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.gameOrders{
+    grid-area: gameOrders;
+    p{
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        color: #fff;
+        background: $buttonColor;
+    }
+
+    .makeItem{
+        height: 45%;
+    }
+
+    .selectItem{
+        height: 45%;
+    }
+}
+
+.gameData {
+    grid-area: gameData;
+    width: 100%;
+
+    .gameUsagi {
+        position: relative;
+        background: url('~/img/mori.png') 100% center;
+        height: 100%;
+        background-size: cover;
+
+        .itemContent{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.gameItems {
+    grid-area: gameItems;
+}

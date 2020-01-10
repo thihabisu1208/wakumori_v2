@@ -1,0 +1,121 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+// @import '~bootstrap/scss/bootstrap';
+
+// Font Awesome Icons
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+html, body{
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: a-otf-ud-shin-maru-go-pr6n, sans-serif;
+}
+
+// General CSS
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+p{
+  font-size: 2rem;
+}
+
+.buttons{
+      text-align: center;
+      a, input{
+        cursor: pointer;
+        width: 70%;
+        margin: 0 auto;
+        background: $buttonColor;
+        border: 1px solid $buttonColor;
+        padding: 10px 30px;
+        border-radius: 10px;
+        transition: 0.3s;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5rem;
+
+        &:hover{
+          background: #fff;
+          border: 1px solid $buttonColor;
+          color: $buttonColor;
+        }
+    }
+    
+    input{
+      cursor: url('~/img/saruFace2.png'), pointer;
+      font-size: 1.5rem;
+    }
+}
+
+// Top Navigation
+#topNav{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  margin: 0;
+  height: 10vh;
+  background: #FFEBB7;
+  display: flex;
+  align-items: center;
+
+  p{
+    margin: 0 0 0 50px;
+  }
+
+  form{
+    position: absolute;
+    right: 3%;
+  }
+}
+
+// Top
+#top{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #FFEBB7 url('~/img/login.png') 100% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+#welcome {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  h1{
+    text-align: center;
+    margin: 100px auto;
+  }
+}
+
+@import 'game';
+
+@import 'gameContent';
