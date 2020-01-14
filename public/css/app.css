@@ -6186,9 +6186,9 @@ img {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-areas: "gameHeader gameHeader" "gameOrders gameData" "gameOrders gameItems";
+  grid-template-areas: "gameHeader gameHeader" "gameOrders gameData" "gameItems gameItems";
   grid-template-columns: 0.2fr 0.8fr;
-  grid-template-rows: 0.1fr 0.7fr 0.2fr;
+  grid-template-rows: 0.1fr 0.8fr 0.1fr;
 }
 
 .gameHeader {
@@ -6199,7 +6199,7 @@ img {
   -webkit-box-direction: normal;
           flex-direction: row;
   justify-content: space-around;
-  background: #FFEBB7;
+  background: #ffebb7;
 }
 
 .gameHeader p,
@@ -6227,15 +6227,23 @@ img {
 }
 
 .gameOrders .makeItem {
-  height: 45%;
-}
-
-.gameOrders .selectItem {
-  height: 45%;
+  height: 64%;
 }
 
 .gameData {
+  position: relative;
   grid-area: gameData;
+  width: 100%;
+}
+
+.gameData .gameAll .saruBot {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  width: 70px;
+}
+
+.gameData .gameAll .saruBot img {
   width: 100%;
 }
 
@@ -6260,6 +6268,59 @@ img {
 }
 
 .gameItems {
+  position: relative;
   grid-area: gameItems;
+  display: grid;
+  grid-template-columns: 0.2fr 0.8fr;
+}
+
+.gameItems .selectItem p {
+  margin: 0 auto;
+  padding: 10px;
+  padding: 10px auto;
+  text-align: center;
+  color: #fff;
+  background: #FFB190;
+}
+
+.gameItems .selectItem p span {
+  width: 100%;
+  height: 100%;
+  padding-left: 10%;
+}
+
+.gameItems .selectItem p span:hover {
+  cursor: url("/img/saruFace22.png"), pointer;
+}
+
+.gameItems .selectItem p:nth-of-type(2) {
+  margin: 50px auto 0;
+  width: 200px;
+  background: #fff;
+}
+
+.gameItems .itemList {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gameItems .itemList img {
+  cursor: url("/img/saruFace22.png"), pointer;
+  width: 50%;
+}
+
+.gameItems .itemList p {
+  text-align: center;
+}
+
+.gameItems .itemList2 {
+  opacity: 0;
+  width: 300px;
+  height: 150px;
+  position: fixed;
+  bottom: 5%;
+  left: 0;
+  overflow: hidden;
 }
 

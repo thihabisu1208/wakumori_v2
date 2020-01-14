@@ -4,34 +4,35 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-areas: 
-                    "gameHeader gameHeader"
-                    "gameOrders gameData"
-                    "gameOrders gameItems";
+    grid-template-areas:
+        "gameHeader gameHeader"
+        "gameOrders gameData"
+        "gameItems gameItems";
     grid-template-columns: 0.2fr 0.8fr;
-    grid-template-rows: 0.1fr 0.7fr 0.2fr;
+    grid-template-rows: 0.1fr 0.8fr 0.1fr;
 }
 
-.gameHeader{
+.gameHeader {
     grid-area: gameHeader;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background: #FFEBB7;
+    background: #ffebb7;
 
-    p, h1{
+    p,
+    h1 {
         margin: 0;
         padding: 0;
-        
+
         display: flex;
         align-items: center;
         justify-content: center;
     }
 }
 
-.gameOrders{
+.gameOrders {
     grid-area: gameOrders;
-    p{
+    p {
         margin: 0;
         padding: 10px;
         text-align: center;
@@ -39,21 +40,29 @@
         background: $buttonColor;
     }
 
-    .makeItem{
-        height: 45%;
-    }
-
-    .selectItem{
-        height: 45%;
+    .makeItem {
+        height: 64%;
     }
 }
 
 .gameData {
+    position: relative;
     grid-area: gameData;
     width: 100%;
 
     .gameAll {
-        .itemContent{
+        .saruBot {
+            position: absolute;
+            top: 1%;
+            left: 1%;
+            width: 70px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .itemContent {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -64,7 +73,7 @@
 
     .gameUsagi {
         position: relative;
-        background: url('~/img/mori.png') 100% center;
+        background: url("~/img/mori.png") 100% center;
         height: 100%;
         background-size: cover;
         img {
@@ -74,5 +83,60 @@
 }
 
 .gameItems {
+    position: relative;
     grid-area: gameItems;
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr;
+
+    .selectItem {
+        p {
+            margin: 0 auto;
+            padding: 10px;
+            padding: 10px auto;
+            text-align: center;
+            color: #fff;
+            background: $buttonColor;
+
+            span {
+                width: 100%;
+                height: 100%;
+                padding-left: 10%;
+
+                &:hover {
+                    cursor: $cursorChange;
+                }
+            }
+        }
+
+        p:nth-of-type(2) {
+            margin: 50px auto 0;
+            width: 200px;
+            background: #fff;
+        }
+    }
+
+    .itemList {
+        width: 50%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        img {
+            cursor: $cursorChange;
+            width: 50%;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+
+    .itemList2 {
+        opacity: 0;
+        width: 300px;
+        height: 150px;
+        position: fixed;
+        bottom: 5%;
+        left: 0;
+        overflow: hidden;
+    }
 }

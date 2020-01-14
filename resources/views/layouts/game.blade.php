@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'わくわくの森') }}</title>
-    <link rel="shortcut icon" href="{{ asset('img/saruFace.png') }}">
+    <link rel="shortcut icon" href="{{ asset('img/saruFace12.png') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -17,7 +17,9 @@
                 @yield('gameHeader')
             </div>
             <div class="gameOrders">
-                @yield('order')
+                <div class="makeItem">
+                    <p class="orderTitle">作ったもの</p>
+                </div>
             </div>
             <div class="gameData">
                 @yield('game')

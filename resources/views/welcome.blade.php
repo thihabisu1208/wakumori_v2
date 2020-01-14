@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="shortcut icon" href="{{ asset('img/saruFace.png') }}">
-        <title>わくわくの森</title>
+        <title>{{ config('app.name', 'わくわくの森') }}</title>
+        <link rel="shortcut icon" href="{{ asset('img/saruFace12.png') }}">
         <script>
             (function(d) {
                 var config = {
@@ -23,9 +23,9 @@
         <div id="app">
             <div id="top">
                 <div id="welcome">
-                    <h1>ようこそ ~ わくわくの森へ</h1>
+                    <h1>ようこそ ~ {{ config('app.name', 'わくわくの森') }}へ</h1>
                      <p class="buttons">
-                        <a href="/home">もりに入る</a>
+                        <a href="/home">~ 旅に行く ~</a>
                     </p>
                 </div>
             </div>

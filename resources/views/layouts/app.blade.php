@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'わくわくの森') }}</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <link rel="shortcut icon" href="{{ asset('img/saruFace.png') }}">
+    <link rel="shortcut icon" href="{{ asset('img/saruFace12.png') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
