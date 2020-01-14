@@ -11,7 +11,7 @@
 @endsection
 
 @section('items')
-    :items="{{ $items }}"
+    :items="{{ $usagiItems }}"
 @endsection
 
 @section('game')

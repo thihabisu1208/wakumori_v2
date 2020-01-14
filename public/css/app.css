@@ -6230,6 +6230,14 @@ img {
   height: 64%;
 }
 
+.gameOrders .showItem {
+  width: 50px;
+}
+
+.gameOrders .showItem img {
+  width: 100%;
+}
+
 .gameData {
   position: relative;
   grid-area: gameData;
@@ -6315,7 +6323,6 @@ img {
 }
 
 .gameItems .itemList2 {
-  opacity: 0;
   width: 300px;
   height: 150px;
   position: fixed;

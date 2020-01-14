@@ -1698,6 +1698,16 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _eventBus_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../eventBus.js */ "./resources/js/eventBus.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
 //
 //
 //
@@ -1710,7 +1720,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      selectedItems: null
+      selectedItems: null,
+      allItems: {},
+      filteredItems: null
     };
   },
   created: function created() {
@@ -1719,12 +1731,27 @@ __webpack_require__.r(__webpack_exports__);
     // Listen for the add items event and its payload.
     _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$on("addSelectedItem", function (selectedItemList) {
       _this.selectedItems = [];
+      console.log(_this.selectedItems);
 
       _this.selectedItems.push(selectedItemList);
+
+      if (_this.allItems["id" + _this.selectedItems[0][_this.selectedItems[0].length - 1].id]) {
+        _this.allItems["id" + _this.selectedItems[0][_this.selectedItems[0].length - 1].id] += 1;
+      } else {
+        _this.allItems["id" + _this.selectedItems[0][_this.selectedItems[0].length - 1].id] = 1;
+      }
+
+      console.log(_this.allItems);
     });
     _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$on("clearSelectedItem", function (selectedItems) {
       _this.selectedItems = selectedItems;
+      _this.allItems = selectedItems;
     });
+  },
+  methods: {
+    filterItems: function filterItems() {
+      this.filteredItems = _objectSpread({}, this.selectedItems);
+    }
   }
 });
 
@@ -41691,11 +41718,18 @@ var render = function() {
     _vm.selectedItems
       ? _c(
           "span",
+          { on: { change: _vm.filterItems } },
           _vm._l(_vm.selectedItems, function(selectedItem, index) {
             return _c("div", { key: index }, [_vm._v(_vm._s(selectedItem))])
           }),
           0
         )
+      : _vm._e(),
+    _vm._v("\n\t" + _vm._s(_vm.allItems) + "\n\t"),
+    _vm.allItems.id1 === 2 && _vm.allItems.id2 === 1
+      ? _c("div", { staticClass: "showItem" }, [
+          _c("img", { attrs: { src: "/img/item/hashigo_wood.png", alt: "" } })
+        ])
       : _vm._e()
   ])
 }
