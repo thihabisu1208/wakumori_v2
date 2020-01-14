@@ -2,10 +2,16 @@
 
 @extends('layouts.gameHeader')
 
+@extends('layouts.order')
+
 @extends('layouts.item')
 
 @section('gameTitle')
     {{ $gameUsagi->title }}
+@endsection
+
+@section('items')
+    :items="{{ $items }}"
 @endsection
 
 @section('game')

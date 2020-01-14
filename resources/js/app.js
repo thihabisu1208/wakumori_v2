@@ -13,6 +13,11 @@ Vue.component(
 );
 
 Vue.component(
+    "created-items-component",
+    require("./components/CreatedItemsComponent.vue").default
+);
+
+Vue.component(
     "selected-items-component",
     require("./components/SelectedItemsComponent.vue").default
 );
@@ -23,4 +28,3 @@ const game = new Vue({
         game1Modal: false
     }
 });
-

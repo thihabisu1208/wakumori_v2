@@ -17,9 +17,7 @@
                 @yield('gameHeader')
             </div>
             <div class="gameOrders">
-                <div class="makeItem">
-                    <p class="orderTitle">作ったもの</p>
-                </div>
+                @yield('order')
             </div>
             <div class="gameData">
                 @yield('game')

@@ -3,6 +3,6 @@
         <selected-items-component></selected-items-component>
     </div>
     <div>
-        <game-component :items="{{ $items }}"></game-component>
+        <game-component @yield('items')></game-component>
     </div>
 @endsection

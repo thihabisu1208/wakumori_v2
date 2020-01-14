@@ -20,8 +20,9 @@ class HomeController extends Controller
     public function usagi()
     {
         $gameUsagi = Game::where('id', 1)->first();
+        $completedGameUsagi = Game::where([['id', '=', '1'],['completed', '=', '1'],])->get();
         $items = Item::where('game_id', 1)->get();
-        return view('game.usagi', compact(['gameUsagi', 'items']));
+        return view('game.usagi', compact(['gameUsagi', 'completedGameUsagi', 'items']));
     }
 
     public function kuma()

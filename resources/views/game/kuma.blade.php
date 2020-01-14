@@ -2,6 +2,8 @@
 
 @extends('layouts.gameHeader')
 
+@extends('layouts.order')
+
 @extends('layouts.item')
 
 @section('gameTitle')
