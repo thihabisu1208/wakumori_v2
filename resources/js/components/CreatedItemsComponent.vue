@@ -5,10 +5,10 @@
 		</span>
 		{{ allItems }}
 		<transition name="slide-fade">
-			<modal-component class="modal backHasigo" id="itemModal" :showing="itemModal">
-				<div class="itemModal">
+			<modal-component class="modal backHasigo" id="itemModal" :showing="itemModal" v-if="createditems">
+				<div class="itemModal" v-for="(createditem, index) in createditems" :key="index">
 					<i @click="itemModal = !itemModal; clearSelectedItems()" class="fas fa-times"></i>
-					<img class="hasigo" src="/img/item/hashigo_wood.png" alt="">
+					<img class="hasigo" :src="'/img/item/' + createditem.path" alt="">
 					<p class="itemtextmodal">はしごができました！</p>
 				</div>
 			</modal-component>
@@ -65,8 +65,7 @@
 				this.filteredItems = { ...this.selectedItems };
 			},
 			clearSelectedItems() {
-				this.allItems = {};
-				EventBus.$emit("clearSelectedItemList");
+				// window.location.reload();
 			},
 		}
 	};

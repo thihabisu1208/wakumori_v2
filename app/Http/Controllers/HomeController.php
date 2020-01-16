@@ -40,4 +40,11 @@ class HomeController extends Controller
         $risuItems = Item::where('game_id', 3)->get();
         return view('game.risu', compact(['gameRisu', 'risuItems']));
     }
+
+    public function createitem(CreatedItem $createditem)
+    {
+        request()->has('created') ? $createditem->create() : $createditem->notcreate();
+        
+        return back();
+    }
 }

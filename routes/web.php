@@ -20,3 +20,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/home/usagi', 'HomeController@usagi');
 Route::get('/home/kuma', 'HomeController@kuma');
 Route::get('/home/risu', 'HomeController@risu');
+
+// Route::post('/createitem', 'HomeController@createitem');
+
+Route::patch('/createitem/{createditem}', 'HomeController@createitem');

@@ -22,6 +22,8 @@ Vue.component(
     require("./components/SelectedItemsComponent.vue").default
 );
 
+Vue.component('sarubot-component', require('./components/SaruBotComponent.vue').default);
+
 const game = new Vue({
     el: "#game",
     data: {

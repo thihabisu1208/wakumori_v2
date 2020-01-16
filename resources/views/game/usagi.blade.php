@@ -20,9 +20,7 @@
 
 @section('game')
     <div class="gameUsagi gameAll">
-        <div class="saruBot">
-            <img src="/img/saru.png" alt="saruBot">
-        </div>
+        <sarubot-component></sarubot-component>
         <div class="itemContent">
             <img class="usagiGame" src="/img/yasiUsagi.png" alt="ヤシとウサギ">
         </div>

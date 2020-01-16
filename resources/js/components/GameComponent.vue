@@ -45,10 +45,6 @@
 			EventBus.$on("clearSelectedItem", selectedItems => {
 				this.selectedItemList = selectedItems;
 			});
-
-			EventBus.$on("clearSelectedItemList", () => {
-				this.selectedItemList = [];
-			})
 		},
 		methods: {
 			addSelectedItems() {
