@@ -4,9 +4,15 @@
 			<div v-for="(selectedItem, index) in selectedItems" :key="index">{{ selectedItem }}</div>
 		</span>
 		{{ allItems }}
-		<div v-if="allItems.id1 === 2 && allItems.id2 === 1" class="showItem">
-			<img src="/img/item/hashigo_wood.png" alt />
-		</div>
+		<transition name="slide-fade">
+			<modal-component class="modal backHasigo" id="itemModal" :showing="itemModal">
+				<div class="itemModal">
+					<i @click="itemModal = !itemModal; clearSelectedItems()" class="fas fa-times"></i>
+					<img class="hasigo" src="/img/item/hashigo_wood.png" alt="">
+					<p class="itemtextmodal">はしごができました！</p>
+				</div>
+			</modal-component>
+		</transition>
 	</div>
 </template>
 
@@ -14,18 +20,19 @@
 	import { EventBus } from "../eventBus.js";
 
 	export default {
+		props: ["createditems"],
 		data() {
 			return {
 				selectedItems: null,
 				allItems: {},
-				filteredItems: null
+				filteredItems: null,
+				itemModal: false
 			};
 		},
 		created() {
 			// Listen for the add items event and its payload.
 			EventBus.$on("addSelectedItem", selectedItemList => {
 				this.selectedItems = [];
-				console.log(this.selectedItems);
 				this.selectedItems.push(selectedItemList);
 				if (
 					this.allItems[
@@ -40,18 +47,27 @@
 						"id" + this.selectedItems[0][this.selectedItems[0].length - 1].id
 					] = 1;
 				}
-				console.log(this.allItems);
 			});
 
 			EventBus.$on("clearSelectedItem", selectedItems => {
 				this.selectedItems = selectedItems;
 				this.allItems = selectedItems;
 			});
+
+			EventBus.$on("createItem", () => {
+				if(this.allItems.id1 == 2 && this.allItems.id2 == 1) {
+					this.itemModal = !this.itemModal;
+				}
+			})
 		},
 		methods: {
 			filterItems() {
 				this.filteredItems = { ...this.selectedItems };
-			}
+			},
+			clearSelectedItems() {
+				this.allItems = {};
+				EventBus.$emit("clearSelectedItemList");
+			},
 		}
 	};
 </script>

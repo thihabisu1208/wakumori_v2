@@ -15,7 +15,8 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
 * {
-   cursor: url('~/img/saruFace12.png'), pointer;
+  cursor:  auto;
+  cursor:  url('~/img/saruFace12.png') 4 12, auto;
 }
 
 html, body{
@@ -44,6 +45,10 @@ p{
   font-size: 2rem;
 }
 
+i{
+  cursor:  url('~/img/saruFace22.png') 4 12, pointer;
+}
+
 .buttons{
       text-align: center;
       a, input{
@@ -60,7 +65,9 @@ p{
         font-size: 1.5rem;
 
         &:hover{
-          cursor: url('~/img/saruFace22.png'), pointer;
+          cursor:  pointer;
+          cursor:  url('~/img/saruFace22.png') 4 12, pointer;
+          // cursor: url('~/img/saruFace22.png') 25 15, auto, pointer;
           background: #fff;
           border: 1px solid $buttonColor;
           color: $buttonColor;
@@ -68,7 +75,9 @@ p{
     }
     
     input{
-      cursor: url('~/img/saruFace22.png'), pointer;
+      cursor:  pointer;
+      cursor:  url('~/img/saruFace22.png') 4 12, pointer;
+      // cursor: url('~/img/saruFace22.png'), pointer;
       font-size: 1.5rem;
     }
 }
@@ -121,6 +130,44 @@ p{
   }
 }
 
+.slide-fade-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: scale(1);
+  opacity: 0;
+}
+
+// Modal Forms
+.modal{
+  width: 100%;
+  height: 100vh;
+}
+
+.modalData{
+  position: relative;
+  width: 40%;
+  border-radius: 10px;
+  margin: 20vh auto;
+  padding: 30px 0;
+  background: #fff;
+
+  .close{
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+
+    i{
+      color: $buttonColor;
+      font-size: 30px;
+    }
+  }
+}
 @import 'game';
 
 @import 'gameContent';

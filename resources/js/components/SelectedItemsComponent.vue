@@ -7,7 +7,7 @@
 			</span>
 		</p>
 		<p>
-			<img src="/img/nabe.png" />
+			<img @click="createItem" src="/img/nabe.png" />
 		</p>
 	</div>
 </template>
@@ -25,6 +25,9 @@
 			clearSelectedItems() {
 				this.selectedItems = [];
 				EventBus.$emit("clearSelectedItem", this.selectedItems);
+			},
+			createItem() {
+				EventBus.$emit("createItem", "ok");
 			}
 		}
 	};

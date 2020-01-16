@@ -9,7 +9,7 @@
 				<p>
 					<img :src="'/img/item/' + item.path" />
 				</p>
-				<p>{{ item.name }}</p>
+				<!-- <p>{{ item.name }}</p> -->
 			</div>
 		</draggable>
 		<draggable class="itemList itemList2" :options="options" group="items" @add="onAdd"></draggable>
@@ -45,6 +45,10 @@
 			EventBus.$on("clearSelectedItem", selectedItems => {
 				this.selectedItemList = selectedItems;
 			});
+
+			EventBus.$on("clearSelectedItemList", () => {
+				this.selectedItemList = [];
+			})
 		},
 		methods: {
 			addSelectedItems() {

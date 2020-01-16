@@ -14,6 +14,10 @@
     :items="{{ $usagiItems }}"
 @endsection
 
+@section('createdItems')
+    :createdItems="{{ $usagiCreatedItems }}"
+@endsection
+
 @section('game')
     <div class="gameUsagi gameAll">
         <div class="saruBot">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Game;
 use App\Item;
+use App\CreatedItem;
 use App\GameUsagi;
 use Illuminate\Http\Request;
 
@@ -20,9 +21,10 @@ class HomeController extends Controller
     public function usagi()
     {
         $gameUsagi = Game::where('id', 1)->first();
-        $completedGameUsagi = Game::where([['id', '=', '1'],['completed', '=', '1'],])->get();
+        $completedGameUsagi = Game::where('id', 1)->get();
         $usagiItems = Item::where('game_id', 1)->get();
-        return view('game.usagi', compact(['gameUsagi', 'completedGameUsagi', 'usagiItems']));
+        $usagiCreatedItems = CreatedItem::where('game_id', 1)->get();
+        return view('game.usagi', compact(['gameUsagi', 'completedGameUsagi', 'usagiItems', 'usagiCreatedItems']));
     }
 
     public function kuma()

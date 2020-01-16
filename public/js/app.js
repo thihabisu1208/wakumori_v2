@@ -1716,13 +1716,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["createditems"],
   data: function data() {
     return {
       selectedItems: null,
       allItems: {},
-      filteredItems: null
+      filteredItems: null,
+      itemModal: false
     };
   },
   created: function created() {
@@ -1731,7 +1739,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     // Listen for the add items event and its payload.
     _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$on("addSelectedItem", function (selectedItemList) {
       _this.selectedItems = [];
-      console.log(_this.selectedItems);
 
       _this.selectedItems.push(selectedItemList);
 
@@ -1740,17 +1747,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       } else {
         _this.allItems["id" + _this.selectedItems[0][_this.selectedItems[0].length - 1].id] = 1;
       }
-
-      console.log(_this.allItems);
     });
     _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$on("clearSelectedItem", function (selectedItems) {
       _this.selectedItems = selectedItems;
       _this.allItems = selectedItems;
     });
+    _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$on("createItem", function () {
+      if (_this.allItems.id1 == 2 && _this.allItems.id2 == 1) {
+        _this.itemModal = !_this.itemModal;
+      }
+    });
   },
   methods: {
     filterItems: function filterItems() {
       this.filteredItems = _objectSpread({}, this.selectedItems);
+    },
+    clearSelectedItems: function clearSelectedItems() {
+      this.allItems = {};
+      _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$emit("clearSelectedItemList");
     }
   }
 });
@@ -1825,6 +1839,9 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     // Listen for the i-got-clicked event and its payload.
     _eventBus_js__WEBPACK_IMPORTED_MODULE_1__["EventBus"].$on("clearSelectedItem", function (selectedItems) {
       _this.selectedItemList = selectedItems;
+    });
+    _eventBus_js__WEBPACK_IMPORTED_MODULE_1__["EventBus"].$on("clearSelectedItemList", function () {
+      _this.selectedItemList = [];
     });
   },
   methods: {
@@ -1907,6 +1924,9 @@ __webpack_require__.r(__webpack_exports__);
     clearSelectedItems: function clearSelectedItems() {
       this.selectedItems = [];
       _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$emit("clearSelectedItem", this.selectedItems);
+    },
+    createItem: function createItem() {
+      _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$emit("createItem", "ok");
     }
   }
 });
@@ -41714,24 +41734,59 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.selectedItems
-      ? _c(
-          "span",
-          { on: { change: _vm.filterItems } },
-          _vm._l(_vm.selectedItems, function(selectedItem, index) {
-            return _c("div", { key: index }, [_vm._v(_vm._s(selectedItem))])
-          }),
-          0
-        )
-      : _vm._e(),
-    _vm._v("\n\t" + _vm._s(_vm.allItems) + "\n\t"),
-    _vm.allItems.id1 === 2 && _vm.allItems.id2 === 1
-      ? _c("div", { staticClass: "showItem" }, [
-          _c("img", { attrs: { src: "/img/item/hashigo_wood.png", alt: "" } })
-        ])
-      : _vm._e()
-  ])
+  return _c(
+    "div",
+    [
+      _vm.selectedItems
+        ? _c(
+            "span",
+            { on: { change: _vm.filterItems } },
+            _vm._l(_vm.selectedItems, function(selectedItem, index) {
+              return _c("div", { key: index }, [_vm._v(_vm._s(selectedItem))])
+            }),
+            0
+          )
+        : _vm._e(),
+      _vm._v("\n\t" + _vm._s(_vm.allItems) + "\n\t"),
+      _c(
+        "transition",
+        { attrs: { name: "slide-fade" } },
+        [
+          _c(
+            "modal-component",
+            {
+              staticClass: "modal backHasigo",
+              attrs: { id: "itemModal", showing: _vm.itemModal }
+            },
+            [
+              _c("div", { staticClass: "itemModal" }, [
+                _c("i", {
+                  staticClass: "fas fa-times",
+                  on: {
+                    click: function($event) {
+                      _vm.itemModal = !_vm.itemModal
+                      _vm.clearSelectedItems()
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "hasigo",
+                  attrs: { src: "/img/item/hashigo_wood.png", alt: "" }
+                }),
+                _vm._v(" "),
+                _c("p", { staticClass: "itemtextmodal" }, [
+                  _vm._v("はしごができました！")
+                ])
+              ])
+            ]
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -41769,9 +41824,7 @@ var render = function() {
         },
         _vm._l(_vm.items, function(item, index) {
           return _c("div", { key: index, staticClass: "item" }, [
-            _c("p", [_c("img", { attrs: { src: "/img/item/" + item.path } })]),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(item.name))])
+            _c("p", [_c("img", { attrs: { src: "/img/item/" + item.path } })])
           ])
         }),
         0
@@ -41844,17 +41897,15 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(0)
+    _c("p", [
+      _c("img", {
+        attrs: { src: "/img/nabe.png" },
+        on: { click: _vm.createItem }
+      })
+    ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [_c("img", { attrs: { src: "/img/nabe.png" } })])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -57306,7 +57357,8 @@ Vue.component("selected-items-component", __webpack_require__(/*! ./components/S
 var game = new Vue({
   el: "#game",
   data: {
-    game1Modal: false
+    game1Modal: false,
+    itemModal: false
   }
 });
 

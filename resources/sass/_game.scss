@@ -123,3 +123,39 @@ img {
         }
     }
 }
+
+ .backHasigo{
+    position: absolute;
+    top: 0;
+    background-color: rgba( 0, 0, 0, 0.5 );
+    width: 100vw;
+    height: 100vh;
+    z-index: 150;
+    display: block;
+    margin: 0 auto;
+    .itemModal{
+        width: 40vw;
+        border-radius: 15px;
+        background-color: #fff;
+        margin: 10vh auto;
+        padding: 5vh 0;
+        .hasigo{
+            width: 7vw;
+            text-align: center;
+            display: block;
+            margin: 10vh auto;
+        }
+        .fa-times{
+            float: right;
+            font-size: 50px;
+            color: #000;
+            padding: 0 40px 0 0 ;
+        }
+        p.itemtextmodal{
+            color: #000;
+            border-radius: 15px;
+            background-color: #fff;
+        }
+    }
+
+  }

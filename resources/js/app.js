@@ -25,6 +25,7 @@ Vue.component(
 const game = new Vue({
     el: "#game",
     data: {
-        game1Modal: false
+        game1Modal: false,
+        itemModal: false
     }
 });
