@@ -81,6 +81,22 @@ i{
       font-size: 1.5rem;
     }
 }
+.elsebuttons{
+  text-align: center;
+  a, input{
+    cursor: pointer;
+    width: 70%;
+    margin: 0 auto;
+    background: $gray;
+    border: 1px solid $gray;
+    padding: 10px 30px;
+    border-radius: 10px;
+    transition: 0.3s;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+}
 
 // Top Navigation
 #topNav{

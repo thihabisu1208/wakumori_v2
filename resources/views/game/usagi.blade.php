@@ -18,6 +18,15 @@
     :createdItems="{{ $usagiCreatedItems }}"
 @endsection
 
+@section('ifCompleted')
+    @if ($completedGameUsagi->first()->completed == 1)
+    <a href="#">
+            すすむ
+    <i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
+    </a>
+    @endif
+@endsection
+
 @section('game')
     <div class="gameUsagi gameAll">
         <sarubot-component></sarubot-component>

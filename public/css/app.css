@@ -6000,6 +6000,26 @@ i {
   font-size: 1.5rem;
 }
 
+.elsebuttons {
+  text-align: center;
+}
+
+.elsebuttons a,
+.elsebuttons input {
+  cursor: pointer;
+  width: 70%;
+  margin: 0 auto;
+  background: #e0e0e0;
+  border: 1px solid #e0e0e0;
+  padding: 10px 30px;
+  border-radius: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
 #topNav {
   width: 100%;
   position: fixed;
@@ -6383,7 +6403,7 @@ img {
 
 .gameData .gameUsagi {
   position: relative;
-  background: url("/img/mori.png") 100% center;
+  background: url("/img/buildings.png") 100% center;
   height: 100%;
   background-size: cover;
 }
@@ -6431,6 +6451,8 @@ img {
 }
 
 .gameItems .itemList img {
+  border: 4px solid rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
   cursor: url("/img/saruFace22.png"), pointer;
   width: 50%;
 }

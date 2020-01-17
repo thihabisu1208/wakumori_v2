@@ -7,7 +7,7 @@
 		>
 			<div class="item" v-for="(item, index) in items" :key="index">
 				<p>
-					<img :src="'/img/item/' + item.path" />
+					<img :class="item.name" :src="'/img/item/' + item.path" />
 				</p>
 				<!-- <p>{{ item.name }}</p> -->
 			</div>

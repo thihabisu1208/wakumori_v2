@@ -24,6 +24,12 @@ Vue.component(
 
 Vue.component('sarubot-component', require('./components/SaruBotComponent.vue').default);
 
+Vue.component('topbutton-component', require('./components/TopButtonComponent.vue').default);
+
+Vue.component('contentgamecomponent-component', require('./components/ContentGameComponent.vue').default);
+
+
+
 const game = new Vue({
     el: "#game",
     data: {

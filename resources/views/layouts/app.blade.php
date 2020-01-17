@@ -10,7 +10,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="home">
+    <div id="game">
         <div id="topNav">
             <p>
                 <a style="color: #000; text-decoration: none;" href="{{ url('/home') }}">{{ config('app.name', 'Laravel') }}</a>

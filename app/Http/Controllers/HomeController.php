@@ -15,7 +15,10 @@ class HomeController extends Controller
     {
         $games = Game::all();
         $usagi = GameUsagi::all();
-        return view('game.home', compact(['games', 'usagi']));
+        $completedGameUsagi = Game::where('id', 1)->get();
+        $completedGameKuma = Game::where('id', 2)->get();
+        $completedGameRisu = Game::where('id', 3)->get();
+        return view('game.home', compact(['games', 'usagi', 'completedGameUsagi', 'completedGameKuma','completedGameRisu']));
     }
 
     public function usagi()
@@ -31,14 +34,16 @@ class HomeController extends Controller
     {
         $gameKuma = Game::where('id', 2)->first();
         $kumaItems = Item::where('game_id', 2)->get();
-        return view('game.kuma', compact(['gameKuma', 'kumaItems']));
+        $completedGameKuma = Game::where('id', 2)->get();
+        return view('game.kuma', compact(['gameKuma', 'kumaItems', 'completedGameKuma']));
     }
 
     public function risu()
     {
         $gameRisu = Game::where('id', 3)->first();
         $risuItems = Item::where('game_id', 3)->get();
-        return view('game.risu', compact(['gameRisu', 'risuItems']));
+        $completedGameRisu = Game::where('id', 3)->get();
+        return view('game.risu', compact(['gameRisu', 'risuItems', 'completedGameRisu']));
     }
 
     public function createitem(CreatedItem $createditem)
