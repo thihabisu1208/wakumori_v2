@@ -24,3 +24,5 @@ Route::get('/home/risu', 'HomeController@risu');
 // Route::post('/createitem', 'HomeController@createitem');
 
 Route::patch('/createitem/{createditem}', 'HomeController@createitem');
+
+Route::get('/completeGame', 'HomeController@completeGame');

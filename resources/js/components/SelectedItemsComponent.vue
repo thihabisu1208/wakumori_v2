@@ -7,7 +7,7 @@
 			</span>
 		</p>
 		<p>
-			<img @click="createItem" src="/img/nabe.png" />
+			<img class="nabe" @click="createItem" src="/img/nabe.png" />
 		</p>
 	</div>
 </template>

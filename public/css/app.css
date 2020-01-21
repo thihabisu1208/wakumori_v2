@@ -6000,6 +6000,26 @@ i {
   font-size: 1.5rem;
 }
 
+.elsebuttons {
+  text-align: center;
+}
+
+.elsebuttons a,
+.elsebuttons input {
+  cursor: not-allowed;
+  width: 70%;
+  margin: 0 auto;
+  background: #e0e0e0;
+  border: 1px solid #e0e0e0;
+  padding: 10px 30px;
+  border-radius: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
 #topNav {
   width: 100%;
   position: fixed;
@@ -6064,6 +6084,32 @@ i {
   -webkit-transform: scale(1);
           transform: scale(1);
   opacity: 0;
+}
+
+.fadeIn {
+  opacity: 0;
+  -webkit-animation: fadeIn 2s forwards;
+          animation: fadeIn 2s forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .modal {
@@ -6249,7 +6295,7 @@ img {
   padding: 5vh 0;
 }
 
-.backHasigo .itemModal .hasigo {
+.backHasigo .itemModal .hashigo {
   width: 7vw;
   text-align: center;
   display: block;
@@ -6315,16 +6361,26 @@ img {
   background: #FFB190;
 }
 
-.gameOrders .makeItem {
-  height: 64%;
-}
-
 .gameOrders .showItem {
   width: 150px;
 }
 
 .gameOrders .showItem img {
   width: 100%;
+}
+
+.gameOrders .createdItems {
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+}
+
+.gameOrders .createdItems img {
+  border: 5px solid #fff;
+  max-width: 50%;
+  height: auto;
 }
 
 .gameData {
@@ -6383,12 +6439,60 @@ img {
 
 .gameData .gameUsagi {
   position: relative;
-  background: url("/img/mori.png") 100% center;
+  background: url("/img/backgrounds/mori.png") 100% center;
   height: 100%;
   background-size: cover;
 }
 
 .gameData .gameUsagi img {
+  width: 100%;
+}
+
+.gameData .gameUsagi .hashigoTop,
+.gameData .gameUsagi .saru {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.gameData .gameUsagi .hashigoTop img,
+.gameData .gameUsagi .saru img {
+  width: 100%;
+}
+
+.gameData .gameUsagi .hashigoTop {
+  opacity: 0;
+  left: 48%;
+  width: 75px;
+}
+
+.gameData .gameUsagi .saru {
+  opacity: 1;
+  left: 5%;
+  top: 90%;
+  width: 75px;
+}
+
+.gameData .gameKuma {
+  position: relative;
+  background: url("/img/backgrounds/buildings.png") 100% center;
+  height: 100%;
+  background-size: cover;
+}
+
+.gameData .gameKuma img {
+  width: 100%;
+}
+
+.gameData .gameRisu {
+  position: relative;
+  background: url("/img/backgrounds/clouds.png") 100% center;
+  height: 100%;
+  background-size: cover;
+}
+
+.gameData .gameRisu img {
   width: 100%;
 }
 
@@ -6424,6 +6528,11 @@ img {
   background: #fff;
 }
 
+.gameItems .selectItem .nabe {
+  padding: 10px;
+  border: 5px solid #fff;
+}
+
 .gameItems .itemList {
   width: 50%;
   display: grid;
@@ -6433,6 +6542,8 @@ img {
 .gameItems .itemList img {
   cursor: url("/img/saruFace22.png"), pointer;
   width: 50%;
+  padding: 10px;
+  border: 5px solid #fff;
 }
 
 .gameItems .itemList p {
@@ -6446,5 +6557,39 @@ img {
   bottom: 5%;
   left: 0;
   overflow: hidden;
+}
+
+.modal {
+  position: relative;
+}
+
+.modal .modalData {
+  border-radius: 20px;
+  background: #fff;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.modal h1 {
+  text-align: center;
+}
+
+.modal .modalContent {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+}
+
+.modal .modalContent h1 {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 

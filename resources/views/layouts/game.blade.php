@@ -25,7 +25,7 @@
             <div class="gameItems">
                 @yield('item')
             </div>
-        </main>
+        </main> 
     </div>
 </body>
 </html>

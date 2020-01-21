@@ -17,7 +17,7 @@
 	};
 </script>
 
-<style>
+<style lang="scss">
 	.overlay {
 		width: 100%;
 		height: 100vh;
@@ -28,5 +28,11 @@
 		left: 0;
 		right: 0;
 		background: rgba(151, 151, 151, 0.7);
+	}
+
+	.modal {
+		img {
+			width: 100%;
+		}
 	}
 </style>

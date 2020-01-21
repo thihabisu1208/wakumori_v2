@@ -22,7 +22,25 @@ Vue.component(
     require("./components/SelectedItemsComponent.vue").default
 );
 
-Vue.component('sarubot-component', require('./components/SaruBotComponent.vue').default);
+Vue.component(
+    "sarubot-component",
+    require("./components/SaruBotComponent.vue").default
+);
+
+Vue.component(
+    "button-component",
+    require("./components/ButtonComponent.vue").default
+);
+
+Vue.component(
+    "forward-component",
+    require("./components/ForwardComponent.vue").default
+);
+
+Vue.component(
+    "content-game-component",
+    require("./components/ContentGameComponent.vue").default
+);
 
 const game = new Vue({
     el: "#game",

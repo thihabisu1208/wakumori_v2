@@ -28,7 +28,6 @@
         align-items: center;
         justify-content: center;
     }
-    
 }
 
 .gameOrders {
@@ -41,14 +40,24 @@
         background: $buttonColor;
     }
 
-    .makeItem {
-        height: 64%;
-    }
-
     .showItem {
         width: 150px;
         img {
             width: 100%;
+        }
+    }
+
+    .createdItems {
+        display: grid;
+        width: 100%;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px;
+
+        img {
+            border: 5px solid #fff;
+            max-width: 50%;
+            height: auto;
         }
     }
 }
@@ -60,8 +69,8 @@
 
     .gameAll {
         position: relative;
-        
-         .saruBot {
+
+        .saruBot {
             position: absolute;
             top: -35%;
             left: 1%;
@@ -70,7 +79,7 @@
             img {
                 width: 100%;
             }
-            .saruText{
+            .saruText {
                 font-size: 16px;
                 opacity: 0;
                 position: absolute;
@@ -90,7 +99,7 @@
                 margin-top: -5px;
                 border: 15px solid transparent;
                 border-right: 15px solid #fff;
-              }
+            }
         }
 
         .itemContent {
@@ -104,7 +113,52 @@
 
     .gameUsagi {
         position: relative;
-        background: url("~/img/mori.png") 100% center;
+        background: url("~/img/backgrounds/mori.png") 100% center;
+        height: 100%;
+        background-size: cover;
+        img {
+            width: 100%;
+        }
+
+        .hashigoTop,
+        .saru {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .hashigoTop {
+            opacity: 0;
+            left: 48%;
+            // top: 70%;
+            width: 75px;
+        }
+
+        .saru {
+            opacity: 1;
+            left: 5%;
+            top: 90%;
+            width: 75px;
+        }
+    }
+
+    .gameKuma {
+        position: relative;
+        background: url("~/img/backgrounds/buildings.png") 100% center;
+        height: 100%;
+        background-size: cover;
+        img {
+            width: 100%;
+        }
+    }
+
+    .gameRisu {
+        position: relative;
+        background: url("~/img/backgrounds/clouds.png") 100% center;
         height: 100%;
         background-size: cover;
         img {
@@ -144,6 +198,10 @@
             width: 200px;
             background: #fff;
         }
+        .nabe {
+            padding: 10px;
+            border: 5px solid #fff;
+        }
     }
 
     .itemList {
@@ -154,6 +212,8 @@
         img {
             cursor: $cursorChange;
             width: 50%;
+            padding: 10px;
+            border: 5px solid #fff;
         }
 
         p {
@@ -169,5 +229,34 @@
         bottom: 5%;
         left: 0;
         overflow: hidden;
+    }
+}
+
+.modal {
+    position: relative;
+    .modalData {
+        border-radius: 20px;
+        background: #fff;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .modalContent {
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 0.5fr;
+
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }

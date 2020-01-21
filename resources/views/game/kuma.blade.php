@@ -10,13 +10,24 @@
     {{ $gameKuma->title }}
 @endsection
 
+@section('items')
+    :items="{{ $kumaItems }}"
+@endsection
+
+@section('ifGame')
+    @if ($completedGameKuma->first()->completed == 1)
+    <a href="#">
+            すすむ
+    <i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
+    </a>
+    @endif
+@endsection
+
 @section('game')
     <div class="gameKuma gameAll">
-        <div class="saruBot">
-            <img src="/img/saru.png" alt="saruBot">
-        </div>
+        <sarubot-component :gamekuma="{{ $gameKuma }}"></sarubot-component>
         <div class="itemContent">
-            <img class="kumaGame" src="img/biruKuma.png" alt="ビルとくま">
+            <img class="kumaGame" src="/img/KingKong.png" alt="ビルとくま">
             <div class="itemList">
 
             </div>

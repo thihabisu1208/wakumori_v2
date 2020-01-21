@@ -82,6 +82,23 @@ i{
     }
 }
 
+.elsebuttons{
+  text-align: center;
+  a, input{
+    cursor: not-allowed;
+    width: 70%;
+    margin: 0 auto;
+    background: $gray;
+    border: 1px solid $gray;
+    padding: 10px 30px;
+    border-radius: 10px;
+    transition: 0.3s;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+}
+
 // Top Navigation
 #topNav{
   width: 100%;
@@ -140,6 +157,20 @@ i{
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: scale(1);
   opacity: 0;
+}
+
+.fadeIn{
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 
 // Modal Forms

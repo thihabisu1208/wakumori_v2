@@ -7,10 +7,11 @@
             <hr>
             <div id="contentGames">
             @foreach ($games as $game)
-                <div class="contentGamesContent">
+                <content-game-component :gamepath="'{{ $game->path }}'" :completedgameusagi="{{ $completedGameUsagi }}" :completedgamekuma="{{ $completedGameKuma }}" :completedgamerisu="{{ $completedGameRisu }}" :gameid="'{{ $game->id }}'" :gametitle="'{{ $game->title }}'" :gamedescription="'{{ $game->description }}'" ></content-game-component>
+                {{-- <div class="contentGamesContent">
                     <div class="contentGame contentGame1">
                         <div class="contentGameContent">
-                            <img src="/img/teacher/game1.png" />
+                            <img src="/img/teacher/{{ $game->id }}.png" />
                             <h3>{{ $game->title }}</h3>
                         </div>
                     </div>
@@ -22,7 +23,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             @endforeach
             </div>
         </div>

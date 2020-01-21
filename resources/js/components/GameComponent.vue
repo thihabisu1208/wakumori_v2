@@ -7,11 +7,12 @@
 		>
 			<div class="item" v-for="(item, index) in items" :key="index">
 				<p>
-					<img :src="'/img/item/' + item.path" />
+					<img class="itemsToSelect" :class="item.name" :src="'/img/item/' + item.path" />
 				</p>
 				<!-- <p>{{ item.name }}</p> -->
 			</div>
 		</draggable>
+		<!-- <draggable class="itemList itemList2" :options="options" group="items" @add="onAdd"></draggable> -->
 		<draggable class="itemList itemList2" :options="options" group="items" @add="onAdd"></draggable>
 	</div>
 </template>
@@ -51,12 +52,20 @@
 				// this.selectedItems.push(this.filteredItems)
 				EventBus.$emit("addSelectedItem", this.selectedItemList);
 			},
-			onAdd(e) {
+			onAdd(event) {
 				// console.log(e.oldIndex + 1);
 				this.selectedItemList.push({
-					id: e.oldIndex + 1
+					id: event.oldIndex + 1
 				});
 				this.addSelectedItems();
+			}
+		},
+		watch: {
+			selectedItemList: {
+				handler(val){
+					EventBus.$emit("checkAddedItems");
+				},
+				deep: true
 			}
 		}
 	};

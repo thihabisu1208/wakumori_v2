@@ -11,12 +11,8 @@
             @yield('gameTitle')
         </h1>
 
-        <p class="moveBtn buttons">
-            @if ($completedGameUsagi->first()->completed == 1)
-            <a href="#">
-                    すすむ
-            <i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
-            </a>
-            @endif
-        </p>
+        {{-- <p class="moveBtn buttons">
+            @yield('ifGame')
+        </p> --}}
+        <forward-component :completedgameusagi="{{ $completedGameUsagi }}" :completedgamekuma="{{ $completedGameKuma }}"  :completedgamerisu="{{ $completedGameRisu }}" ></forward-component>
 @endsection
