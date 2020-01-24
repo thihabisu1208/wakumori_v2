@@ -6066,7 +6066,7 @@ i {
 
 .backgroundPng #top p.buttons a {
   width: 5vw;
-  font-size: 3rem;
+  font-size: 5rem;
 }
 
 #welcome {
@@ -6151,6 +6151,10 @@ i {
   font-size: 30px;
 }
 
+body {
+  overflow: hidden;
+}
+
 .container {
   margin: 10vh auto 0;
   width: 95%;
@@ -6168,6 +6172,7 @@ img {
 }
 
 #topNav p a {
+  font-size: 3rem;
   padding-bottom: 5px;
 }
 
@@ -6181,6 +6186,10 @@ img {
   display: grid;
 }
 
+.topMargin {
+  margin-top: 5vh;
+}
+
 #contentGames {
   margin: 10px auto;
   width: 100%;
@@ -6192,19 +6201,20 @@ img {
 #contentGames .contentGamesContent {
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
 
 #contentGames .contentGamesContent:hover .contentGame.contentGame1 {
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
 }
 
 #contentGames .contentGamesContent:hover .contentGame.contentGame2 {
   background: #fff;
   display: -webkit-box;
   display: flex;
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
 }
 
 #contentGames .contentGamesContent:hover .contentGame.contentGame1 .contentGameContent {
@@ -6214,6 +6224,7 @@ img {
 #contentGames .contentGamesContent .contentGame {
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  border-radius: 15px 15px 0 0;
 }
 
 #contentGames .contentGamesContent .contentGame.contentGame1 {
@@ -6228,6 +6239,13 @@ img {
   z-index: 1;
   -webkit-transform: translateY(100px);
           transform: translateY(100px);
+  border-right: 3px solid #e0e0e0;
+  border-left: 3px solid #e0e0e0;
+  border-top: 3px solid #e0e0e0;
+}
+
+#contentGames .contentGamesContent .contentGame.contentGame1 img {
+  border-radius: 15px 15px 0 0;
 }
 
 #contentGames .contentGamesContent .contentGame.contentGame1 .contentGameContent {
@@ -6237,8 +6255,7 @@ img {
 
 #contentGames .contentGamesContent .contentGame.contentGame1 .contentGameContent h3 {
   width: 70%;
-  margin: 10px auto;
-  border-bottom: 3px solid #8D6600;
+  margin: 10px auto 20px;
   padding: 0;
   text-align: center;
 }
@@ -6251,13 +6268,16 @@ img {
           align-items: center;
   padding: 20px;
   box-sizing: border-box;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
   -webkit-transform: translateY(-100px);
           transform: translateY(-100px);
+  border-radius: 0 0 15px 15px;
+  border-right: 3px solid #e0e0e0;
+  border-left: 3px solid #e0e0e0;
+  border-bottom: 3px solid #e0e0e0;
 }
 
 #contentGames .contentGamesContent .contentGame.contentGame2 .contentGameContent p {
-  margin: 0 auto 30px;
+  margin: 20px auto 30px;
   padding: 0;
 }
 
@@ -6461,7 +6481,7 @@ img {
   width: 100%;
 }
 
-.gameData .gameUsagi .hashigoTop,
+.gameData .gameUsagi .sarugoTop,
 .gameData .gameUsagi .saru {
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
@@ -6469,7 +6489,7 @@ img {
   z-index: 3;
 }
 
-.gameData .gameUsagi .hashigoTop img,
+.gameData .gameUsagi .sarugoTop img,
 .gameData .gameUsagi .saru img {
   width: 100%;
 }
@@ -6604,5 +6624,45 @@ img {
           align-items: center;
   -webkit-box-pack: center;
           justify-content: center;
+}
+
+.startSaru {
+  position: absolute;
+  left: 40%;
+  z-index: 50;
+  top: -350px;
+  width: 170px;
+}
+
+.startSaru .helloSaruImages {
+  opacity: 1;
+  width: 100%;
+}
+
+.startSaru .saruHello {
+  opacity: 0;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 20%;
+  left: 10vw;
+  width: 15vw;
+  margin: 0;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.startSaru .saruHello:before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: 100%;
+  margin-top: -5px;
+  border: 15px solid transparent;
+  border-right: 15px solid #fff;
+}
+
+.elseSaruHello {
+  display: none;
 }
 

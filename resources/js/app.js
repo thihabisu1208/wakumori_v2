@@ -42,6 +42,11 @@ Vue.component(
     require("./components/ContentGameComponent.vue").default
 );
 
+Vue.component(
+    "hello-saru-component",
+    require("./components/HelloSaruComponent.vue").default
+);
+
 const game = new Vue({
     el: "#game",
     data: {

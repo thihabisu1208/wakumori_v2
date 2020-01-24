@@ -1,0 +1,38 @@
+.startSaru{
+    position: absolute;
+    left: 40%;
+    z-index: 50;
+    top: -350px;
+    width: 170px;
+
+    .helloSaruImages{
+        opacity: 1;
+        width: 100%;
+    }
+
+    .saruHello{
+        opacity: 0;
+        font-size: 2.5rem;
+        position: absolute;
+        top: 20%;
+        left: 10vw;
+        width: 15vw;
+        margin: 0;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 15px;
+    }
+    .saruHello:before {
+        content: "";
+        position: absolute;
+        top: 30%;
+        right: 100%;
+        margin-top: -5px;
+        border: 15px solid transparent;
+        border-right: 15px solid #fff;
+    }
+}
+
+.elseSaruHello{
+    display: none;
+}

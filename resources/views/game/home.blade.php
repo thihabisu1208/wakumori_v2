@@ -2,9 +2,13 @@
 
 @section('content')
     <div class="content" id="contentGame">
-        <div class="contentGame">
-            <h2>ゲーム画面<h2>
-            <hr>
+        <hello-saru-component  :usagicompleted="{{ $completedGameUsagi }}"></hello-saru-component>
+        <div class="contentGame topMargin">
+            <h2>ゲーム画面</h2>
+            {{-- <hr> --}}
+            
+
+
             <div id="contentGames">
             @foreach ($games as $game)
                 <content-game-component :gamepath="'{{ $game->path }}'" :completedgameusagi="{{ $completedGameUsagi }}" :completedgamekuma="{{ $completedGameKuma }}" :completedgamerisu="{{ $completedGameRisu }}" :gameid="'{{ $game->id }}'" :gametitle="'{{ $game->title }}'" :gamedescription="'{{ $game->description }}'" ></content-game-component>

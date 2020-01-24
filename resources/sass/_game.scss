@@ -1,4 +1,9 @@
 // Teacher
+body{
+    overflow: hidden;
+
+}
+
 .container {
     margin: 10vh auto 0;
     width: 95%;
@@ -14,6 +19,7 @@ img {
     text-align: center;
 
     a {
+        font-size: 3rem;
         padding-bottom: 5px;
     }
 
@@ -28,6 +34,10 @@ img {
     display: grid;
 }
 
+.topMargin{
+    margin-top: 5vh;
+}
+
 #contentGames {
     margin: 10px auto;
     width: 100%;
@@ -38,23 +48,27 @@ img {
     .contentGamesContent {
         position: relative;
         cursor: pointer;
+        overflow: hidden;
+
 
         &:hover .contentGame.contentGame1 {
-            transform: translateY(0px);
+            transform: translateY(15px);
         }
 
         &:hover .contentGame.contentGame2 {
             background: #fff;
             display: flex;
-            transform: translateY(0px);
+            transform: translateY(-15px);
         }
 
         &:hover .contentGame.contentGame1 .contentGameContent {
             opacity: 1;
+
         }
 
         .contentGame {
             transition: 0.5s;
+            border-radius: 15px 15px 0 0;
 
             &.contentGame1 {
                 position: relative;
@@ -64,6 +78,12 @@ img {
                 align-items: center;
                 z-index: 1;
                 transform: translateY(100px);
+                border-right: 3px solid $gray;
+                border-left: 3px solid $gray;
+                border-top: 3px solid $gray;
+                img {
+                    border-radius: 15px 15px 0 0;
+                }
 
                 .contentGameContent {
                     transition: 0.5s;
@@ -71,8 +91,8 @@ img {
 
                 .contentGameContent h3 {
                     width: 70%;
-                    margin: 10px auto;
-                    border-bottom: 3px solid $fontColor;
+                    margin: 10px auto 20px;
+                    // border-bottom: 3px solid $fontColor;
                     padding: 0;
                     text-align: center;
                 }
@@ -84,11 +104,15 @@ img {
                 align-items: center;
                 padding: 20px;
                 box-sizing: border-box;
-                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+                // box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
                 transform: translateY(-100px);
+                border-radius: 0 0 15px 15px;
+                border-right: 3px solid $gray;
+                border-left: 3px solid $gray;
+                border-bottom: 3px solid $gray;
 
                 .contentGameContent p {
-                    margin: 0 auto 30px;
+                    margin: 20px auto 30px;
                     padding: 0;
                 }
             }
