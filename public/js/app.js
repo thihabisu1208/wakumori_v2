@@ -1832,7 +1832,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -48003,7 +48002,6 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("img", {
-                      staticClass: "hashigo",
                       attrs: {
                         src: "/img/item/" + createditem.path + ".png",
                         alt: ""
@@ -48166,15 +48164,19 @@ var render = function() {
           }
         },
         _vm._l(_vm.items, function(item, index) {
-          return _c("div", { key: index, staticClass: "item" }, [
-            _c("p", [
-              _c("img", {
-                staticClass: "itemsToSelect",
-                class: item.name,
-                attrs: { src: "/img/item/" + item.path }
-              })
-            ])
-          ])
+          return _c(
+            "div",
+            { key: index, staticClass: "item", class: item.name },
+            [
+              _c("p", [
+                _c("img", {
+                  staticClass: "itemsToSelect",
+                  class: item.name,
+                  attrs: { src: "/img/item/" + item.path }
+                })
+              ])
+            ]
+          )
         }),
         0
       ),
@@ -64445,8 +64447,8 @@ var EventBus = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/bisu/Desktop/Projects/wakumori/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/bisu/Desktop/Projects/wakumori/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\wakumori_v2\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wakumori_v2\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

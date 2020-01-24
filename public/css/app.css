@@ -6042,23 +6042,36 @@ i {
   right: 3%;
 }
 
-#top {
-  position: relative;
+.backgroundPng {
   width: 100vw;
   height: 100vh;
-  background: #FFEBB7 url("/img/login.png") 100% center;
+  background: url("/img/bg_login.png") 100% center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-#top h1 {
+.backgroundPng #top {
+  width: 100vw;
+  height: 100vh;
+  background: url("/img/login.png") 100% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.backgroundPng #top h1 {
+  font-size: 6rem;
   margin: 0;
-  padding: 0;
+  padding: 0 0 5vh;
+}
+
+.backgroundPng #top p.buttons a {
+  width: 5vw;
+  font-size: 3rem;
 }
 
 #welcome {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);

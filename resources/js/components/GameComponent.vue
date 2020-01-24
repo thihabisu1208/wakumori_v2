@@ -5,7 +5,7 @@
 			:options="options"
 			:group="{ name: 'items', pull: 'clone', put: false }"
 		>
-			<div class="item" v-for="(item, index) in items" :key="index">
+			<div class="item" :class="item.name" v-for="(item, index) in items" :key="index">
 				<p>
 					<img class="itemsToSelect" :class="item.name" :src="'/img/item/' + item.path" />
 				</p>

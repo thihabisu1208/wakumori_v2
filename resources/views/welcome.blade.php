@@ -21,6 +21,7 @@
     </head>
     <body>
         <div id="app">
+            <div class="backgroundPng">
             <div id="top">
                 <div id="welcome">
                     <h1>ようこそ ~ {{ config('app.name', 'わくわくの森') }}へ</h1>
@@ -29,6 +30,7 @@
                     </p>
                 </div>
             </div>
+        </div>
         </div>
     </body>
 </html>

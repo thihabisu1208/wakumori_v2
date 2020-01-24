@@ -18,7 +18,6 @@
 					<i @click="itemModal = !itemModal" class="fas fa-times"></i>
 					<img
 						@click="itemModal = !itemModal; addHint(); "
-						class="hashigo"
 						:src="'/img/item/' + createditem.path + '.png'"
 						alt
 					/>
