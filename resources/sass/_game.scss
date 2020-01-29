@@ -56,6 +56,12 @@ img {
         .contentGame {
             transition: 0.5s;
 
+            @include tablet {
+                p {
+                    font-size: 1.6rem;
+                }
+            }
+
             &.contentGame1 {
                 position: relative;
                 background: #fff;

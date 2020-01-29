@@ -11,7 +11,15 @@
 @endsection
 
 @section('items')
-    :items="{{ $kumaItems }}"
+    <game-component :kumaitems="{{ $kumaItems }}"></game-component>
+@endsection
+
+@section('createditems')
+    <selected-items-component :kumacreateditems="{{ $kumaItems }}"></selected-items-component>
+@endsection
+
+@section('createdItems')
+    <created-items-component :nowgame="{{ $completedGameKuma }}" :kumacreateditems="{{ $kumaItems }}"></created-items-component>
 @endsection
 
 @section('ifGame')
@@ -25,12 +33,25 @@
 
 @section('game')
     <div class="gameKuma gameAll">
-        <sarubot-component :gamekuma="{{ $gameKuma }}"></sarubot-component>
+        <sarubot-component :kumacreateditems="{{ $kumaItems }}" :gamekuma="{{ $gameKuma }}"></sarubot-component>
+        <div class="hashigoTop">
+            <img src="/img/item/hashigo_wood.png" />
+        </div>
+        <div class="elevatorClose goUp">
+            <img src="/img/item/elevator_door_close.png" />
+        </div>
+        <div class="elevatorOpen goUp">
+            <img src="/img/item/elevator_door_open.png" />
+        </div>
+        <div class="saru goUp">
+            <img src="/img/saru.png" />
+        </div>
         <div class="itemContent">
-            <img class="kumaGame" src="/img/KingKong.png" alt="ビルとくま">
-            <div class="itemList">
-
-            </div>
+            <img class="kumaGame" src="/img/kuma_biru.png" alt="ビルとくま">
+            <img class="kumaGame" id="kuma" src="/img/kuma_noboru.png" alt="ビルとくま">
+        </div>
+        <div class="cushion">
+            <img src="/img/item/kagu_cushion.png" />
         </div>
     </div>
 @endsection

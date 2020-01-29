@@ -1,19 +1,50 @@
 <template>
 	<div>
-		<draggable
-			class="itemList"
-			:options="options"
-			:group="{ name: 'items', pull: 'clone', put: false }"
-		>
-			<div class="item" v-for="(item, index) in items" :key="index">
-				<p>
-					<img class="itemsToSelect" :class="item.name" :src="'/img/item/' + item.path" />
-				</p>
-				<!-- <p>{{ item.name }}</p> -->
-			</div>
-		</draggable>
-		<!-- <draggable class="itemList itemList2" :options="options" group="items" @add="onAdd"></draggable> -->
-		<draggable class="itemList itemList2" :options="options" group="items" @add="onAdd"></draggable>
+		<div v-if="usagiitems">
+			<draggable
+				class="itemList"
+				:options="options"
+				:group="{ name: 'usagiitems', pull: 'clone', put: false }"
+			>
+				<div class="item" v-for="(item, index) in usagiitems" :key="index">
+					<p>
+						<img class="itemsToSelect" :class="item.name" :src="'/img/item/' + item.path" />
+					</p>
+					<!-- <p>{{ item.name }}</p> -->
+				</div>
+			</draggable>
+			<draggable class="itemList itemList2" :options="options" group="usagiitems" @add="onAdd"></draggable>
+		</div>
+		<div v-else-if="kumaitems">
+			<draggable
+				class="itemList"
+				:options="options"
+				:group="{ name: 'kumaitems', pull: 'clone', put: false }"
+			>
+				<div class="item" v-for="(item, index) in kumaitems" :key="index">
+					<p>
+						<img class="itemsToSelect" :class="item.name" :src="'/img/item/' + item.path" />
+					</p>
+					<!-- <p>{{ item.name }}</p> -->
+				</div>
+			</draggable>
+			<draggable class="itemList itemList2" :options="options" group="kumaitems" @add="onAdd"></draggable>
+		</div>
+		<div v-else-if="risuitems">
+			<draggable
+				class="itemList"
+				:options="options"
+				:group="{ name: 'risuitems', pull: 'clone', put: false }"
+			>
+				<div class="item" v-for="(item, index) in risuitems" :key="index">
+					<p>
+						<img class="itemsToSelect" :class="item.name" :src="'/img/item/' + item.path" />
+					</p>
+					<!-- <p>{{ item.name }}</p> -->
+				</div>
+			</draggable>
+			<draggable class="itemList itemList2" :options="options" group="risuitems" @add="onAdd"></draggable>
+		</div>
 	</div>
 </template>
 
@@ -22,7 +53,7 @@
 	import { EventBus } from "../eventBus.js";
 
 	export default {
-		props: ["items"],
+		props: ["usagiitems", "kumaitems", "risuitems"],
 		components: {
 			draggable
 		},
@@ -32,14 +63,10 @@
 				selectedItems: [],
 				clickCount: 0,
 				options: {
-					animation: 200
+					animation: 200,
+					sort: false
 				}
 			};
-		},
-		computed: {
-			filteredItems() {
-				return this.items.reduce((result, item) => [...result, item.id], []);
-			}
 		},
 		created() {
 			// Listen for the i-got-clicked event and its payload.
@@ -62,8 +89,15 @@
 		},
 		watch: {
 			selectedItemList: {
-				handler(val){
+				handler(val) {
 					EventBus.$emit("checkAddedItems");
+				},
+				deep: true
+			},
+			items: {
+				handler(val1, val2) {
+					console.log(val1);
+					console.log(val2);
 				},
 				deep: true
 			}

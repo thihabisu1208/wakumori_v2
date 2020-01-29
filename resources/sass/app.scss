@@ -14,6 +14,14 @@
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+$tablet: 1024px;
+
+@mixin tablet{
+    @media(max-width: #{$tablet}){
+        @content;
+    }
+}
+
 * {
   cursor:  auto;
   cursor:  url('~/img/saruFace12.png') 4 12, auto;
@@ -31,6 +39,10 @@ html, body{
 // General CSS
 h1{
   font-size: 3rem;
+
+  @include tablet {
+    font-size: 2.5rem;
+  }
 }
 
 h2{
@@ -39,6 +51,10 @@ h2{
 
 h3 {
   font-size: 2.2rem;
+
+  @include tablet {
+    font-size: 1.6rem;
+  }
 }
 
 p{
@@ -121,17 +137,36 @@ i{
 }
 
 // Top
-#top{
-  position: relative;
+.backgroundPng{
   width: 100vw;
   height: 100vh;
-  background: #FFEBB7 url('~/img/login.png') 100% center;
+  background:  url('~/img/bg_login.png') 100% center;
   background-repeat: no-repeat;
   background-size: cover;
+    #top{
+      width: 100vw;
+      height: 100vh;
+      background:  url('~/img/login.png') 100% center;
+      background-repeat: no-repeat;
+      background-size: cover;
 
-  h1 {
-    margin: 0;
-    padding: 0;
+    h1 {
+      font-size: 6rem;
+      margin: 0;
+      padding: 0 0 5vh;
+
+      @include tablet {
+        font-size: 4rem;
+      }
+    }
+    p.buttons a{
+      width: 5vw;
+      font-size: 5rem;
+
+      @include tablet {
+        font-size: 3rem;
+      }
+    }
   }
 }
 
@@ -140,6 +175,10 @@ i{
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @include tablet {
+    top: 50%;
+  }
   
   h1{
     text-align: center;
@@ -187,6 +226,12 @@ i{
   padding: 30px 0;
   background: #fff;
 
+  @include tablet {
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
+
   .close{
     cursor: pointer;
     position: absolute;
@@ -202,3 +247,5 @@ i{
 @import 'game';
 
 @import 'gameContent';
+
+@import 'helloSaru';

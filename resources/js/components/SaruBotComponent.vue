@@ -5,13 +5,10 @@
 			うさぎを助けよう！
 			<br />まずはひもを鍋に追加しよう〜
 		</p>
-		<p v-else-if="gamekuma" class="saruText">
-			くまを助けよう！
-			<br />まずは丈夫なひもを作ろう！
-		</p>
+		<p v-else-if="gamekuma" class="saruText">くまさんがビルの上にのぼっておりられなくなったようだ！</p>
 		<p v-else-if="gamerisu" class="saruText">
 			りすを助けよう！
-			<br />まずは丈夫なひもを作ろう！
+			<br /> 今回は自由にやってみよう！
 		</p>
 	</div>
 </template>
@@ -22,24 +19,74 @@
 	import { EventBus } from "../eventBus.js";
 
 	export default {
-		props: ["gameusagi", "gamekuma", "gamerisu"],
+		props: ["gameusagi", "gamekuma", "gamerisu", "kumacreateditems"],
 		created() {
 			gsap.registerPlugin(TextPlugin);
 		},
 		mounted() {
-			this.addStart();
+			if (this.gameusagi) {
+				this.addUsagiAnimation1();
 
-			EventBus.$on("showHint", () => {
-				this.addMiddle();
-			});
+				EventBus.$on("showUsagiHint1", () => {
+					this.addUsagiAnimation2();
+				});
 
-			EventBus.$on("showHint2", () => {
-				this.addEnd();
-			});
+				EventBus.$on("showUsagiHint2", () => {
+					this.addUsagiAnimation3();
+				});
 
-			EventBus.$on("addHint", () => {
-				this.addEnd2();
-			});
+				EventBus.$on("showUsagiHint3", () => {
+					this.addUsagiAnimation4();
+				});
+			}
+
+			if (
+				this.gamekuma &&
+				!this.kumacreateditems[3] &&
+				!this.kumacreateditems[4]
+			) {
+				this.addKumaAnimation1();
+
+				EventBus.$on("showKumaHint1", () => {
+					this.kumaAnimation2();
+				});
+			} else if (
+				this.gamekuma &&
+				this.kumacreateditems[3] &&
+				!this.kumacreateditems[4]
+			) {
+				this.addKumaAnimation3();
+
+				EventBus.$on("showKumaHint2", () => {
+					this.kumaAnimation4();
+				})
+			} else if (
+				this.gamekuma &&
+				this.kumacreateditems[3] &&
+				this.kumacreateditems[4]
+			) {
+				this.addKumaAnimation5();
+
+				EventBus.$on("showKumaHint4", () => {
+					this.kumaAnimation6();
+				})
+			}
+
+			if (this.gamerisu) {
+				this.addRisuAnimation1();
+
+				// EventBus.$on("showUsagiHint1", () => {
+				// 	this.addUsagiAnimation2();
+				// });
+
+				// EventBus.$on("showUsagiHint2", () => {
+				// 	this.addUsagiAnimation3();
+				// });
+
+				// EventBus.$on("showUsagiHint3", () => {
+				// 	this.addUsagiAnimation4();
+				// });
+			}
 		},
 		data() {
 			return {
@@ -47,20 +94,21 @@
 			};
 		},
 		methods: {
-			addStart() {
-				this.saruBot.add(this.start());
+			// Usagi Game Animations
+			addUsagiAnimation1() {
+				this.saruBot.add(this.usagiAnimation1());
 			},
-			start() {
+			usagiAnimation1() {
 				let tl = gsap.timeline();
 				tl.to(".saruBot", { duration: 1, delay: 2, opacity: 1, y: 200 });
 				tl.to(".saruText", { duration: 1, opacity: 1 });
-				tl.to(".himo", { border: "5px solid #000" });
+				tl.to(".himo", { border: "5px solid #ff0000" });
 				return tl;
 			},
-			addMiddle() {
-				this.saruBot.add(this.middle());
+			addUsagiAnimation2() {
+				this.saruBot.add(this.usagiAnimation2());
 			},
-			middle() {
+			usagiAnimation2() {
 				let tl = gsap.timeline();
 				tl.to(".himo", { duration: 0.5, border: "transparent" });
 				tl.to(".saruText", { duration: 1, opacity: 0 });
@@ -70,14 +118,14 @@
 					delay: -1,
 					text: "次はえだ２つ入れてみましょう！"
 				});
-				tl.to(".eda", { border: "5px solid #000" });
+				tl.to(".eda", { border: "5px solid #ff0000" });
 				return tl;
 			},
-			addEnd() {
+			addUsagiAnimation3() {
 				// this.saruBot.add(this.end(), "-=2");
-				this.saruBot.add(this.end());
+				this.saruBot.add(this.uagiAnimation3());
 			},
-			end() {
+			uagiAnimation3() {
 				let tl = gsap.timeline();
 				tl.to(".eda", { border: "transparent" });
 				tl.to(".saruText", { duration: 1, opacity: 0 });
@@ -87,14 +135,14 @@
 					delay: -1,
 					text: "最後に鍋をクリックしてみて！"
 				});
-				tl.to(".nabe", { border: "5px solid #000" });
+				tl.to(".nabe", { border: "5px solid #ff0000" });
 				return tl;
 			},
-			addEnd2() {
+			addUsagiAnimation4() {
 				// this.saruBot.add(this.end(), "-=2");
-				this.saruBot.add(this.end2());
+				this.saruBot.add(this.usagiAnimation4());
 			},
-			end2() {
+			usagiAnimation4() {
 				let tl = gsap.timeline({ onComplete: this.hashigo });
 				tl.to(".nabe", { border: "transparent" });
 				tl.to(".saruText", { duration: 1, opacity: 0 });
@@ -109,9 +157,100 @@
 			hashigo() {
 				gsap.to(".hashigo_wood", {
 					duration: 1,
-					border: "5px solid #000"
+					border: "5px solid #ff0000"
 				});
-			}
+			},
+			// Kuma Game Animations
+			addKumaAnimation1() {
+				this.saruBot.add(this.kumaAnimation1());
+			},
+			kumaAnimation1() {
+				let tl = gsap.timeline();
+				tl.to(".saruBot", { duration: 1, delay: 2, opacity: 1, y: 200 });
+				tl.to(".saruText", { duration: 1, opacity: 1 });
+				tl.to(".saruText", { duration: 1, delay: 1, opacity: 0 });
+				tl.to(".saruText", { duration: 1, opacity: 1 });
+				tl.to(".saruText", {
+					duration: 0,
+					delay: -1,
+					text: "うさぎさんの時より高さがあって、はしごでは届かなさそう…"
+				});
+				tl.to(".saruText", { duration: 1, delay: 2, opacity: 0 });
+				tl.to(".saruText", { duration: 1, opacity: 1 });
+				tl.to(".saruText", {
+					duration: 0,
+					delay: -1,
+					text: "ひもを２つ入れるともっと強くなるよ！"
+				});
+				return tl;
+			},
+			addKumaAnimation2() {
+				this.sarubot.add(this.kumaAnimation2());
+			},
+			kumaAnimation2() {
+				let tl = gsap.timeline();
+				tl.to(".saruText", { duration: 1, opacity: 0 });
+				tl.to(".saruText", { duration: 1, opacity: 1 });
+				tl.to(".saruText", {
+					duration: 0,
+					delay: -1,
+					text: "前回と同じく鍋をクリックしてみよう！"
+				});
+				return tl;
+			},
+			addKumaAnimation3() {
+				// this.sarubot.add(this.kumaAnimation3());
+				this.kumaAnimation3();
+			},
+			kumaAnimation3() {
+				let tl = gsap.timeline();
+				tl.to(".saruBot", { duration: 1, delay: 1, opacity: 1, y: 200 });
+				tl.to(".saruText", { duration: 1, opacity: 1 });
+				tl.to(".saruText", {
+					duration: 1,
+					delay: -2,
+					text: "強い縄ができたね！"
+				});
+				tl.to(".saruText", { duration: 3, opacity: 0 });
+				tl.to(".saruText", { duration: 1, opacity: 1 });
+				tl.to(".saruText", {
+					duration: 1,
+					delay: -2,
+					text: "えだもひもと同じく二つ合わせると強くなるんだよ！"
+				});
+				return tl;
+			},
+			kumaAnimation4() {
+				let tl = gsap.timeline();
+				tl.to(".saruBot", { duration: 1, delay: 1, opacity: 1, y: 200 });
+				tl.to(".saruText", { duration: 1, opacity: 1 });
+				tl.to(".saruText", {
+					duration: 0,
+					delay: -1,
+					text: "鍋をクリック！"
+				});
+				return tl;
+			},
+			addKumaAnimation5() {
+				// this.sarubot.add(this.kumaAnimation3());
+				this.kumaAnimation5();
+			},
+			kumaAnimation5() {
+				let tl = gsap.timeline();
+				tl.to(".saruBot", { duration: 1, delay: 1, opacity: 1, y: 200});
+				tl.to(".saruText", { duration: 1, opacity: 1 });
+				tl.to(".saruText", { duration: 0, delay: -1, text: "作った新しいモノ２つを混ぜてみて！"})
+			},
+			// Risu Game Animations
+			addRisuAnimation1() {
+				this.saruBot.add(this.risuAnimation1());
+			},
+			risuAnimation1() {
+				let tl = gsap.timeline();
+				tl.to(".saruBot", { duration: 1, delay: 2, opacity: 1, y: 200 });
+				tl.to(".saruText", { duration: 1, opacity: 1 });
+				return tl;
+			},
 		}
 	};
 </script>

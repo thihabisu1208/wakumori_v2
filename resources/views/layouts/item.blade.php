@@ -1,8 +1,6 @@
 @section('item')
     <div class="selectItem">
-        <selected-items-component></selected-items-component>
+        @yield('createditems')
     </div>
-    <div>
-        <game-component @yield('items')></game-component>
-    </div>
+    @yield('items')
 @endsection

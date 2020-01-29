@@ -5949,12 +5949,24 @@ h1 {
   font-size: 3rem;
 }
 
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
 h2 {
   font-size: 2.2rem;
 }
 
 h3 {
   font-size: 2.2rem;
+}
+
+@media (max-width: 1024px) {
+  h3 {
+    font-size: 1.6rem;
+  }
 }
 
 p {
@@ -6042,18 +6054,43 @@ i {
   right: 3%;
 }
 
-#top {
-  position: relative;
+.backgroundPng {
   width: 100vw;
   height: 100vh;
-  background: #FFEBB7 url("/img/login.png") 100% center;
+  background: url("/img/bg_login.png") 100% center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-#top h1 {
+.backgroundPng #top {
+  width: 100vw;
+  height: 100vh;
+  background: url("/img/login.png") 100% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.backgroundPng #top h1 {
+  font-size: 6rem;
   margin: 0;
-  padding: 0;
+  padding: 0 0 5vh;
+}
+
+@media (max-width: 1024px) {
+  .backgroundPng #top h1 {
+    font-size: 4rem;
+  }
+}
+
+.backgroundPng #top p.buttons a {
+  width: 5vw;
+  font-size: 5rem;
+}
+
+@media (max-width: 1024px) {
+  .backgroundPng #top p.buttons a {
+    font-size: 3rem;
+  }
 }
 
 #welcome {
@@ -6062,6 +6099,12 @@ i {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1024px) {
+  #welcome {
+    top: 50%;
+  }
 }
 
 #welcome h1 {
@@ -6124,6 +6167,12 @@ i {
   margin: 20vh auto;
   padding: 30px 0;
   background: #fff;
+}
+
+@media (max-width: 1024px) {
+  .modalData h1 {
+    font-size: 1.8rem;
+  }
 }
 
 .modalData .close {
@@ -6201,6 +6250,12 @@ img {
 #contentGames .contentGamesContent .contentGame {
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+@media (max-width: 1024px) {
+  #contentGames .contentGamesContent .contentGame p {
+    font-size: 1.6rem;
+  }
 }
 
 #contentGames .contentGamesContent .contentGame.contentGame1 {
@@ -6322,8 +6377,16 @@ img {
   padding: 0;
   display: grid;
   grid-template-areas: "gameHeader gameHeader" "gameOrders gameData" "gameItems gameItems";
-  grid-template-columns: 0.2fr 0.8fr;
+  grid-template-columns: 0.25fr 0.75fr;
   grid-template-rows: 0.1fr 0.8fr 0.1fr;
+}
+
+@media (max-width: 1024px) {
+  #gameContent {
+    height: 100vh;
+    grid-template-columns: 0.25fr 0.75fr;
+    grid-template-rows: 0.2fr 0.7fr 0.1fr;
+  }
 }
 
 .gameHeader {
@@ -6401,12 +6464,19 @@ img {
   opacity: 0;
 }
 
+@media (max-width: 1024px) {
+  .gameData .gameAll .saruBot {
+    width: 55px;
+    top: -50%;
+  }
+}
+
 .gameData .gameAll .saruBot img {
   width: 100%;
 }
 
 .gameData .gameAll .saruBot .saruText {
-  font-size: 16px;
+  font-size: 1.8rem;
   opacity: 0;
   position: absolute;
   top: 0;
@@ -6418,6 +6488,14 @@ img {
   border-radius: 15px;
 }
 
+@media (max-width: 1024px) {
+  .gameData .gameAll .saruBot .saruText {
+    left: 8vw;
+    top: -5%;
+    font-size: 1.5rem;
+  }
+}
+
 .gameData .gameAll .saruBot .saruText:before {
   content: "";
   position: absolute;
@@ -6426,15 +6504,6 @@ img {
   margin-top: -5px;
   border: 15px solid transparent;
   border-right: 15px solid #fff;
-}
-
-.gameData .gameAll .itemContent {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 300px;
 }
 
 .gameData .gameUsagi {
@@ -6467,11 +6536,39 @@ img {
   width: 75px;
 }
 
+@media (max-width: 1024px) {
+  .gameData .gameUsagi .hashigoTop {
+    width: 55px;
+  }
+}
+
 .gameData .gameUsagi .saru {
   opacity: 1;
   left: 5%;
   top: 90%;
   width: 75px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameUsagi .saru {
+    width: 50px;
+  }
+}
+
+.gameData .gameUsagi .itemContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameUsagi .itemContent {
+    top: 60%;
+    width: 200px;
+  }
 }
 
 .gameData .gameKuma {
@@ -6485,6 +6582,105 @@ img {
   width: 100%;
 }
 
+.gameData .gameKuma .elevatorClose,
+.gameData .gameKuma .elevatorOpen,
+.gameData .gameKuma .cushion,
+.gameData .gameKuma .saru {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.gameData .gameKuma .elevatorClose img,
+.gameData .gameKuma .elevatorOpen img,
+.gameData .gameKuma .cushion img,
+.gameData .gameKuma .saru img {
+  width: 100%;
+}
+
+.gameData .gameKuma .hashigoTop {
+  opacity: 0;
+  left: 48%;
+  width: 75px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameKuma .hashigoTop {
+    width: 55px;
+  }
+}
+
+.gameData .gameKuma .elevatorClose,
+.gameData .gameKuma .elevatorOpen {
+  opacity: 0;
+  left: 50%;
+  top: 74%;
+  width: 75px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameKuma .elevatorClose,
+  .gameData .gameKuma .elevatorOpen {
+    width: 55px;
+  }
+}
+
+.gameData .gameKuma .cushion {
+  opacity: 0;
+  right: 35%;
+  top: 80%;
+  width: 75px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameKuma .cushion {
+    width: 55px;
+  }
+}
+
+.gameData .gameKuma .saru {
+  opacity: 1;
+  left: 5%;
+  top: 75%;
+  width: 65px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameKuma .saru {
+    width: 45px;
+  }
+}
+
+.gameData .gameKuma .itemContent {
+  position: relative;
+  top: -20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 250px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameKuma .itemContent {
+    top: -45%;
+    width: 200px;
+  }
+}
+
+.gameData .gameKuma .itemContent img {
+  position: absolute;
+}
+
+.gameData .gameKuma .itemContent img:nth-of-type(1) {
+  width: 100%;
+}
+
+.gameData .gameKuma .itemContent #kuma {
+  width: 30%;
+  right: 30%;
+}
+
 .gameData .gameRisu {
   position: relative;
   background: url("/img/backgrounds/clouds.png") 100% center;
@@ -6496,11 +6692,106 @@ img {
   width: 100%;
 }
 
+.gameData .gameRisu .hashigoTop,
+.gameData .gameRisu .cushion,
+.gameData .gameRisu .elevatorClose,
+.gameData .gameRisu .elevatorOpen,
+.gameData .gameRisu .kikyuu,
+.gameData .gameRisu .koukyuu,
+.gameData .gameRisu .saru {
+  opacity: 0;
+  position: absolute;
+}
+
+.gameData .gameRisu .saru {
+  opacity: 1;
+  left: 5%;
+  top: 80%;
+  width: 65px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameRisu .saru {
+    width: 50px;
+  }
+}
+
+.gameData .gameRisu .itemContent {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 250px;
+}
+
+.gameData .gameRisu .hashigoTop {
+  left: 48%;
+  width: 50px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameRisu .hashigoTop {
+    width: 40px;
+  }
+}
+
+.gameData .gameRisu .elevatorClose,
+.gameData .gameRisu .elevatorOpen {
+  left: 45%;
+  top: 80%;
+  width: 75px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameRisu .elevatorClose,
+  .gameData .gameRisu .elevatorOpen {
+    width: 55px;
+  }
+}
+
+.gameData .gameRisu .cushion {
+  right: 35%;
+  top: 80%;
+  width: 75px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameRisu .cushion {
+    width: 55px;
+  }
+}
+
+.gameData .gameRisu .kikyuu {
+  left: 45%;
+  top: 65%;
+  width: 100px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameRisu .kikyuu {
+    width: 70px;
+  }
+}
+
+.gameData .gameRisu .koukyuu {
+  left: 20%;
+  top: 80%;
+  width: 120px;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameRisu .koukyuu {
+    width: 100px;
+  }
+}
+
 .gameItems {
+  width: 100%;
   position: relative;
   grid-area: gameItems;
   display: grid;
-  grid-template-columns: 0.2fr 0.8fr;
+  grid-template-columns: 0.25fr 0.75fr;
 }
 
 .gameItems .selectItem p {
@@ -6534,9 +6825,16 @@ img {
 }
 
 .gameItems .itemList {
-  width: 50%;
+  width: 90%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .gameItems .itemList {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .gameItems .itemList img {
@@ -6544,6 +6842,8 @@ img {
   width: 50%;
   padding: 10px;
   border: 5px solid #fff;
+  border-radius: 16px;
+  box-shadow: -5px 5px 3px rgba(0, 0, 0, 0.25);
 }
 
 .gameItems .itemList p {
@@ -6557,6 +6857,12 @@ img {
   bottom: 5%;
   left: 0;
   overflow: hidden;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gameItems .itemList2 img {
+  background-color: #fff;
+  box-shadow: none;
 }
 
 .modal {
@@ -6591,5 +6897,57 @@ img {
           align-items: center;
   -webkit-box-pack: center;
           justify-content: center;
+}
+
+.startSaru {
+  position: absolute;
+  left: 40%;
+  z-index: 50;
+  top: -350px;
+  width: 120px;
+}
+
+@media (max-width: 1024px) {
+  .startSaru {
+    width: 100px;
+  }
+}
+
+.startSaru .helloSaruImages {
+  opacity: 1;
+  width: 100%;
+}
+
+.startSaru .saruHello {
+  opacity: 0;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 20%;
+  left: 10vw;
+  width: 15vw;
+  margin: 0;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+@media (max-width: 1024px) {
+  .startSaru .saruHello {
+    font-size: 1.6rem;
+  }
+}
+
+.startSaru .saruHello:before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: 100%;
+  margin-top: -5px;
+  border: 15px solid transparent;
+  border-right: 15px solid #fff;
+}
+
+.elseSaruHello {
+  display: none;
 }
 

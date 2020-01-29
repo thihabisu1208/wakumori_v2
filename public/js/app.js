@@ -1778,12 +1778,172 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_TextPlugin_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/TextPlugin.js */ "./node_modules/gsap/TextPlugin.js");
 /* harmony import */ var _eventBus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../eventBus.js */ "./resources/js/eventBus.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1837,7 +1997,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["nowgame", "createditems"],
+  props: ["nowgame", "usagicreateditems", "kumacreateditems", "risucreateditems"],
   data: function data() {
     return {
       selectedItems: null,
@@ -1845,7 +2005,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       filteredItems: null,
       itemModal: false,
       showItem: false,
-      clearModal: false
+      showItem2: false,
+      showItem3: false,
+      clearModal: false,
+      clearModal2: false,
+      clearModal3: false,
+      kumaItemModal1: false,
+      kumaItemModal2: false,
+      unclearModal: false,
+      risuShowItem1: false,
+      risuShowItem2: false,
+      risuShowItem3: false,
+      risuShowItem4: false,
+      risuShowItem5: false,
+      risuShowItem6: false
     };
   },
   created: function created() {
@@ -1871,24 +2044,85 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (_this.allItems.id1 == 2 && _this.allItems.id2 == 1) {
         _this.itemModal = !_this.itemModal; // EventBus.$emit("addedItem");
       }
+
+      if (_this.allItems.id2 == 2) {
+        _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("createKumaItem1");
+      }
+
+      if (_this.allItems.id4 == 1 && _this.allItems.id5 == 1) {
+        _this.kumaItemModal2 = !_this.kumaItemModal2;
+      }
+
+      if (_this.allItems.id3 == 2) {
+        _this.kumaItemModal1 = !_this.kumaItemModal1;
+      }
+
+      if (_this.risucreateditems) {
+        if (_this.allItems.id1 == 2 && _this.allItems.id2 == 1) {
+          _this.risuShowItem1 = !_this.risuShowItem1;
+        }
+
+        if (_this.allItems.id3 == 2) {
+          _this.risuShowItem2 = !_this.risuShowItem2;
+        }
+
+        if (_this.allItems.id4 == 1 && _this.allItems.id5 == 1) {
+          _this.risuShowItem3 = !_this.risuShowItem3;
+        }
+
+        if (_this.allItems.id2 == 2 && _this.allItems.id3 == 1) {
+          _this.risuShowItem4 = !_this.risuShowItem4;
+        }
+
+        if (_this.allItems.id7 == 1 && _this.allItems.id8 == 1 && _this.allItems.id9 == 1) {
+          _this.risuShowItem5 = !_this.risuShowItem5;
+        }
+
+        if (_this.allItems.id4 == 1 && _this.allItems.id7 == 1 && _this.allItems.id9 == 1) {
+          _this.risuShowItem6 = !_this.risuShowItem6;
+        }
+      }
     });
     _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$on("checkAddedItems", function () {
-      if (_this.allItems.id2 == 1) {
-        _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showHint");
+      if (_this.usagicreateditems) {
+        if (_this.allItems.id2 == 1) {
+          _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showUsagiHint1");
+
+          if (_this.allItems.id1 == 2) {
+            _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showUsagiHint2");
+            setTimeout(function () {
+              _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showUsagiHint3");
+            }, 5000);
+          }
+        }
+      }
+
+      if (_this.kumacreateditems) {
+        if (_this.allItems.id2 == 2) {
+          _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showKumaHint1");
+        }
 
         if (_this.allItems.id1 == 2) {
-          _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showHint2");
-          setTimeout(function () {
-            _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showHint3");
-          }, 5000);
+          _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showKumaHint2");
+        }
+
+        if (_this.allItems.id3 == 2) {
+          _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("nuno");
+        }
+      }
+
+      if (_this.risucreateditems) {
+        if (_this.allItems.id6 == 2) {
+          _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("ishi");
+        }
+
+        if (_this.allItems.id3 == 3) {
+          _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("bignuno");
         }
       }
     });
   },
   methods: {
-    filterItems: function filterItems() {
-      this.filteredItems = _objectSpread({}, this.selectedItems);
-    },
     clearSelectedItems: function clearSelectedItems() {
       gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(".nabe", {
         duration: 1,
@@ -1936,12 +2170,306 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }, 3000);
       }, 6000);
     },
-    addHint: function addHint() {
+    showUsagiHint3: function showUsagiHint3() {
       this.showItem = !this.showItem;
 
       if (this.showItem !== null) {
-        _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("addHint");
+        _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showUsagiHint3");
       }
+    },
+    incompleteKuma: function incompleteKuma() {
+      var _this3 = this;
+
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline(); // tl.to(".himo", {duration: 0.5, border: "transparent"});
+
+      tl.to(".hashigoTop", {
+        duration: 1,
+        opacity: 1,
+        top: "70%"
+      });
+      tl.to(".hashigo_wood", {
+        duration: 1,
+        border: "transparent"
+      });
+      tl.to(".saru", {
+        duration: 2,
+        left: "48%"
+      });
+      tl.to(".saru", {
+        duration: 1.5,
+        top: "45%"
+      });
+      setTimeout(function () {
+        _this3.unclearModal = true;
+
+        _this3.clearSelectedItems();
+
+        setTimeout(function () {
+          _this3.unclearModal = false;
+        }, 3000);
+      }, 6000);
+    },
+    completeKuma1: function completeKuma1() {
+      var _this4 = this;
+
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline(); // tl.to(".himo", {duration: 0.5, border: "transparent"});
+
+      tl.to(".cushion", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saru", {
+        duration: 2,
+        left: "65%"
+      });
+      tl.to("#kuma", {
+        duration: 1,
+        scaleX: -1
+      });
+      tl.to("#kuma", {
+        duration: 0.5,
+        top: "-50px"
+      });
+      tl.to("#kuma", {
+        duration: 1.5,
+        right: "-10%",
+        top: "200px"
+      });
+      setTimeout(function () {
+        _this4.clearModal2 = true;
+
+        _this4.clearSelectedItems();
+
+        _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("completedKuma");
+        setTimeout(function () {
+          _this4.clearModal2 = false;
+        }, 3000);
+      }, 6000);
+    },
+    completeKuma2: function completeKuma2() {
+      var _this5 = this;
+
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline(); // tl.to(".himo", {duration: 0.5, border: "transparent"});
+
+      tl.to(".elevatorOpen", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saru", {
+        duration: 2,
+        left: "50%"
+      });
+      tl.to(".elevatorOpen", {
+        duration: 0,
+        opacity: 0
+      });
+      tl.to(".saru", {
+        duration: 0,
+        zIndex: 1
+      });
+      tl.to(".elevatorClose", {
+        duration: 0,
+        opacity: 1,
+        zIndex: 2
+      });
+      tl.to(".goUp", {
+        duration: 1.5,
+        top: "40%"
+      });
+      tl.to(".elevatorClose", {
+        duration: 0,
+        opacity: 0
+      });
+      tl.to(".elevatorOpen", {
+        duration: 0,
+        opacity: 1,
+        zIndex: 1
+      });
+      tl.to(".saru", {
+        duration: 1,
+        zIndex: 2
+      });
+      setTimeout(function () {
+        _this5.clearModal2 = true;
+
+        _this5.clearSelectedItems();
+
+        _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("completedKuma");
+        setTimeout(function () {
+          _this5.clearModal2 = false;
+        }, 3000);
+      }, 6000);
+    },
+    showKumaHint3: function showKumaHint3() {
+      this.showItem2 = !this.showItem2;
+
+      if (this.showItem2 !== null) {
+        _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showKumaHint3");
+      }
+    },
+    showKumaHint4: function showKumaHint4() {
+      this.showItem3 = !this.showItem3;
+
+      if (this.showItem3 !== null) {
+        _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showKumaHint4");
+      }
+    },
+    incompleteRisu: function incompleteRisu() {
+      var _this6 = this;
+
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline(); // tl.to(".himo", {duration: 0.5, border: "transparent"});
+
+      tl.to(".hashigoTop", {
+        duration: 1,
+        opacity: 1,
+        top: "58%"
+      });
+      tl.to(".saru", {
+        duration: 2,
+        left: "48%"
+      });
+      tl.to(".saru", {
+        duration: 1.5,
+        top: "55%"
+      });
+      setTimeout(function () {
+        _this6.unclearModal = true;
+
+        _this6.clearSelectedItems();
+      }, 5000);
+    },
+    incompleteRisu2: function incompleteRisu2() {
+      var _this7 = this;
+
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline(); // tl.to(".himo", {duration: 0.5, border: "transparent"});
+
+      tl.to(".cushion", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".cushion", {
+        duration: 1.5,
+        top: "300%"
+      });
+      setTimeout(function () {
+        _this7.unclearModal = true;
+
+        _this7.clearSelectedItems();
+      }, 3000);
+    },
+    incompleteRisu3: function incompleteRisu3() {
+      var _this8 = this;
+
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
+      tl.to(".elevatorOpen", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saru", {
+        duration: 2,
+        left: "45%"
+      });
+      tl.to(".elevatorOpen", {
+        duration: 0,
+        opacity: 0
+      });
+      tl.to(".saru", {
+        duration: 0,
+        zIndex: 1
+      });
+      tl.to(".elevatorClose", {
+        duration: 0,
+        opacity: 1,
+        zIndex: 2
+      });
+      tl.to(".goDown", {
+        duration: 2,
+        ease: "elastic.out(1.75, 0.5)",
+        top: "70%"
+      });
+      tl.to(".saru", {
+        duration: 1,
+        zIndex: 2
+      });
+      setTimeout(function () {
+        _this8.unclearModal = true;
+
+        _this8.clearSelectedItems();
+      }, 5000);
+    },
+    completeRisu1: function completeRisu1() {
+      var _this9 = this;
+
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
+      tl.to(".kikyuu", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saru", {
+        duration: 2,
+        left: "45%"
+      });
+      tl.to(".saru", {
+        duration: 0,
+        opacity: 0
+      });
+      tl.to(".fly", {
+        duration: 2,
+        top: "30%"
+      });
+      tl.to(".saru", {
+        duration: 1,
+        opacity: 1
+      });
+      setTimeout(function () {
+        _this9.clearModal3 = true;
+
+        _this9.clearSelectedItems();
+
+        _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("completedRisu");
+        setTimeout(function () {
+          _this9.clearModal3 = false;
+        }, 3000);
+      }, 6000);
+    },
+    completeRisu2: function completeRisu2() {
+      var _this10 = this;
+
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
+      tl.to(".koukyuu", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saru", {
+        duration: 2,
+        left: "20%"
+      });
+      tl.to(".saru", {
+        duration: 0,
+        opacity: 0
+      });
+      tl.to(".fly", {
+        duration: 2,
+        top: "30%",
+        left: "50%"
+      });
+      tl.to(".saru", {
+        duration: 1,
+        opacity: 1
+      });
+      setTimeout(function () {
+        _this10.clearModal3 = true;
+
+        _this10.clearSelectedItems();
+
+        _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("completedRisu");
+        setTimeout(function () {
+          _this10.clearModal3 = false;
+        }, 3000);
+      }, 6000);
+    },
+    refresh: function refresh() {
+      window.location.reload();
     }
   },
   watch: {
@@ -1987,12 +2515,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["completedgameusagi", "completedgamekuma", "completedgamerisu"],
@@ -2008,6 +2530,9 @@ __webpack_require__.r(__webpack_exports__);
 
     _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$on("completedUsagi", function () {
       _this.completedUsagi = true;
+    });
+    _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$on("completedKuma", function () {
+      _this.completedKuma = true;
     });
   }
 });
@@ -2026,14 +2551,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuedraggable */ "./node_modules/vuedraggable/dist/vuedraggable.common.js");
 /* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuedraggable__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _eventBus_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../eventBus.js */ "./resources/js/eventBus.js");
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2056,7 +2604,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["items"],
+  props: ["usagiitems", "kumaitems", "risuitems"],
   components: {
     draggable: vuedraggable__WEBPACK_IMPORTED_MODULE_0___default.a
   },
@@ -2066,16 +2614,10 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       selectedItems: [],
       clickCount: 0,
       options: {
-        animation: 200
+        animation: 200,
+        sort: false
       }
     };
-  },
-  computed: {
-    filteredItems: function filteredItems() {
-      return this.items.reduce(function (result, item) {
-        return [].concat(_toConsumableArray(result), [item.id]);
-      }, []);
-    }
   },
   created: function created() {
     var _this = this;
@@ -2104,6 +2646,125 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         _eventBus_js__WEBPACK_IMPORTED_MODULE_1__["EventBus"].$emit("checkAddedItems");
       },
       deep: true
+    },
+    items: {
+      handler: function handler(val1, val2) {
+        console.log(val1);
+        console.log(val2);
+      },
+      deep: true
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HelloSaruComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HelloSaruComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_TextPlugin_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/TextPlugin.js */ "./node_modules/gsap/TextPlugin.js");
+/* harmony import */ var _eventBus_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../eventBus.js */ "./resources/js/eventBus.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["usagicompleted"],
+  data: function data() {
+    return {
+      ref: null
+    };
+  },
+  methods: {
+    helloSaru: function helloSaru() {
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
+      tl.to(".helloSaruImages, .saruHello", {
+        duration: 1.5,
+        ease: "elastic.out(1, 1)",
+        y: 600,
+        delay: 2
+      });
+      tl.to(".saruHello", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saruHello", {
+        duration: 2,
+        opacity: 1
+      });
+      tl.to(".saruHello", {
+        duration: 1,
+        opacity: 0
+      });
+      tl.to(".saruHello", {
+        duration: 0,
+        delay: 4.5,
+        text: "困ってるうさぎさんを助けてあげよう"
+      }, 3);
+      tl.to(".saruHello", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saruHello", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saruHello", {
+        duration: 1,
+        opacity: 0
+      });
+      tl.to(".helloSaruImages, .saruHello", {
+        duration: 1,
+        x: 200,
+        y: 850
+      });
+      tl.to(".overlay", {
+        duration: 0.5,
+        opacity: 0
+      });
+      tl.to(".saruHello", {
+        duration: 0,
+        delay: 10,
+        text: "うさぎさんのイラストにぼくを合わせて、助けるボタンを押してね"
+      }, 3);
+      tl.to(".saruHello", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".overlay", {
+        duration: 1,
+        display: "none"
+      });
+      ;
+    }
+  },
+  created: function created() {
+    this.ref = document.referrer;
+    gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_TextPlugin_js__WEBPACK_IMPORTED_MODULE_1__["TextPlugin"]);
+  },
+  mounted: function mounted() {
+    if (this.usagicompleted[0].completed == 0) {
+      this.helloSaru();
     }
   }
 });
@@ -2165,30 +2826,58 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["gameusagi", "gamekuma", "gamerisu"],
+  props: ["gameusagi", "gamekuma", "gamerisu", "kumacreateditems"],
   created: function created() {
     gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_TextPlugin_js__WEBPACK_IMPORTED_MODULE_1__["TextPlugin"]);
   },
   mounted: function mounted() {
     var _this = this;
 
-    this.addStart();
-    _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$on("showHint", function () {
-      _this.addMiddle();
-    });
-    _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$on("showHint2", function () {
-      _this.addEnd();
-    });
-    _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$on("addHint", function () {
-      _this.addEnd2();
-    });
+    if (this.gameusagi) {
+      this.addUsagiAnimation1();
+      _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$on("showUsagiHint1", function () {
+        _this.addUsagiAnimation2();
+      });
+      _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$on("showUsagiHint2", function () {
+        _this.addUsagiAnimation3();
+      });
+      _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$on("showUsagiHint3", function () {
+        _this.addUsagiAnimation4();
+      });
+    }
+
+    if (this.gamekuma && !this.kumacreateditems[3] && !this.kumacreateditems[4]) {
+      this.addKumaAnimation1();
+      _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$on("showKumaHint1", function () {
+        _this.kumaAnimation2();
+      });
+    } else if (this.gamekuma && this.kumacreateditems[3] && !this.kumacreateditems[4]) {
+      this.addKumaAnimation3();
+      _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$on("showKumaHint2", function () {
+        _this.kumaAnimation4();
+      });
+    } else if (this.gamekuma && this.kumacreateditems[3] && this.kumacreateditems[4]) {
+      this.addKumaAnimation5();
+      _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$on("showKumaHint4", function () {
+        _this.kumaAnimation6();
+      });
+    }
+
+    if (this.gamerisu) {
+      this.addRisuAnimation1(); // EventBus.$on("showUsagiHint1", () => {
+      // 	this.addUsagiAnimation2();
+      // });
+      // EventBus.$on("showUsagiHint2", () => {
+      // 	this.addUsagiAnimation3();
+      // });
+      // EventBus.$on("showUsagiHint3", () => {
+      // 	this.addUsagiAnimation4();
+      // });
+    }
   },
   data: function data() {
     return {
@@ -2196,10 +2885,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    addStart: function addStart() {
-      this.saruBot.add(this.start());
+    // Usagi Game Animations
+    addUsagiAnimation1: function addUsagiAnimation1() {
+      this.saruBot.add(this.usagiAnimation1());
     },
-    start: function start() {
+    usagiAnimation1: function usagiAnimation1() {
       var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
       tl.to(".saruBot", {
         duration: 1,
@@ -2212,14 +2902,14 @@ __webpack_require__.r(__webpack_exports__);
         opacity: 1
       });
       tl.to(".himo", {
-        border: "5px solid #000"
+        border: "5px solid #ff0000"
       });
       return tl;
     },
-    addMiddle: function addMiddle() {
-      this.saruBot.add(this.middle());
+    addUsagiAnimation2: function addUsagiAnimation2() {
+      this.saruBot.add(this.usagiAnimation2());
     },
-    middle: function middle() {
+    usagiAnimation2: function usagiAnimation2() {
       var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
       tl.to(".himo", {
         duration: 0.5,
@@ -2239,15 +2929,15 @@ __webpack_require__.r(__webpack_exports__);
         text: "次はえだ２つ入れてみましょう！"
       });
       tl.to(".eda", {
-        border: "5px solid #000"
+        border: "5px solid #ff0000"
       });
       return tl;
     },
-    addEnd: function addEnd() {
+    addUsagiAnimation3: function addUsagiAnimation3() {
       // this.saruBot.add(this.end(), "-=2");
-      this.saruBot.add(this.end());
+      this.saruBot.add(this.uagiAnimation3());
     },
-    end: function end() {
+    uagiAnimation3: function uagiAnimation3() {
       var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
       tl.to(".eda", {
         border: "transparent"
@@ -2266,15 +2956,15 @@ __webpack_require__.r(__webpack_exports__);
         text: "最後に鍋をクリックしてみて！"
       });
       tl.to(".nabe", {
-        border: "5px solid #000"
+        border: "5px solid #ff0000"
       });
       return tl;
     },
-    addEnd2: function addEnd2() {
+    addUsagiAnimation4: function addUsagiAnimation4() {
       // this.saruBot.add(this.end(), "-=2");
-      this.saruBot.add(this.end2());
+      this.saruBot.add(this.usagiAnimation4());
     },
-    end2: function end2() {
+    usagiAnimation4: function usagiAnimation4() {
       var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline({
         onComplete: this.hashigo
       });
@@ -2299,8 +2989,169 @@ __webpack_require__.r(__webpack_exports__);
     hashigo: function hashigo() {
       gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(".hashigo_wood", {
         duration: 1,
-        border: "5px solid #000"
+        border: "5px solid #ff0000"
       });
+    },
+    // Kuma Game Animations
+    addKumaAnimation1: function addKumaAnimation1() {
+      this.saruBot.add(this.kumaAnimation1());
+    },
+    kumaAnimation1: function kumaAnimation1() {
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
+      tl.to(".saruBot", {
+        duration: 1,
+        delay: 2,
+        opacity: 1,
+        y: 200
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        delay: 1,
+        opacity: 0
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saruText", {
+        duration: 0,
+        delay: -1,
+        text: "うさぎさんの時より高さがあって、はしごでは届かなさそう…"
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        delay: 2,
+        opacity: 0
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saruText", {
+        duration: 0,
+        delay: -1,
+        text: "ひもを２つ入れるともっと強くなるよ！"
+      });
+      return tl;
+    },
+    addKumaAnimation2: function addKumaAnimation2() {
+      this.sarubot.add(this.kumaAnimation2());
+    },
+    kumaAnimation2: function kumaAnimation2() {
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
+      tl.to(".saruText", {
+        duration: 1,
+        opacity: 0
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saruText", {
+        duration: 0,
+        delay: -1,
+        text: "前回と同じく鍋をクリックしてみよう！"
+      });
+      return tl;
+    },
+    addKumaAnimation3: function addKumaAnimation3() {
+      // this.sarubot.add(this.kumaAnimation3());
+      this.kumaAnimation3();
+    },
+    kumaAnimation3: function kumaAnimation3() {
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
+      tl.to(".saruBot", {
+        duration: 1,
+        delay: 1,
+        opacity: 1,
+        y: 200
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        delay: -2,
+        text: "強い縄ができたね！"
+      });
+      tl.to(".saruText", {
+        duration: 3,
+        opacity: 0
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        delay: -2,
+        text: "えだもひもと同じく二つ合わせると強くなるんだよ！"
+      });
+      return tl;
+    },
+    kumaAnimation4: function kumaAnimation4() {
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
+      tl.to(".saruBot", {
+        duration: 1,
+        delay: 1,
+        opacity: 1,
+        y: 200
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saruText", {
+        duration: 0,
+        delay: -1,
+        text: "鍋をクリック！"
+      });
+      return tl;
+    },
+    addKumaAnimation5: function addKumaAnimation5() {
+      // this.sarubot.add(this.kumaAnimation3());
+      this.kumaAnimation5();
+    },
+    kumaAnimation5: function kumaAnimation5() {
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
+      tl.to(".saruBot", {
+        duration: 1,
+        delay: 1,
+        opacity: 1,
+        y: 200
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".saruText", {
+        duration: 0,
+        delay: -1,
+        text: "作った新しいモノ２つを混ぜてみて！"
+      });
+    },
+    // Risu Game Animations
+    addRisuAnimation1: function addRisuAnimation1() {
+      this.saruBot.add(this.risuAnimation1());
+    },
+    risuAnimation1: function risuAnimation1() {
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
+      tl.to(".saruBot", {
+        duration: 1,
+        delay: 2,
+        opacity: 1,
+        y: 200
+      });
+      tl.to(".saruText", {
+        duration: 1,
+        opacity: 1
+      });
+      return tl;
     }
   }
 });
@@ -2331,12 +3182,82 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["usagicreateditems", "kumacreateditems", "risucreateditems"],
   data: function data() {
     return {
-      selectedItems: null
+      selectedItems: null,
+      kumaNuno: false,
+      risuIshi: false,
+      risuNuno: false
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$on("showKumaHint1", function () {
+      _this.kumaItem1 = !_this.kumaItem1;
+    });
+    _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$on("nuno", function () {
+      console.log("ok");
+      _this.kumaNuno = !_this.kumaNuno;
+    });
+    _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$on("ishi", function () {
+      console.log("ok");
+      _this.risuIshi = !_this.risuIshi;
+    });
+    _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$on("bignuno", function () {
+      console.log("ok");
+      _this.risuNuno = !_this.risuNuno;
+    });
   },
   methods: {
     clearSelectedItems: function clearSelectedItems() {
@@ -6894,7 +7815,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".overlay {\n  width: 100%;\n  height: 100vh;\n  z-index: 999;\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: rgba(151, 151, 151, 0.7);\n}\n.modal img {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".overlay {\n  width: 100%;\n  height: 100vh;\n  z-index: 15;\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: rgba(151, 151, 151, 0.7);\n}\n.modal img {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -47846,19 +48767,17 @@ var render = function() {
     _vm.gameid == 1
       ? _c("div", [
           _c("p", { staticClass: "buttons" }, [
-            _c("a", { attrs: { href: _vm.gamepath } }, [_vm._v("やってみる")])
+            _c("a", { attrs: { href: _vm.gamepath } }, [_vm._v("助ける")])
           ])
         ])
       : _vm.gameid == 2
       ? _c("div", [
           _vm.completedgameusagi[0].completed == 1
             ? _c("p", { staticClass: "buttons" }, [
-                _c("a", { attrs: { href: _vm.gamepath } }, [
-                  _vm._v("やってみる")
-                ])
+                _c("a", { attrs: { href: _vm.gamepath } }, [_vm._v("助ける")])
               ])
             : _c("p", { staticClass: "elsebuttons" }, [
-                _c("a", [_vm._v("うさぎをクリアしよう")])
+                _c("a", [_vm._v("うさぎを助けよう")])
               ])
         ])
       : _vm.gameid == 3
@@ -47866,12 +48785,10 @@ var render = function() {
           _vm.completedgameusagi[0].completed == 1 &&
           _vm.completedgamekuma[0].completed == 1
             ? _c("p", { staticClass: "buttons" }, [
-                _c("a", { attrs: { href: _vm.gamepath } }, [
-                  _vm._v("やってみる")
-                ])
+                _c("a", { attrs: { href: _vm.gamepath } }, [_vm._v("助ける")])
               ])
             : _c("p", { staticClass: "elsebuttons" }, [
-                _c("a", [_vm._v("うさぎをクリアしよう")])
+                _c("a", [_vm._v("くまを助けよう")])
               ])
         ])
       : _vm._e()
@@ -47963,7 +48880,7 @@ var render = function() {
         ? _c(
             "div",
             { staticClass: "fadeIn" },
-            _vm._l(_vm.createditems, function(createditem, index) {
+            _vm._l(_vm.usagicreateditems, function(createditem, index) {
               return _c("div", { key: index, staticClass: "createdItems" }, [
                 _c("a", { on: { click: _vm.completeUsagi } }, [
                   _c("img", {
@@ -47980,18 +48897,110 @@ var render = function() {
           )
         : _vm._e(),
       _vm._v(" "),
+      _vm.showItem2
+        ? _c("div", { staticClass: "fadeIn" }, [
+            _c("div", { staticClass: "createdItems" }, [
+              _c("a", { on: { click: _vm.completeKuma1 } }, [
+                _c("img", {
+                  attrs: { src: "/img/item/kagu_cushion.png", alt: "" }
+                })
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.showItem3
+        ? _c("div", { staticClass: "fadeIn" }, [
+            _c("div", { staticClass: "createdItems" }, [
+              _c("a", { on: { click: _vm.completeKuma2 } }, [
+                _c("img", {
+                  attrs: { src: "/img/item/elevator_door_close.png", alt: "" }
+                })
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.risuShowItem1
+        ? _c("div", { staticClass: "fadeIn" }, [
+            _c("div", { staticClass: "createdItems" }, [
+              _c("a", { on: { click: _vm.incompleteRisu } }, [
+                _c("img", {
+                  attrs: { src: "/img/item/hashigo_wood.png", alt: "" }
+                })
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.risuShowItem2
+        ? _c("div", { staticClass: "fadeIn" }, [
+            _c("div", { staticClass: "createdItems" }, [
+              _c("a", { on: { click: _vm.incompleteRisu2 } }, [
+                _c("img", {
+                  attrs: { src: "/img/item/kagu_cushion.png", alt: "" }
+                })
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.risuShowItem3
+        ? _c("div", { staticClass: "fadeIn" }, [
+            _c("div", { staticClass: "createdItems" }, [
+              _c("a", { on: { click: _vm.incompleteRisu3 } }, [
+                _c("img", {
+                  attrs: { src: "/img/item/elevator_door_close.png", alt: "" }
+                })
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.risuShowItem4
+        ? _c("div", { staticClass: "fadeIn" }, [
+            _c("div", { staticClass: "createdItems" }, [
+              _c("a", { on: { click: _vm.incompleteRisu4 } }, [
+                _c("img", { attrs: { src: "/img/item/fusen.png", alt: "" } })
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.risuShowItem5
+        ? _c("div", { staticClass: "fadeIn" }, [
+            _c("div", { staticClass: "createdItems" }, [
+              _c("a", { on: { click: _vm.completeRisu1 } }, [
+                _c("img", { attrs: { src: "/img/item/kikyuu.png", alt: "" } })
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.risuShowItem6
+        ? _c("div", { staticClass: "fadeIn" }, [
+            _c("div", { staticClass: "createdItems" }, [
+              _c("a", { on: { click: _vm.completeRisu2 } }, [
+                _c("img", {
+                  attrs: { src: "/img/item/airplane_ornithopter.png", alt: "" }
+                })
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
       _c(
         "transition",
         { attrs: { name: "slide-fade" } },
         [
-          _vm.createditems
+          _vm.usagicreateditems
             ? _c(
                 "modal-component",
                 {
                   staticClass: "modal backHasigo",
                   attrs: { id: "itemModal", showing: _vm.itemModal }
                 },
-                _vm._l(_vm.createditems, function(createditem, index) {
+                _vm._l(_vm.usagicreateditems, function(createditem, index) {
                   return _c("div", { key: index, staticClass: "itemModal" }, [
                     _c("i", {
                       staticClass: "fas fa-times",
@@ -48011,7 +49020,7 @@ var render = function() {
                       on: {
                         click: function($event) {
                           _vm.itemModal = !_vm.itemModal
-                          _vm.addHint()
+                          _vm.showUsagiHint3()
                         }
                       }
                     }),
@@ -48022,6 +49031,97 @@ var render = function() {
                   ])
                 }),
                 0
+              )
+            : _vm._e()
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "transition",
+        { attrs: { name: "slide-fade" } },
+        [
+          _vm.kumacreateditems
+            ? _c(
+                "modal-component",
+                {
+                  staticClass: "modal backHasigo",
+                  attrs: { id: "itemModal", showing: _vm.kumaItemModal1 }
+                },
+                [
+                  _c("div", { staticClass: "itemModal" }, [
+                    _c("i", {
+                      staticClass: "fas fa-times",
+                      on: {
+                        click: function($event) {
+                          _vm.kumaItemModal1 = !_vm.kumaItemModal1
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "hashigo",
+                      attrs: { src: "/img/item/kagu_cushion.png", alt: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.kumaItemModal1 = !_vm.kumaItemModal1
+                          _vm.showKumaHint3()
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "itemtextmodal" }, [
+                      _vm._v("クッションができました！")
+                    ])
+                  ])
+                ]
+              )
+            : _vm._e()
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "transition",
+        { attrs: { name: "slide-fade" } },
+        [
+          _vm.kumacreateditems
+            ? _c(
+                "modal-component",
+                {
+                  staticClass: "modal backHasigo",
+                  attrs: { id: "itemModal", showing: _vm.kumaItemModal2 }
+                },
+                [
+                  _c("div", { staticClass: "itemModal" }, [
+                    _c("i", {
+                      staticClass: "fas fa-times",
+                      on: {
+                        click: function($event) {
+                          _vm.kumaItemModal2 = !_vm.kumaItemModal2
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "hashigo",
+                      attrs: {
+                        src: "/img/item/elevator_door_close.png",
+                        alt: ""
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.kumaItemModal2 = !_vm.kumaItemModal2
+                          _vm.showKumaHint4()
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "itemtextmodal" }, [
+                      _vm._v("エレベーターができました！")
+                    ])
+                  ])
+                ]
               )
             : _vm._e()
         ],
@@ -48057,6 +49157,103 @@ var render = function() {
           )
         ],
         1
+      ),
+      _vm._v(" "),
+      _c(
+        "transition",
+        { attrs: { name: "slide-fade" } },
+        [
+          _c(
+            "modal-component",
+            { staticClass: "modal", attrs: { showing: _vm.clearModal2 } },
+            [
+              _c("div", { staticClass: "modalData" }, [
+                _c("h1", [_vm._v("くまさんを助けることできた！")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modalContent" }, [
+                  _c("div", { staticClass: "saruModal" }, [
+                    _c("img", { attrs: { src: "/img/saruModal.png", alt: "" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [_c("h1", [_vm._v("おめでとう！")])]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "usagiModal" }, [
+                    _c("img", { attrs: { src: "/img/kumaModal.png", alt: "" } })
+                  ])
+                ])
+              ])
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "transition",
+        { attrs: { name: "slide-fade" } },
+        [
+          _c(
+            "modal-component",
+            { staticClass: "modal", attrs: { showing: _vm.clearModal3 } },
+            [
+              _c("div", { staticClass: "modalData" }, [
+                _c("h1", [_vm._v("りすさんを助けることできた！")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modalContent" }, [
+                  _c("div", { staticClass: "saruModal" }, [
+                    _c("img", { attrs: { src: "/img/saruModal.png", alt: "" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [_c("h1", [_vm._v("おめでとう！")])]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "usagiModal" }, [
+                    _c("img", { attrs: { src: "/img/risuModal.png", alt: "" } })
+                  ])
+                ])
+              ])
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "transition",
+        { attrs: { name: "slide-fade" } },
+        [
+          _c(
+            "modal-component",
+            { staticClass: "modal", attrs: { showing: _vm.unclearModal } },
+            [
+              _c("div", { staticClass: "modalData" }, [
+                _c("h1", [_vm._v("りすさんを助けることできなかった。。")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modalContent" }, [
+                  _c("div", { staticClass: "saruModal" }, [
+                    _c("img", {
+                      attrs: { src: "/img/saruModal2.png", alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [_c("h1", [_vm._v("残念！")])]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "usagiModal" }, [
+                    _c("img", {
+                      attrs: { src: "/img/risuModal2.png", alt: "" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "buttons" }, [
+                  _c("a", { on: { click: _vm.refresh } }, [
+                    _vm._v("もう一度やってみる")
+                  ])
+                ])
+              ])
+            ]
+          )
+        ],
+        1
       )
     ],
     1
@@ -48084,54 +49281,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("p", { staticClass: "moveBtn buttons" }, [
     _vm.completedUsagi == true
-      ? _c("p", { staticClass: "moveBtn buttons" }, [_vm._m(0)])
+      ? _c("a", { attrs: { href: "/completeGame" } }, [
+          _vm._v("\n\t\tすすむ\n\t\t"),
+          _c("i", {
+            staticClass: "fas fa-arrow-right",
+            staticStyle: { "padding-left": "10px" }
+          })
+        ])
       : _vm.completedKuma == true
-      ? _c("p", { staticClass: "moveBtn buttons" }, [_vm._m(1)])
+      ? _c("a", { attrs: { href: "/completeGame1" } }, [
+          _vm._v("\n\t\tすすむ\n\t\t"),
+          _c("i", {
+            staticClass: "fas fa-arrow-right",
+            staticStyle: { "padding-left": "10px" }
+          })
+        ])
       : _vm.completedRisu == true
-      ? _c("p", { staticClass: "moveBtn buttons" }, [_vm._m(2)])
+      ? _c("a", { attrs: { href: "/completeGame2" } }, [
+          _vm._v("\n\t\tすすむ\n\t\t"),
+          _c("i", {
+            staticClass: "fas fa-arrow-right",
+            staticStyle: { "padding-left": "10px" }
+          })
+        ])
       : _vm._e()
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "/completeGame" } }, [
-      _vm._v("\n\t\t\tすすむ\n\t\t\t"),
-      _c("i", {
-        staticClass: "fas fa-arrow-right",
-        staticStyle: { "padding-left": "10px" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "/completeGame1" } }, [
-      _vm._v("\n\t\t\tすすむ\n\t\t\t"),
-      _c("i", {
-        staticClass: "fas fa-arrow-right",
-        staticStyle: { "padding-left": "10px" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "/completeGame2" } }, [
-      _vm._v("\n\t\t\tすすむ\n\t\t\t"),
-      _c("i", {
-        staticClass: "fas fa-arrow-right",
-        staticStyle: { "padding-left": "10px" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -48153,42 +49331,166 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "draggable",
-        {
-          staticClass: "itemList",
-          attrs: {
-            options: _vm.options,
-            group: { name: "items", pull: "clone", put: false }
-          }
-        },
-        _vm._l(_vm.items, function(item, index) {
-          return _c("div", { key: index, staticClass: "item" }, [
-            _c("p", [
-              _c("img", {
-                staticClass: "itemsToSelect",
-                class: item.name,
-                attrs: { src: "/img/item/" + item.path }
-              })
-            ])
-          ])
-        }),
-        0
-      ),
-      _vm._v(" "),
-      _c("draggable", {
-        staticClass: "itemList itemList2",
-        attrs: { options: _vm.options, group: "items" },
-        on: { add: _vm.onAdd }
-      })
-    ],
-    1
-  )
+  return _c("div", [
+    _vm.usagiitems
+      ? _c(
+          "div",
+          [
+            _c(
+              "draggable",
+              {
+                staticClass: "itemList",
+                attrs: {
+                  options: _vm.options,
+                  group: { name: "usagiitems", pull: "clone", put: false }
+                }
+              },
+              _vm._l(_vm.usagiitems, function(item, index) {
+                return _c("div", { key: index, staticClass: "item" }, [
+                  _c("p", [
+                    _c("img", {
+                      staticClass: "itemsToSelect",
+                      class: item.name,
+                      attrs: { src: "/img/item/" + item.path }
+                    })
+                  ])
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("draggable", {
+              staticClass: "itemList itemList2",
+              attrs: { options: _vm.options, group: "usagiitems" },
+              on: { add: _vm.onAdd }
+            })
+          ],
+          1
+        )
+      : _vm.kumaitems
+      ? _c(
+          "div",
+          [
+            _c(
+              "draggable",
+              {
+                staticClass: "itemList",
+                attrs: {
+                  options: _vm.options,
+                  group: { name: "kumaitems", pull: "clone", put: false }
+                }
+              },
+              _vm._l(_vm.kumaitems, function(item, index) {
+                return _c("div", { key: index, staticClass: "item" }, [
+                  _c("p", [
+                    _c("img", {
+                      staticClass: "itemsToSelect",
+                      class: item.name,
+                      attrs: { src: "/img/item/" + item.path }
+                    })
+                  ])
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("draggable", {
+              staticClass: "itemList itemList2",
+              attrs: { options: _vm.options, group: "kumaitems" },
+              on: { add: _vm.onAdd }
+            })
+          ],
+          1
+        )
+      : _vm.risuitems
+      ? _c(
+          "div",
+          [
+            _c(
+              "draggable",
+              {
+                staticClass: "itemList",
+                attrs: {
+                  options: _vm.options,
+                  group: { name: "risuitems", pull: "clone", put: false }
+                }
+              },
+              _vm._l(_vm.risuitems, function(item, index) {
+                return _c("div", { key: index, staticClass: "item" }, [
+                  _c("p", [
+                    _c("img", {
+                      staticClass: "itemsToSelect",
+                      class: item.name,
+                      attrs: { src: "/img/item/" + item.path }
+                    })
+                  ])
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("draggable", {
+              staticClass: "itemList itemList2",
+              attrs: { options: _vm.options, group: "risuitems" },
+              on: { add: _vm.onAdd }
+            })
+          ],
+          1
+        )
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HelloSaruComponent.vue?vue&type=template&id=57f157e5&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HelloSaruComponent.vue?vue&type=template&id=57f157e5& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "ifCover" }, [
+    _vm.usagicompleted[0].completed == 0
+      ? _c("div", { staticClass: "saruCover" }, [
+          _c("div", { staticClass: "overlay" }),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
+      : _c("div", { staticClass: "elseSaruHello" })
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "startSaru" }, [
+      _c("img", {
+        staticClass: "helloSaruImages",
+        attrs: { src: "/img/saru.png", alt: "" }
+      }),
+      _vm._v(" "),
+      _c("p", { staticClass: "saruHello" }, [
+        _vm._v(
+          "\n                こんにちは！一緒に旅に出てくれる人がいてうれしいよ\n                "
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -48249,15 +49551,13 @@ var render = function() {
         ])
       : _vm.gamekuma
       ? _c("p", { staticClass: "saruText" }, [
-          _vm._v("\n\t\tくまを助けよう！\n\t\t"),
-          _c("br"),
-          _vm._v("まずは丈夫なひもを作ろう！\n\t")
+          _vm._v("くまさんがビルの上にのぼっておりられなくなったようだ！")
         ])
       : _vm.gamerisu
       ? _c("p", { staticClass: "saruText" }, [
           _vm._v("\n\t\tりすを助けよう！\n\t\t"),
           _c("br"),
-          _vm._v("まずは丈夫なひもを作ろう！\n\t")
+          _vm._v(" 今回は自由にやってみよう！\n\t")
         ])
       : _vm._e()
   ])
@@ -48292,13 +49592,111 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("p", [
-      _c("img", {
-        staticClass: "nabe",
-        attrs: { src: "/img/nabe.png" },
-        on: { click: _vm.createItem }
-      })
-    ])
+    _vm.usagicreateditems
+      ? _c("p", [
+          _c("img", {
+            staticClass: "nabe nabe1",
+            attrs: { src: "/img/nabe.png" },
+            on: { click: _vm.createItem }
+          })
+        ])
+      : _vm.kumacreateditems
+      ? _c("p", [
+          _vm.kumaNuno != true &&
+          !_vm.kumacreateditems[3] &&
+          !_vm.kumacreateditems[4]
+            ? _c("a", { attrs: { href: "/createKumaItem1" } }, [
+                _c("img", {
+                  staticClass: "nabe",
+                  attrs: { src: "/img/nabe.png" }
+                })
+              ])
+            : _vm.kumaNuno != true &&
+              _vm.kumacreateditems[3] &&
+              !_vm.kumacreateditems[4]
+            ? _c("a", { attrs: { href: "/createKumaItem2" } }, [
+                _c("img", {
+                  staticClass: "nabe",
+                  attrs: { src: "/img/nabe.png" }
+                })
+              ])
+            : _vm.kumaNuno == true &&
+              _vm.kumacreateditems[3] &&
+              _vm.kumacreateditems[4]
+            ? _c("img", {
+                staticClass: "nabe",
+                attrs: { src: "/img/nabe.png", alt: "" },
+                on: { click: _vm.createItem }
+              })
+            : _vm.kumaNuno != true &&
+              _vm.kumacreateditems[3] &&
+              _vm.kumacreateditems[4]
+            ? _c("img", {
+                staticClass: "nabe",
+                attrs: { src: "/img/nabe.png", alt: "" },
+                on: { click: _vm.createItem }
+              })
+            : _vm._e()
+        ])
+      : _vm.risucreateditems
+      ? _c("p", [
+          _vm.risuIshi != true &&
+          _vm.risuNuno != true &&
+          !_vm.risucreateditems[6] &&
+          !_vm.risucreateditems[7] &&
+          !_vm.risucreateditems[8]
+            ? _c("img", {
+                staticClass: "nabe",
+                attrs: { src: "/img/nabe.png" },
+                on: { click: _vm.createItem }
+              })
+            : _vm.risuIshi == true &&
+              _vm.risuNuno != true &&
+              !_vm.risucreateditems[6] &&
+              !_vm.risucreateditems[7] &&
+              !_vm.risucreateditems[8]
+            ? _c("a", { attrs: { href: "/createrisuitem1" } }, [
+                _c("img", {
+                  staticClass: "nabe",
+                  attrs: { src: "/img/nabe.png" }
+                })
+              ])
+            : _vm.risuIshi != true &&
+              _vm.risuNuno != true &&
+              _vm.risucreateditems[6] &&
+              !_vm.risucreateditems[7] &&
+              !_vm.risucreateditems[8]
+            ? _c("a", { attrs: { href: "/createrisuitem2" } }, [
+                _c("img", {
+                  staticClass: "nabe",
+                  attrs: { src: "/img/nabe.png" }
+                })
+              ])
+            : _vm.risuIshi != true &&
+              _vm.risuNuno == true &&
+              _vm.risucreateditems[6] &&
+              _vm.risucreateditems[7] &&
+              !_vm.risucreateditems[8]
+            ? _c("a", { attrs: { href: "/createrisuitem3" } }, [
+                _c("img", {
+                  staticClass: "nabe",
+                  attrs: { src: "/img/nabe.png" }
+                })
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.risuIshi != true &&
+          _vm.risuNuno != true &&
+          _vm.risucreateditems[6] &&
+          _vm.risucreateditems[7]
+            ? _c("img", {
+                staticClass: "nabe",
+                attrs: { src: "/img/nabe.png" },
+                on: { click: _vm.createItem }
+              })
+            : _vm._e()
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -63754,6 +65152,7 @@ Vue.component("sarubot-component", __webpack_require__(/*! ./components/SaruBotC
 Vue.component("button-component", __webpack_require__(/*! ./components/ButtonComponent.vue */ "./resources/js/components/ButtonComponent.vue")["default"]);
 Vue.component("forward-component", __webpack_require__(/*! ./components/ForwardComponent.vue */ "./resources/js/components/ForwardComponent.vue")["default"]);
 Vue.component("content-game-component", __webpack_require__(/*! ./components/ContentGameComponent.vue */ "./resources/js/components/ContentGameComponent.vue")["default"]);
+Vue.component("hello-saru-component", __webpack_require__(/*! ./components/HelloSaruComponent.vue */ "./resources/js/components/HelloSaruComponent.vue")["default"]);
 var game = new Vue({
   el: "#game",
   data: {
@@ -64162,6 +65561,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GameComponent_vue_vue_type_template_id_5cec6160_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GameComponent_vue_vue_type_template_id_5cec6160_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/HelloSaruComponent.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/HelloSaruComponent.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HelloSaruComponent_vue_vue_type_template_id_57f157e5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HelloSaruComponent.vue?vue&type=template&id=57f157e5& */ "./resources/js/components/HelloSaruComponent.vue?vue&type=template&id=57f157e5&");
+/* harmony import */ var _HelloSaruComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HelloSaruComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/HelloSaruComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _HelloSaruComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _HelloSaruComponent_vue_vue_type_template_id_57f157e5___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _HelloSaruComponent_vue_vue_type_template_id_57f157e5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/HelloSaruComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/HelloSaruComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/HelloSaruComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HelloSaruComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./HelloSaruComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HelloSaruComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HelloSaruComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/HelloSaruComponent.vue?vue&type=template&id=57f157e5&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/HelloSaruComponent.vue?vue&type=template&id=57f157e5& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HelloSaruComponent_vue_vue_type_template_id_57f157e5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./HelloSaruComponent.vue?vue&type=template&id=57f157e5& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HelloSaruComponent.vue?vue&type=template&id=57f157e5&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HelloSaruComponent_vue_vue_type_template_id_57f157e5___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HelloSaruComponent_vue_vue_type_template_id_57f157e5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

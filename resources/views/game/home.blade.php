@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="content" id="contentGame">
+        <hello-saru-component  :usagicompleted="{{ $completedGameUsagi }}"></hello-saru-component>
         <div class="contentGame">
             <h2>ゲーム画面<h2>
             <hr>

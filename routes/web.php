@@ -26,3 +26,15 @@ Route::get('/home/risu', 'HomeController@risu');
 Route::patch('/createitem/{createditem}', 'HomeController@createitem');
 
 Route::get('/completeGame', 'HomeController@completeGame');
+
+Route::get('/completeGame1', 'HomeController@completeGame1');
+
+Route::get('/createKumaItem1', 'HomeController@createKumaItem1');
+
+Route::get('/createKumaItem2', 'HomeController@createKumaItem2');
+
+Route::get('/createrisuitem1', 'HomeController@createrisuitem1');
+
+Route::get('/createrisuitem2', 'HomeController@createrisuitem2');
+
+Route::get('/createrisuitem3', 'HomeController@createrisuitem3');

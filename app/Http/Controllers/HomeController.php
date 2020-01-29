@@ -27,7 +27,8 @@ class HomeController extends Controller
         $completedGameKuma = Game::where('id', 2)->get();
         $completedGameRisu = Game::where('id', 3)->get();
         $gameUsagi = Game::where('id', 1)->first();
-        $usagiItems = Item::where('game_id', 1)->get();
+        // $usagiItems = Item::where('game_id', 1)->get();
+        $usagiItems = Item::where(['game_id' => 1, 'created' => true])->get();;
         $usagiCreatedItems = CreatedItem::where('game_id', 1)->get();
         return view('game.usagi', compact(['gameUsagi', 'completedGameUsagi', 'completedGameKuma', 'completedGameRisu', 'usagiItems', 'usagiCreatedItems']));
     }
@@ -38,17 +39,22 @@ class HomeController extends Controller
         $completedGameKuma = Game::where('id', 2)->get();
         $completedGameRisu = Game::where('id', 3)->get();
         $gameKuma = Game::where('id', 2)->first();
-        $kumaItems = Item::where(['game_id' => 1, 'game_id' => 2])->get();
+        // $kumaItems = Item::whereIn('game_id', [1, 2])->get();
+        // $kumaItems = Item::where(['game_id' => 1])->get();
+        $kumaItems = Item::where(['game_id' => 1, 'created' => true])->get();
+        // $kumaCreatedItems = Item::where(['game_id' => 1, 'created' => true])->get();
         return view('game.kuma', compact(['gameKuma', 'completedGameUsagi', 'completedGameKuma', 'completedGameRisu', 'kumaItems']));
     }
 
     public function risu()
     {
+        $gameIds = [1, 2];
         $completedGameUsagi = Game::where('id', 1)->get();
         $completedGameKuma = Game::where('id', 2)->get();
         $completedGameRisu = Game::where('id', 3)->get();
         $gameRisu = Game::where('id', 3)->first();
-        $risuItems = Item::where('game_id', 3)->get();
+        // $risuItems = Item::where('game_id', 1)->get();
+        $risuItems = Item::whereIn('game_id', ['1', '2'])->where(['created' => true])->get();
         return view('game.risu', compact(['gameRisu', 'completedGameUsagi', 'completedGameKuma', 'completedGameRisu', 'risuItems']));
     }
 
@@ -60,13 +66,50 @@ class HomeController extends Controller
         $completedGameKuma = Game::where('id', 2)->get();
         $completedGameRisu = Game::where('id', 3)->get();
         Game::where('id', '=', 1)->update(['completed' => 1]);
+        Item::where('id', '=', 3)->update(['created' => 1]);
         return view('game.home', compact(['games', 'usagi', 'completedGameUsagi', 'completedGameKuma', 'completedGameRisu']));
     }
 
-    // public function completeTheGame(Request $request)
-    // {
-    //     request
-    // }
+    public function completeGame1()
+    {
+        $games = Game::all();
+        $usagi = GameUsagi::all();
+        $completedGameUsagi = Game::where('id', 1)->get();
+        $completedGameKuma = Game::where('id', 2)->get();
+        $completedGameRisu = Game::where('id', 3)->get();
+        Game::where('id', '=', 2)->update(['completed' => 1]);
+        return view('game.home', compact(['games', 'usagi', 'completedGameUsagi', 'completedGameKuma', 'completedGameRisu']));
+    }
+
+    public function createKumaItem1()
+    {
+        Item::where('id', '=', 4)->update(['created' => 1]);
+        return back();
+    }
+
+     public function createKumaItem2()
+    {
+        Item::where('id', '=', 5)->update(['created' => 1]);
+        return back();
+    }
+
+    public function createrisuitem1()
+    {
+        Item::where('id', '=', 7)->update(['created' => 1]);
+        return back();
+    }
+
+    public function createrisuitem2()
+    {
+        Item::where('id', '=', 8)->update(['created' => 1]);
+        return back();
+    }
+
+    public function createrisuitem3()
+    {
+        Item::where('id', '=', 9)->update(['created' => 1]);
+        return back();
+    }
 
     public function createitem(CreatedItem $createditem)
     {

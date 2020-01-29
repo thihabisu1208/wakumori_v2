@@ -21,14 +21,16 @@
     </head>
     <body>
         <div id="app">
-            <div id="top">
-                <div id="welcome">
-                    <h1>ようこそ ~ {{ config('app.name', 'わくわくの森') }}へ</h1>
-                     <p class="buttons">
-                        <a href="/home">~ 旅に行く ~</a>
-                    </p>
+            <div class="backgroundPng">
+                <div id="top">
+                    <div id="welcome">
+                        <h1>ようこそ ~ {{ config('app.name', 'わくわくの森') }}へ</h1>
+                        <p class="buttons">
+                            <a href="/home">~ 旅に行く ~</a>
+                        </p>
+                    </div>
                 </div>
-            </div>
+             </div>
         </div>
     </body>
 </html>

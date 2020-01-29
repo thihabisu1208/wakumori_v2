@@ -8,8 +8,14 @@
         "gameHeader gameHeader"
         "gameOrders gameData"
         "gameItems gameItems";
-    grid-template-columns: 0.2fr 0.8fr;
+    grid-template-columns: 0.25fr 0.75fr;
     grid-template-rows: 0.1fr 0.8fr 0.1fr;
+
+    @include tablet {
+        height: 100vh;
+        grid-template-columns: 0.25fr 0.75fr;
+        grid-template-rows: 0.2fr 0.7fr 0.1fr;
+    }
 }
 
 .gameHeader {
@@ -76,11 +82,17 @@
             left: 1%;
             width: 70px;
             opacity: 0;
+
+            @include tablet {
+                width: 55px;
+                top: -50%;
+            }
+
             img {
                 width: 100%;
             }
             .saruText {
-                font-size: 16px;
+                font-size: 1.8rem;
                 opacity: 0;
                 position: absolute;
                 top: 0;
@@ -90,6 +102,12 @@
                 padding: 10px;
                 background-color: #fff;
                 border-radius: 15px;
+
+                @include tablet {
+                    left: 8vw;
+                    top: -5%;
+                    font-size: 1.5rem;
+                }
             }
             .saruText:before {
                 content: "";
@@ -100,14 +118,6 @@
                 border: 15px solid transparent;
                 border-right: 15px solid #fff;
             }
-        }
-
-        .itemContent {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
         }
     }
 
@@ -136,6 +146,10 @@
             left: 48%;
             // top: 70%;
             width: 75px;
+
+            @include tablet {
+                width: 55px;
+            }
         }
 
         .saru {
@@ -143,6 +157,23 @@
             left: 5%;
             top: 90%;
             width: 75px;
+
+            @include tablet {
+                width: 50px;
+            }
+        }
+
+        .itemContent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+
+            @include tablet {
+                top: 60%;
+                width: 200px;
+            }
         }
     }
 
@@ -154,6 +185,90 @@
         img {
             width: 100%;
         }
+
+        .elevatorClose,
+        .elevatorOpen,
+        .cushion,
+        .saru {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+
+            img {
+                width: 100%;
+            }
+        }
+        
+        .hashigoTop {
+            opacity: 0;
+            left: 48%;
+            // top: 70%;
+            width: 75px;
+
+            @include tablet {
+                width: 55px;
+            }
+        }
+
+        .elevatorClose, .elevatorOpen {
+            opacity: 0;
+            left: 50%;
+            top: 74%;
+            width: 75px;
+
+            @include tablet {
+                width: 55px;
+            }
+        }
+
+        .cushion {
+            opacity: 0;
+            right: 35%;
+            top: 80%;
+            width: 75px;
+
+            @include tablet {
+                width: 55px;
+            }
+        }
+
+        .saru {
+            opacity: 1;
+            left: 5%;
+            top: 75%;
+            width: 65px;
+
+            @include tablet {
+                width: 45px;
+            }
+        }
+
+        .itemContent {
+            position: relative;
+            top: -20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+
+            @include tablet {
+                top: -45%;
+                width: 200px;
+            }
+
+            img {
+                position: absolute;
+            }
+
+            img:nth-of-type(1) {
+                width: 100%;
+            }
+
+            #kuma {
+                width: 30%;
+                right: 30%;
+                // transform: scaleX(-1);
+            }
+        }
     }
 
     .gameRisu {
@@ -164,14 +279,95 @@
         img {
             width: 100%;
         }
+
+        .hashigoTop, 
+        .cushion, 
+        .elevatorClose,
+        .elevatorOpen,
+        .kikyuu,
+        .koukyuu,
+        .saru{
+            opacity: 0;
+            position: absolute;
+        }
+
+        .saru {
+            opacity: 1;
+            left: 5%;
+            top: 80%;
+            width: 65px;
+
+            @include tablet {
+                width: 50px;
+            }
+        }
+
+        .itemContent {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+        }
+
+        .hashigoTop {
+            left: 48%;
+            // top: 70%;
+            width: 50px;
+
+            @include tablet {
+                width: 40px;
+            }
+        }
+
+        .elevatorClose, .elevatorOpen {
+            left: 45%;
+            top: 80%;
+            width: 75px;
+
+            @include tablet {
+                width: 55px;
+            }
+        }
+
+        .cushion {
+            right: 35%;
+            top: 80%;
+            width: 75px;
+
+            @include tablet {
+                width: 55px;
+            }
+        }
+
+        .kikyuu {
+            left: 45%;
+            top: 65%;
+            width: 100px;
+
+            @include tablet {
+                width: 70px;
+            }
+        }
+
+        .koukyuu {
+            left: 20%;
+            top: 80%;
+            width: 120px;
+
+            @include tablet {
+                width: 100px;
+            }
+        }
     }
 }
 
 .gameItems {
+    width: 100%;
     position: relative;
     grid-area: gameItems;
     display: grid;
-    grid-template-columns: 0.2fr 0.8fr;
+    grid-template-columns: 0.25fr 0.75fr;
 
     .selectItem {
         p {
@@ -205,15 +401,22 @@
     }
 
     .itemList {
-        width: 50%;
+        width: 90%;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        margin: 0 auto;
+        grid-template-columns: repeat(8, 1fr);
+
+        @include tablet {
+            grid-template-columns: repeat(5, 1fr);
+        }
 
         img {
             cursor: $cursorChange;
             width: 50%;
             padding: 10px;
             border: 5px solid #fff;
+            border-radius: 16px;
+            box-shadow: -5px 5px 3px rgba(0, 0, 0, 0.25);
         }
 
         p {
@@ -229,6 +432,12 @@
         bottom: 5%;
         left: 0;
         overflow: hidden;
+        grid-template-columns: repeat(3, 1fr);
+
+        img {
+            background-color: #fff;
+            box-shadow: none;
+        }
     }
 }
 

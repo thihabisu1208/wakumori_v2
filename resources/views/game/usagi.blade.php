@@ -11,11 +11,15 @@
 @endsection
 
 @section('items')
-    :items="{{ $usagiItems }}"
+    <game-component :usagiitems="{{ $usagiItems }}"></game-component>
+@endsection
+
+@section('createditems')
+    <selected-items-component :usagicreateditems="{{ $usagiCreatedItems }}"></selected-items-component>
 @endsection
 
 @section('createdItems')
-    :createdItems="{{ $usagiCreatedItems }}"
+    <created-items-component :nowgame="{{ $completedGameUsagi }}" :usagicreateditems="{{ $usagiCreatedItems }}"></created-items-component>
 @endsection
 
 @section('ifGame')

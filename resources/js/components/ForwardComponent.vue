@@ -1,24 +1,18 @@
 <template>
-	<div>
-		<p v-if="completedUsagi == true" class="moveBtn buttons">
-			<a href="/completeGame">
-				すすむ
-				<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
-			</a>
-		</p>
-		<p v-else-if="completedKuma == true" class="moveBtn buttons">
-			<a href="/completeGame1">
-				すすむ
-				<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
-			</a>
-		</p>
-		<p v-else-if="completedRisu == true" class="moveBtn buttons">
-			<a href="/completeGame2">
-				すすむ
-				<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
-			</a>
-		</p>
-	</div>
+	<p class="moveBtn buttons">
+		<a href="/completeGame" v-if="completedUsagi == true">
+			すすむ
+			<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
+		</a>
+		<a href="/completeGame1" v-else-if="completedKuma == true">
+			すすむ
+			<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
+		</a>
+		<a href="/completeGame2" v-else-if="completedRisu == true">
+			すすむ
+			<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
+		</a>
+	</p>
 </template>
 
 <script>
@@ -36,6 +30,10 @@
 		mounted() {
 			EventBus.$on("completedUsagi", () => {
 				this.completedUsagi = true;
+			});
+
+			EventBus.$on("completedKuma", () => {
+				this.completedKuma = true;
 			});
 		}
 	};
