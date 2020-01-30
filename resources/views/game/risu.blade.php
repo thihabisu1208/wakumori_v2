@@ -58,5 +58,9 @@
         <div class="koukyuu fly">
             <img src="/img/item/airplane_ornithopter.png" />
         </div>
+        <div class="otya">
+            <img src="/img/item/drink_chabashira.png" alt="otya">
+            <img class="favorite" src="/img/item/heart_small.png" alt="favorite">
+        </div>
     </div>
 @endsection

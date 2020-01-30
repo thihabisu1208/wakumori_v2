@@ -6416,7 +6416,7 @@ img {
   grid-area: gameOrders;
 }
 
-.gameOrders p {
+.gameOrders p.orderTitle {
   margin: 0;
   padding: 10px;
   text-align: center;
@@ -6433,11 +6433,9 @@ img {
 }
 
 .gameOrders .createdItems {
-  display: grid;
-  width: 100%;
-  margin: 0 auto;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 50px;
+  width: 75%;
+  margin: 5vh auto;
+  text-align: center;
 }
 
 .gameOrders .createdItems img {
@@ -6698,7 +6696,8 @@ img {
 .gameData .gameRisu .elevatorOpen,
 .gameData .gameRisu .kikyuu,
 .gameData .gameRisu .koukyuu,
-.gameData .gameRisu .saru {
+.gameData .gameRisu .saru,
+.gameData .gameRisu .otya {
   opacity: 0;
   position: absolute;
 }
@@ -6783,6 +6782,25 @@ img {
 @media (max-width: 1024px) {
   .gameData .gameRisu .koukyuu {
     width: 100px;
+  }
+}
+
+.gameData .gameRisu .otya {
+  left: 9%;
+  top: 82%;
+  width: 45px;
+}
+
+.gameData .gameRisu .otya .favorite {
+  opacity: 0;
+  position: absolute;
+  bottom: 80%;
+  right: 6%;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameRisu .otya {
+    width: 33px;
   }
 }
 

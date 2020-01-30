@@ -1993,6 +1993,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2018,7 +2026,8 @@ __webpack_require__.r(__webpack_exports__);
       risuShowItem3: false,
       risuShowItem4: false,
       risuShowItem5: false,
-      risuShowItem6: false
+      risuShowItem6: false,
+      risuShowItem7: false
     };
   },
   created: function created() {
@@ -2055,7 +2064,8 @@ __webpack_require__.r(__webpack_exports__);
 
       if (_this.allItems.id3 == 2) {
         _this.kumaItemModal1 = !_this.kumaItemModal1;
-      }
+      } //risu item create
+
 
       if (_this.risucreateditems) {
         if (_this.allItems.id1 == 2 && _this.allItems.id2 == 1) {
@@ -2080,6 +2090,10 @@ __webpack_require__.r(__webpack_exports__);
 
         if (_this.allItems.id4 == 1 && _this.allItems.id7 == 1 && _this.allItems.id9 == 1) {
           _this.risuShowItem6 = !_this.risuShowItem6;
+        }
+
+        if (_this.allItems.id12 == 1 && _this.allItems.id14 == 1 && _this.allItems.id5 == 1) {
+          _this.risuShowItem7 = !_this.risuShowItem7;
         }
       }
     });
@@ -2397,8 +2411,35 @@ __webpack_require__.r(__webpack_exports__);
         _this8.clearSelectedItems();
       }, 5000);
     },
-    completeRisu1: function completeRisu1() {
+    incompleteRisu5: function incompleteRisu5() {
       var _this9 = this;
+
+      var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
+      tl.to(".otya", {
+        duration: 1,
+        opacity: 1
+      });
+      tl.to(".favorite", {
+        duration: 2.5,
+        ease: "power4.out",
+        opacity: 1,
+        y: -60,
+        x: 30
+      });
+      tl.to(".favorite", {
+        duration: 1,
+        opacity: 0,
+        delay: 1
+      }); // tl.to(".favorite", { duration:0.5, opacity: 0 });
+
+      setTimeout(function () {
+        _this9.unclearModal = true;
+
+        _this9.clearSelectedItems();
+      }, 5000);
+    },
+    completeRisu1: function completeRisu1() {
+      var _this10 = this;
 
       var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
       tl.to(".kikyuu", {
@@ -2422,18 +2463,18 @@ __webpack_require__.r(__webpack_exports__);
         opacity: 1
       });
       setTimeout(function () {
-        _this9.clearModal3 = true;
+        _this10.clearModal3 = true;
 
-        _this9.clearSelectedItems();
+        _this10.clearSelectedItems();
 
         _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("completedRisu");
         setTimeout(function () {
-          _this9.clearModal3 = false;
+          _this10.clearModal3 = false;
         }, 3000);
       }, 6000);
     },
     completeRisu2: function completeRisu2() {
-      var _this10 = this;
+      var _this11 = this;
 
       var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
       tl.to(".koukyuu", {
@@ -2458,13 +2499,13 @@ __webpack_require__.r(__webpack_exports__);
         opacity: 1
       });
       setTimeout(function () {
-        _this10.clearModal3 = true;
+        _this11.clearModal3 = true;
 
-        _this10.clearSelectedItems();
+        _this11.clearSelectedItems();
 
         _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("completedRisu");
         setTimeout(function () {
-          _this10.clearModal3 = false;
+          _this11.clearModal3 = false;
         }, 3000);
       }, 6000);
     },
@@ -48989,6 +49030,18 @@ var render = function() {
           ])
         : _vm._e(),
       _vm._v(" "),
+      _vm.risuShowItem7
+        ? _c("div", { staticClass: "fadeIn" }, [
+            _c("div", { staticClass: "createdItems" }, [
+              _c("a", { on: { click: _vm.incompleteRisu5 } }, [
+                _c("img", {
+                  attrs: { src: "/img/item/drink_chabashira.png", alt: "" }
+                })
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
       _c(
         "transition",
         { attrs: { name: "slide-fade" } },
@@ -49485,7 +49538,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "saruHello" }, [
         _vm._v(
-          "\n                こんにちは！一緒に旅に出てくれる人がいてうれしいよ\n                "
+          "\r\n                こんにちは！一緒に旅に出てくれる人がいてうれしいよ\r\n                "
         )
       ])
     ])
@@ -65913,8 +65966,8 @@ var EventBus = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/bisu/Desktop/Projects/wakumori/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/bisu/Desktop/Projects/wakumori/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\wakumori_v2\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wakumori_v2\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

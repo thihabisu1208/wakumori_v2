@@ -54,7 +54,7 @@ class HomeController extends Controller
         $completedGameRisu = Game::where('id', 3)->get();
         $gameRisu = Game::where('id', 3)->first();
         // $risuItems = Item::where('game_id', 1)->get();
-        $risuItems = Item::whereIn('game_id', ['1', '2'])->where(['created' => true])->get();
+        $risuItems = Item::whereIn('game_id', ['1', '2', '3'])->where(['created' => true])->get();
         return view('game.risu', compact(['gameRisu', 'completedGameUsagi', 'completedGameKuma', 'completedGameRisu', 'risuItems']));
     }
 

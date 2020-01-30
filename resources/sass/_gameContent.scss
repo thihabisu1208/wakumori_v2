@@ -38,7 +38,7 @@
 
 .gameOrders {
     grid-area: gameOrders;
-    p {
+    p.orderTitle {
         margin: 0;
         padding: 10px;
         text-align: center;
@@ -54,16 +54,21 @@
     }
 
     .createdItems {
-        display: grid;
-        width: 100%;
-        margin: 0 auto;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 50px;
+        // display: grid;
+        // width: 100%;
+        // margin: 0 auto;
+        // grid-template-columns: repeat(2, 1fr);
+        // grid-gap: 50px;
 
+//要素の中央寄せ
+        width: 75%;
+        margin: 5vh auto;
+        text-align: center;
         img {
             border: 5px solid #fff;
             max-width: 50%;
             height: auto;
+
         }
     }
 }
@@ -286,7 +291,8 @@
         .elevatorOpen,
         .kikyuu,
         .koukyuu,
-        .saru{
+        .saru,
+        .otya{
             opacity: 0;
             position: absolute;
         }
@@ -357,6 +363,22 @@
 
             @include tablet {
                 width: 100px;
+            }
+        }
+        .otya {
+            left:9%;
+            top: 82%;
+            width: 45px;
+
+            .favorite{
+                opacity: 0;
+                position: absolute;
+                bottom: 80%;
+                right: 6%;
+            }
+
+            @include tablet {
+                width: 33px;
             }
         }
     }

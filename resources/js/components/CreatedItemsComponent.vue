@@ -70,6 +70,14 @@
 				</a>
 			</div>
 		</div>
+
+		<div v-if="risuShowItem7" class="fadeIn">
+			<div class="createdItems">
+				<a @click="incompleteRisu5">
+					<img src="/img/item/drink_chabashira.png" alt />
+				</a>
+			</div>
+		</div>
 		<!-- <div v-if="kumaItemModal2" class="fadeIn">
 			<div class="createdItems">
 				<a @click="completeKuma">
@@ -245,7 +253,8 @@
 				risuShowItem3: false,
 				risuShowItem4: false,
 				risuShowItem5: false,
-				risuShowItem6: false
+				risuShowItem6: false,
+				risuShowItem7: false
 			};
 		},
 		created() {
@@ -291,6 +300,7 @@
 					this.kumaItemModal1 = !this.kumaItemModal1;
 				}
 
+					//risu item create
 				if (this.risucreateditems) {
 					if(this.allItems.id1 == 2 && this.allItems.id2 == 1) {
 						this.risuShowItem1 = !this.risuShowItem1;
@@ -314,6 +324,10 @@
 
 					if(this.allItems.id4 == 1 && this.allItems.id7 == 1 && this.allItems.id9 == 1) {
 						this.risuShowItem6 = !this.risuShowItem6;
+					}
+
+					if(this.allItems.id12 == 1 && this.allItems.id14 == 1 && this.allItems.id5 == 1) {
+						this.risuShowItem7 = !this.risuShowItem7;
 					}
 				}
 			});
@@ -480,6 +494,18 @@
 				tl.to(".elevatorClose", { duration: 0, opacity: 1, zIndex: 2 });
 				tl.to(".goDown", { duration: 2, ease: "elastic.out(1.75, 0.5)", top: "70%" });
 				tl.to(".saru", { duration:1, zIndex: 2 });
+				setTimeout(() => {
+					this.unclearModal = true;
+					this.clearSelectedItems();
+				}, 5000);
+			},
+			incompleteRisu5() {
+				let tl = gsap.timeline();
+				tl.to(".otya", { duration:1, opacity: 1 });
+				tl.to(".favorite", { duration:2.5 ,ease: "power4.out", opacity: 1 ,y:-60 ,x:30});
+				tl.to(".favorite", { duration:1, opacity: 0 });
+				tl.to(".favorite", { duration:0.5 });
+
 				setTimeout(() => {
 					this.unclearModal = true;
 					this.clearSelectedItems();
