@@ -27,7 +27,11 @@ Route::patch('/createitem/{createditem}', 'HomeController@createitem');
 
 Route::get('/completeGame', 'HomeController@completeGame');
 
+Route::post('/completeUsagiGame', 'HomeController@completeUsagiGame');
+
 Route::get('/completeGame1', 'HomeController@completeGame1');
+
+Route::post('/completeKumaGame', 'HomeController@completeKumaGame');
 
 Route::get('/createKumaItem1', 'HomeController@createKumaItem1');
 

@@ -21,7 +21,8 @@ export default {
         props : ["usagicompleted"],
         data() {
             return {
-                ref:null
+                ref:null,
+                width: window.innerWidth
             }
         },
         methods:{
@@ -41,11 +42,19 @@ export default {
             tl.to(".saruHello", { duration: 1, opacity: 0 });
             tl.to(".helloSaruImages, .saruHello", { duration: 1, x: 200,y: 850 });
             tl.to(".overlay", {duration: 0.5 ,opacity: 0 });
-            tl.to(".saruHello", {
-					duration: 0,
-					delay: 10,
-					text: "うさぎさんのイラストにぼくを合わせて、助けるボタンを押してね"
-                },3 );
+            if(this.width < 1025) {
+                tl.to(".saruHello", {
+                        duration: 0,
+                        delay: 10,
+                        text: "うさぎさんのイラストの下にある助けるを押してみて"
+                    },3 );
+            } else {
+                tl.to(".saruHello", {
+                        duration: 0,
+                        delay: 10,
+                        text: "うさぎさんのイラストにぼくを合わせて、助けるボタンを押してね"
+                    },3 );
+            }
             tl.to(".saruHello", { duration: 1, opacity: 1 })
             tl.to(".overlay", {duration: 1 ,display:"none" });;
             }

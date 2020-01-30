@@ -2084,15 +2084,20 @@ __webpack_require__.r(__webpack_exports__);
       }
     });
     _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$on("checkAddedItems", function () {
+      var nabe = document.querySelector('.nabe');
+      nabe.classList.add('nabeMove');
+      setTimeout(function () {
+        nabe.classList.remove('nabeMove');
+      }, 500);
+
       if (_this.usagicreateditems) {
         if (_this.allItems.id2 == 1) {
           _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showUsagiHint1");
 
           if (_this.allItems.id1 == 2) {
-            _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showUsagiHint2");
-            setTimeout(function () {
-              _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showUsagiHint3");
-            }, 5000);
+            _eventBus_js__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit("showUsagiHint2"); // setTimeout(() => {
+            // 	EventBus.$emit("showUsagiHint3");
+            // }, 5000);
           }
         }
       }
@@ -2169,6 +2174,11 @@ __webpack_require__.r(__webpack_exports__);
           _this2.clearModal = false;
         }, 3000);
       }, 6000);
+      axios.post('/completeUsagiGame', 1).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {
+        console.log(error);
+      });
     },
     showUsagiHint3: function showUsagiHint3() {
       this.showItem = !this.showItem;
@@ -2245,6 +2255,11 @@ __webpack_require__.r(__webpack_exports__);
           _this4.clearModal2 = false;
         }, 3000);
       }, 6000);
+      axios.post('/completeKumaGame', 1).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {
+        console.log(error);
+      });
     },
     completeKuma2: function completeKuma2() {
       var _this5 = this;
@@ -2299,6 +2314,11 @@ __webpack_require__.r(__webpack_exports__);
           _this5.clearModal2 = false;
         }, 3000);
       }, 6000);
+      axios.post('/completeKumaGame', 1).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {
+        console.log(error);
+      });
     },
     showKumaHint3: function showKumaHint3() {
       this.showItem2 = !this.showItem2;
@@ -2515,6 +2535,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["completedgameusagi", "completedgamekuma", "completedgamerisu"],
@@ -2692,7 +2713,8 @@ __webpack_require__.r(__webpack_exports__);
   props: ["usagicompleted"],
   data: function data() {
     return {
-      ref: null
+      ref: null,
+      width: window.innerWidth
     };
   },
   methods: {
@@ -2742,11 +2764,21 @@ __webpack_require__.r(__webpack_exports__);
         duration: 0.5,
         opacity: 0
       });
-      tl.to(".saruHello", {
-        duration: 0,
-        delay: 10,
-        text: "うさぎさんのイラストにぼくを合わせて、助けるボタンを押してね"
-      }, 3);
+
+      if (this.width < 1025) {
+        tl.to(".saruHello", {
+          duration: 0,
+          delay: 10,
+          text: "うさぎさんのイラストの下にある助けるを押してみて"
+        }, 3);
+      } else {
+        tl.to(".saruHello", {
+          duration: 0,
+          delay: 10,
+          text: "うさぎさんのイラストにぼくを合わせて、助けるボタンを押してね"
+        }, 3);
+      }
+
       tl.to(".saruHello", {
         duration: 1,
         opacity: 1
@@ -49283,7 +49315,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("p", { staticClass: "moveBtn buttons" }, [
     _vm.completedUsagi == true
-      ? _c("a", { attrs: { href: "/completeGame" } }, [
+      ? _c("a", { attrs: { href: "/home" } }, [
           _vm._v("\n\t\tすすむ\n\t\t"),
           _c("i", {
             staticClass: "fas fa-arrow-right",
@@ -49291,7 +49323,7 @@ var render = function() {
           })
         ])
       : _vm.completedKuma == true
-      ? _c("a", { attrs: { href: "/completeGame1" } }, [
+      ? _c("a", { attrs: { href: "/home" } }, [
           _vm._v("\n\t\tすすむ\n\t\t"),
           _c("i", {
             staticClass: "fas fa-arrow-right",
@@ -49299,7 +49331,7 @@ var render = function() {
           })
         ])
       : _vm.completedRisu == true
-      ? _c("a", { attrs: { href: "/completeGame2" } }, [
+      ? _c("a", { attrs: { href: "/home" } }, [
           _vm._v("\n\t\tすすむ\n\t\t"),
           _c("i", {
             staticClass: "fas fa-arrow-right",

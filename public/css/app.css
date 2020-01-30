@@ -6250,6 +6250,7 @@ img {
 #contentGames .contentGamesContent .contentGame {
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  border-radius: 15px 15px 0 0;
 }
 
 @media (max-width: 1024px) {
@@ -6270,6 +6271,20 @@ img {
   z-index: 1;
   -webkit-transform: translateY(100px);
           transform: translateY(100px);
+  border-right: 3px solid #e0e0e0;
+  border-left: 3px solid #e0e0e0;
+  border-top: 3px solid #e0e0e0;
+}
+
+@media (max-width: 1024px) {
+  #contentGames .contentGamesContent .contentGame.contentGame1 {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+#contentGames .contentGamesContent .contentGame.contentGame1 img {
+  border-radius: 15px 15px 0 0;
 }
 
 #contentGames .contentGamesContent .contentGame.contentGame1 .contentGameContent {
@@ -6277,10 +6292,15 @@ img {
   transition: 0.5s;
 }
 
+@media (max-width: 1024px) {
+  #contentGames .contentGamesContent .contentGame.contentGame1 .contentGameContent {
+    opacity: 1;
+  }
+}
+
 #contentGames .contentGamesContent .contentGame.contentGame1 .contentGameContent h3 {
   width: 70%;
   margin: 10px auto;
-  border-bottom: 3px solid #8D6600;
   padding: 0;
   text-align: center;
 }
@@ -6293,9 +6313,22 @@ img {
           align-items: center;
   padding: 20px;
   box-sizing: border-box;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
   -webkit-transform: translateY(-100px);
           transform: translateY(-100px);
+  border-radius: 0 0 15px 15px;
+  border-right: 3px solid #e0e0e0;
+  border-left: 3px solid #e0e0e0;
+  border-bottom: 3px solid #e0e0e0;
+}
+
+@media (max-width: 1024px) {
+  #contentGames .contentGamesContent .contentGame.contentGame2 {
+    background: #fff;
+    display: -webkit-box;
+    display: flex;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
 }
 
 #contentGames .contentGamesContent .contentGame.contentGame2 .contentGameContent p {
@@ -6373,6 +6406,7 @@ img {
 #gameContent {
   width: 100%;
   height: 100vh;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   display: grid;
@@ -6383,9 +6417,8 @@ img {
 
 @media (max-width: 1024px) {
   #gameContent {
-    height: 100vh;
     grid-template-columns: 0.25fr 0.75fr;
-    grid-template-rows: 0.2fr 0.7fr 0.1fr;
+    grid-template-rows: 0.2fr 0.7fr 0.05fr;
   }
 }
 
@@ -6476,12 +6509,12 @@ img {
 }
 
 .gameData .gameAll .saruBot .saruText {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   opacity: 0;
   position: absolute;
   top: 0;
   left: 6vw;
-  width: 10vw;
+  width: 150px;
   margin: 0;
   padding: 10px;
   background-color: #fff;
@@ -6492,7 +6525,7 @@ img {
   .gameData .gameAll .saruBot .saruText {
     left: 8vw;
     top: -5%;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -6824,6 +6857,65 @@ img {
   border: 5px solid #fff;
 }
 
+.gameItems .selectItem .nabe.nabeMove {
+  -webkit-animation: nabeMove 0.5s;
+          animation: nabeMove 0.5s;
+}
+
+@-webkit-keyframes nabeMove {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(345deg);
+            transform: rotate(345deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(355deg);
+            transform: rotate(355deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes nabeMove {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(345deg);
+            transform: rotate(345deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(355deg);
+            transform: rotate(355deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .gameItems .itemList {
   width: 90%;
   display: grid;
@@ -6840,6 +6932,7 @@ img {
 .gameItems .itemList img {
   cursor: url("/img/saruFace22.png"), pointer;
   width: 50%;
+  height: auto;
   padding: 10px;
   border: 5px solid #fff;
   border-radius: 16px;

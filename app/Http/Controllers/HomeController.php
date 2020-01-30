@@ -70,6 +70,21 @@ class HomeController extends Controller
         return view('game.home', compact(['games', 'usagi', 'completedGameUsagi', 'completedGameKuma', 'completedGameRisu']));
     }
 
+    public function completeUsagiGame(Game $game)
+    {
+        Game::where('id', '=', 1)->update(['completed' => 1]);
+        Item::where('id', '=', 3)->update(['created' => 1]);
+
+        return redirect('/home');
+    }
+
+    public function completeKumaGame(Game $game)
+    {
+        Game::where('id', '=', 2)->update(['completed' => 1]);
+
+        return redirect('/home');
+    }
+
     public function completeGame1()
     {
         $games = Game::all();

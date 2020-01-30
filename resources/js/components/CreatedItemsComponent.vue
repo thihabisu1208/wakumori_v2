@@ -319,14 +319,20 @@
 			});
 
 			EventBus.$on("checkAddedItems", () => {
+				let nabe = document.querySelector('.nabe');
+				nabe.classList.add('nabeMove');
+				setTimeout(() => {
+					nabe.classList.remove('nabeMove');
+				}, 500)
+
 				if (this.usagicreateditems) {
 					if (this.allItems.id2 == 1) {
 						EventBus.$emit("showUsagiHint1");
 						if (this.allItems.id1 == 2) {
 							EventBus.$emit("showUsagiHint2");
-							setTimeout(() => {
-								EventBus.$emit("showUsagiHint3");
-							}, 5000);
+							// setTimeout(() => {
+							// 	EventBus.$emit("showUsagiHint3");
+							// }, 5000);
 						}
 					}
 				}
@@ -378,6 +384,14 @@
 						this.clearModal = false;
 					}, 3000);
 				}, 6000);
+
+				axios.post('/completeUsagiGame', 1)
+					.then(response => {
+						console.log(response)
+					})
+					.catch(error => {
+						console.log(error);
+					})
 			},
 			showUsagiHint3() {
 				this.showItem = !this.showItem;
@@ -399,6 +413,7 @@
 						this.unclearModal = false;
 					}, 3000);
 				}, 6000);
+
 			},
 			completeKuma1() {
 				let tl = gsap.timeline();
@@ -416,6 +431,14 @@
 						this.clearModal2 = false;
 					}, 3000);
 				}, 6000);
+
+				axios.post('/completeKumaGame', 1)
+					.then(response => {
+						console.log(response)
+					})
+					.catch(error => {
+						console.log(error);
+					})
 			},
 			completeKuma2() {
 				let tl = gsap.timeline();
@@ -437,6 +460,14 @@
 						this.clearModal2 = false;
 					}, 3000);
 				}, 6000);
+
+				axios.post('/completeKumaGame', 1)
+					.then(response => {
+						console.log(response)
+					})
+					.catch(error => {
+						console.log(error);
+					})
 			},
 			showKumaHint3() {
 				this.showItem2 = !this.showItem2;

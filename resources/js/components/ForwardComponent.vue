@@ -1,14 +1,15 @@
 <template>
 	<p class="moveBtn buttons">
-		<a href="/completeGame" v-if="completedUsagi == true">
+		<!-- <a href="/completeGame" v-if="completedUsagi == true"> -->
+		<a href="/home" v-if="completedUsagi == true">
 			すすむ
 			<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
 		</a>
-		<a href="/completeGame1" v-else-if="completedKuma == true">
+		<a href="/home" v-else-if="completedKuma == true">
 			すすむ
 			<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
 		</a>
-		<a href="/completeGame2" v-else-if="completedRisu == true">
+		<a href="/home" v-else-if="completedRisu == true">
 			すすむ
 			<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
 		</a>

@@ -1,6 +1,7 @@
 #gameContent {
     width: 100%;
     height: 100vh;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     display: grid;
@@ -12,9 +13,8 @@
     grid-template-rows: 0.1fr 0.8fr 0.1fr;
 
     @include tablet {
-        height: 100vh;
         grid-template-columns: 0.25fr 0.75fr;
-        grid-template-rows: 0.2fr 0.7fr 0.1fr;
+        grid-template-rows: 0.2fr 0.7fr 0.05fr;
     }
 }
 
@@ -92,12 +92,12 @@
                 width: 100%;
             }
             .saruText {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
                 opacity: 0;
                 position: absolute;
                 top: 0;
                 left: 6vw;
-                width: 10vw;
+                width: 150px;
                 margin: 0;
                 padding: 10px;
                 background-color: #fff;
@@ -106,7 +106,7 @@
                 @include tablet {
                     left: 8vw;
                     top: -5%;
-                    font-size: 1.5rem;
+                    font-size: 1.4rem;
                 }
             }
             .saruText:before {
@@ -397,8 +397,30 @@
         .nabe {
             padding: 10px;
             border: 5px solid #fff;
+
+            &.nabeMove {
+                animation: nabeMove 0.5s;
+            }
         }
     }
+
+@keyframes nabeMove {
+    0% {
+        transform: rotate(360deg);
+    }
+    25% {
+        transform: rotate(345deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    75% {
+        transform: rotate(355deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
     .itemList {
         width: 90%;
@@ -413,6 +435,7 @@
         img {
             cursor: $cursorChange;
             width: 50%;
+            height: auto;
             padding: 10px;
             border: 5px solid #fff;
             border-radius: 16px;
