@@ -127,6 +127,12 @@
 						src="/img/item/kagu_cushion.png"
 						alt
 					/>
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
+
 					<p class="itemtextmodal">クッションができました！</p>
 				</div>
 			</modal-component>
@@ -140,16 +146,81 @@
 			>
 				<div class="itemModal">
 					<i @click="kumaItemModal2 = !kumaItemModal2" class="fas fa-times"></i>
+					<!-- エレベーターのモーダルを表示 -->
 					<img
 						@click="kumaItemModal2 = !kumaItemModal2; showKumaHint4(); "
 						class="hashigo"
 						src="/img/item/elevator_door_close.png"
 						alt
 					/>
+					<!-- アイテムの画像がクリックされたらモーダルを非表示 -->
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
+
 					<p class="itemtextmodal">エレベーターができました！</p>
 				</div>
 			</modal-component>
 		</transition>
+
+<transition name="slide-fade">
+			<modal-component
+				class="modal backHasigo"
+				id="itemModal"
+				:showing="risuItemModal6"
+				v-if="risucreateditems"
+			>
+				<div class="itemModal">
+					<i @click="risuItemModal6 = !risuItemModal6" class="fas fa-times"></i>
+
+					<img
+						@click="risuItemModal6 = !risuItemModal6"
+						class="hashigo"
+						src="/img/item/airplane_ornithopter.png"
+						alt
+					/>
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
+
+					<p class="itemtextmodal">飛行機ができました！</p>
+				</div>
+			</modal-component>
+		</transition>
+
+			<transition name="slide-fade">
+			<modal-component
+				class="modal backHasigo"
+				id="itemModal"
+				:showing="risuItemModal5"
+				v-if="risucreateditems"
+			>
+				<div class="itemModal">
+					<i @click="risuItemModal5 = !risuItemModal5" class="fas fa-times"></i>
+
+					<img
+						@click="risuItemModal5 = !risuItemModal5"
+						class="hashigo"
+						src="/img/item/kikyuu.png"
+						alt
+					/>
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
+
+					<p class="itemtextmodal">気球ができました！</p>
+				</div>
+			</modal-component>
+		</transition>
+
 		<transition name="slide-fade">
 			<modal-component class="modal" :showing="clearModal">
 				<div class="modalData">
@@ -260,8 +331,11 @@
 				risuShowItem3: false,
 				risuShowItem4: false,
 				risuShowItem5: false,
+				risuItemModal5: false,
 				risuShowItem6: false,
-				risuShowItem7: false,
+				risuItemModal6:false,
+				risuShowItem7: false
+
 
 			};
 		},
@@ -305,39 +379,55 @@
 				}
 
 				if (this.allItems.id4 == 1 && this.allItems.id5 == 1) {
+					//選択されたアイテムのIDを判別してDataのtrueとfalseを変える
 					this.kumaItemModal2 = !this.kumaItemModal2;
+					setTimeout(() => {
+					this.createEfect();
+				},2000)
 				}
 
 				if (this.allItems.id3 == 2) {
 					this.kumaItemModal1 = !this.kumaItemModal1;
+					setTimeout(() => {
+					this.createEfect();
+				},2000)
 				}
 
 					//risu item create
+					//梯子を作る(uncomplete)
 				if (this.risucreateditems) {
 					if(this.allItems.id1 == 2 && this.allItems.id2 == 1) {
 						this.risuShowItem1 = !this.risuShowItem1;
 					}
-
+					//クッションを作る(uncomplete)
 					if(this.allItems.id3 == 2) {
 						this.risuShowItem2 = !this.risuShowItem2;
 					}
-
+					//エレベーターを作る(complete)
 					if(this.allItems.id4 == 1 && this.allItems.id5 == 1) {
 						this.risuShowItem3 = !this.risuShowItem3;
 					}
-
+					//風船を作る
 					if(this.allItems.id2 == 2 && this.allItems.id3 == 1) {
 						this.risuShowItem4 = !this.risuShowItem4;
 					}
-
+					//気球を作る(complete)
 					if(this.allItems.id7 == 1 && this.allItems.id8 == 1 && this.allItems.id9 == 1) {
 						this.risuShowItem5 = !this.risuShowItem5;
+						this.risuItemModal5 = !this.risuItemModal5;
+						setTimeout(() => {
+						this.createEfect();
+						},2000)
 					}
-
+					//飛行機を作る(complete)
 					if(this.allItems.id4 == 1 && this.allItems.id7 == 1 && this.allItems.id9 == 1) {
 						this.risuShowItem6 = !this.risuShowItem6;
+						this.risuItemModal6 = !this.risuItemModal6;
+						setTimeout(() => {
+						this.createEfect();
+						},1000)
 					}
-
+					//お茶を作る(uncomplete)
 					if(this.allItems.id12 == 1 && this.allItems.id14 == 1 && this.allItems.id5 == 1) {
 						this.risuShowItem7 = !this.risuShowItem7;
 					}
@@ -386,10 +476,10 @@
 			createEfect(){
 
 				let tl = gsap.timeline();
-				tl.to(".efect1", { duration: 1, opacity: 0 });
-				tl.to(".efect2", { duration: 1, opacity: 1 });
-				tl.to(".efect2", { duration: 1, opacity: 0 });
-				tl.to(".efect1", { duration: 1, opacity: 1 });
+				tl.to(".efect1", { duration: 0.5, opacity: 0 });
+				tl.to(".efect2", { duration: 0.5, opacity: 1 });
+				tl.to(".efect2", { duration: 0.5, opacity: 0 });
+				tl.to(".efect1", { duration: 0.5, opacity: 1 });
 
 			},
 			clearSelectedItems() {

@@ -2008,6 +2008,77 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2033,7 +2104,9 @@ __webpack_require__.r(__webpack_exports__);
       risuShowItem3: false,
       risuShowItem4: false,
       risuShowItem5: false,
+      risuItemModal5: false,
       risuShowItem6: false,
+      risuItemModal6: false,
       risuShowItem7: false
     };
   },
@@ -2069,38 +2142,60 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       if (_this.allItems.id4 == 1 && _this.allItems.id5 == 1) {
+        //選択されたアイテムのIDを判別してDataのtrueとfalseを変える
         _this.kumaItemModal2 = !_this.kumaItemModal2;
+        setTimeout(function () {
+          _this.createEfect();
+        }, 2000);
       }
 
       if (_this.allItems.id3 == 2) {
         _this.kumaItemModal1 = !_this.kumaItemModal1;
+        setTimeout(function () {
+          _this.createEfect();
+        }, 2000);
       } //risu item create
+      //梯子を作る(uncomplete)
 
 
       if (_this.risucreateditems) {
         if (_this.allItems.id1 == 2 && _this.allItems.id2 == 1) {
           _this.risuShowItem1 = !_this.risuShowItem1;
-        }
+        } //クッションを作る(uncomplete)
+
 
         if (_this.allItems.id3 == 2) {
           _this.risuShowItem2 = !_this.risuShowItem2;
-        }
+        } //エレベーターを作る(complete)
+
 
         if (_this.allItems.id4 == 1 && _this.allItems.id5 == 1) {
           _this.risuShowItem3 = !_this.risuShowItem3;
-        }
+        } //風船を作る
+
 
         if (_this.allItems.id2 == 2 && _this.allItems.id3 == 1) {
           _this.risuShowItem4 = !_this.risuShowItem4;
-        }
+        } //気球を作る(complete)
+
 
         if (_this.allItems.id7 == 1 && _this.allItems.id8 == 1 && _this.allItems.id9 == 1) {
           _this.risuShowItem5 = !_this.risuShowItem5;
-        }
+          _this.risuItemModal5 = !_this.risuItemModal5;
+          setTimeout(function () {
+            _this.createEfect();
+          }, 2000);
+        } //飛行機を作る(complete)
+
 
         if (_this.allItems.id4 == 1 && _this.allItems.id7 == 1 && _this.allItems.id9 == 1) {
           _this.risuShowItem6 = !_this.risuShowItem6;
-        }
+          _this.risuItemModal6 = !_this.risuItemModal6;
+          setTimeout(function () {
+            _this.createEfect();
+          }, 1000);
+        } //お茶を作る(uncomplete)
+
 
         if (_this.allItems.id12 == 1 && _this.allItems.id14 == 1 && _this.allItems.id5 == 1) {
           _this.risuShowItem7 = !_this.risuShowItem7;
@@ -2150,19 +2245,19 @@ __webpack_require__.r(__webpack_exports__);
     createEfect: function createEfect() {
       var tl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
       tl.to(".efect1", {
-        duration: 1,
+        duration: 0.5,
         opacity: 0
       });
       tl.to(".efect2", {
-        duration: 1,
+        duration: 0.5,
         opacity: 1
       });
       tl.to(".efect2", {
-        duration: 1,
+        duration: 0.5,
         opacity: 0
       });
       tl.to(".efect1", {
-        duration: 1,
+        duration: 0.5,
         opacity: 1
       });
     },
@@ -2706,7 +2801,8 @@ __webpack_require__.r(__webpack_exports__);
     onAdd: function onAdd(event) {
       // console.log(e.oldIndex + 1);
       this.selectedItemList.push({
-        id: event.oldIndex + 1
+        id: event.oldIndex + 1,
+        "class": "select"
       });
       this.addSelectedItems();
     }
@@ -3471,6 +3567,7 @@ __webpack_require__.r(__webpack_exports__);
     clearSelectedItems: function clearSelectedItems() {
       this.selectedItems = [];
       _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$emit("clearSelectedItem", this.selectedItems);
+      location.reload();
     },
     createItem: function createItem() {
       _eventBus_js__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$emit("createItem", "ok");
@@ -49310,6 +49407,26 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira1 efect1",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira2 efect1",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira3 efect2",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira4 efect2",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
                     _c("p", { staticClass: "itemtextmodal" }, [
                       _vm._v("クッションができました！")
                     ])
@@ -49357,8 +49474,157 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira1 efect1",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira2 efect1",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira3 efect2",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira4 efect2",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
                     _c("p", { staticClass: "itemtextmodal" }, [
                       _vm._v("エレベーターができました！")
+                    ])
+                  ])
+                ]
+              )
+            : _vm._e()
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "transition",
+        { attrs: { name: "slide-fade" } },
+        [
+          _vm.risucreateditems
+            ? _c(
+                "modal-component",
+                {
+                  staticClass: "modal backHasigo",
+                  attrs: { id: "itemModal", showing: _vm.risuItemModal6 }
+                },
+                [
+                  _c("div", { staticClass: "itemModal" }, [
+                    _c("i", {
+                      staticClass: "fas fa-times",
+                      on: {
+                        click: function($event) {
+                          _vm.risuItemModal6 = !_vm.risuItemModal6
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "hashigo",
+                      attrs: {
+                        src: "/img/item/airplane_ornithopter.png",
+                        alt: ""
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.risuItemModal6 = !_vm.risuItemModal6
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira1 efect1",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira2 efect1",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira3 efect2",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira4 efect2",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "itemtextmodal" }, [
+                      _vm._v("飛行機ができました！")
+                    ])
+                  ])
+                ]
+              )
+            : _vm._e()
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "transition",
+        { attrs: { name: "slide-fade" } },
+        [
+          _vm.risucreateditems
+            ? _c(
+                "modal-component",
+                {
+                  staticClass: "modal backHasigo",
+                  attrs: { id: "itemModal", showing: _vm.risuItemModal5 }
+                },
+                [
+                  _c("div", { staticClass: "itemModal" }, [
+                    _c("i", {
+                      staticClass: "fas fa-times",
+                      on: {
+                        click: function($event) {
+                          _vm.risuItemModal5 = !_vm.risuItemModal5
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "hashigo",
+                      attrs: { src: "/img/item/kikyuu.png", alt: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.risuItemModal5 = !_vm.risuItemModal5
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira1 efect1",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira2 efect1",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira3 efect2",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticClass: "kirakira4 efect2",
+                      attrs: { src: "/img/kirakira1.png", alt: "きらきら" }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "itemtextmodal" }, [
+                      _vm._v("気球ができました！")
                     ])
                   ])
                 ]
@@ -49600,7 +49866,7 @@ var render = function() {
             ),
             _vm._v(" "),
             _c("draggable", {
-              staticClass: "itemList itemList2",
+              staticClass: "itemList itemList2 ",
               attrs: { options: _vm.options, group: "usagiitems" },
               on: { add: _vm.onAdd }
             })

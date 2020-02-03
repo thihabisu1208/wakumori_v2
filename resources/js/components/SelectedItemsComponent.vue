@@ -2,7 +2,7 @@
 	<div>
 		<p class="orderTitle">
 			ここに入れて
-			<span @click="clearSelectedItems">
+			<span @click="clearSelectedItems" >
 				<i class="fas fa-sync-alt"></i>
 			</span>
 		</p>
@@ -96,6 +96,7 @@
 			clearSelectedItems() {
 				this.selectedItems = [];
 				EventBus.$emit("clearSelectedItem", this.selectedItems);
+				location.reload()
 			},
 			createItem() {
 				EventBus.$emit("createItem", "ok");

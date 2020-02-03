@@ -13,7 +13,7 @@
 					<!-- <p>{{ item.name }}</p> -->
 				</div>
 			</draggable>
-			<draggable class="itemList itemList2" :options="options" group="usagiitems" @add="onAdd"></draggable>
+			<draggable class="itemList itemList2 " :options="options" group="usagiitems" @add="onAdd"></draggable>
 		</div>
 		<div v-else-if="kumaitems">
 			<draggable
@@ -82,7 +82,8 @@
 			onAdd(event) {
 				// console.log(e.oldIndex + 1);
 				this.selectedItemList.push({
-					id: event.oldIndex + 1
+					id: event.oldIndex + 1,
+					class: "select"
 				});
 				this.addSelectedItems();
 			}
