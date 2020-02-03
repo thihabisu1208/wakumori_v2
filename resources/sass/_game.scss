@@ -161,6 +161,44 @@ img {
             color: #000;
             border-radius: 15px;
             background-color: #fff;
+            text-align: center;
+            font-size: 1.6rem;
         }
     }
+}
+
+.itemModal{
+    position: relative;
+        .kirakira1{
+            width: 20%;
+            position: absolute;
+            right: 7%;
+            top: 20%;
+        }
+        .kirakira2{
+            width: 20%;
+            position: absolute;
+            left: 7%;
+            bottom: 20%;
+        }
+
+        .kirakira3{
+            width: 20%;
+            position: absolute;
+            right: 7%;
+            bottom: 20%;
+        }
+        .kirakira4{
+            width: 20%;
+            position: absolute;
+            left: 7%;
+            top: 20%;
+        }
+
+        .efect1{
+            opacity: 1;
+        }
+        .efect2{
+            opacity: 0;
+        }
 }

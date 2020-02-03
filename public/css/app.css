@@ -6368,6 +6368,48 @@ img {
   color: #000;
   border-radius: 15px;
   background-color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.itemModal {
+  position: relative;
+}
+
+.itemModal .kirakira1 {
+  width: 20%;
+  position: absolute;
+  right: 7%;
+  top: 20%;
+}
+
+.itemModal .kirakira2 {
+  width: 20%;
+  position: absolute;
+  left: 7%;
+  bottom: 20%;
+}
+
+.itemModal .kirakira3 {
+  width: 20%;
+  position: absolute;
+  right: 7%;
+  bottom: 20%;
+}
+
+.itemModal .kirakira4 {
+  width: 20%;
+  position: absolute;
+  left: 7%;
+  top: 20%;
+}
+
+.itemModal .efect1 {
+  opacity: 1;
+}
+
+.itemModal .efect2 {
+  opacity: 0;
 }
 
 #gameContent {

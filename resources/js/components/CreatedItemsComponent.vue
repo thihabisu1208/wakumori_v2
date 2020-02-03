@@ -101,6 +101,13 @@
 						:src="'/img/item/' + createditem.path + '.png'"
 						alt
 					/>
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
+
 					<p class="itemtextmodal">はしごができました！</p>
 				</div>
 			</modal-component>
@@ -254,7 +261,8 @@
 				risuShowItem4: false,
 				risuShowItem5: false,
 				risuShowItem6: false,
-				risuShowItem7: false
+				risuShowItem7: false,
+
 			};
 		},
 		created() {
@@ -285,6 +293,10 @@
 			EventBus.$on("createItem", () => {
 				if (this.allItems.id1 == 2 && this.allItems.id2 == 1) {
 					this.itemModal = !this.itemModal;
+
+				setTimeout(() => {
+					this.createEfect();
+				},2000)
 					// EventBus.$emit("addedItem");
 				}
 
@@ -371,6 +383,15 @@
 			});
 		},
 		methods: {
+			createEfect(){
+
+				let tl = gsap.timeline();
+				tl.to(".efect1", { duration: 1, opacity: 0 });
+				tl.to(".efect2", { duration: 1, opacity: 1 });
+				tl.to(".efect2", { duration: 1, opacity: 0 });
+				tl.to(".efect1", { duration: 1, opacity: 1 });
+
+			},
 			clearSelectedItems() {
 				gsap.to(".nabe", { duration: 1, border: "transparent" });
 				gsap.to(".saruBot", { duration: 1, opacity: 0 });
@@ -386,6 +407,7 @@
 				tl.to(".saru", { duration: 1.5, top: "45%" });
 				setTimeout(() => {
 					this.clearModal = true;
+
 					this.clearSelectedItems();
 					EventBus.$emit("completedUsagi");
 					setTimeout(() => {
