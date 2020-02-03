@@ -20,7 +20,7 @@
         <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div id="app">
+        <div id="game">
             <div class="backgroundPng">
                 <div id="top">
                     <div id="welcome">
@@ -29,6 +29,7 @@
                             <a href="/home">~ 旅に行く ~</a>
                         </p>
                     </div>
+                    <welcome-component></welcome-component>
                 </div>
              </div>
         </div>

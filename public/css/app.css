@@ -6187,6 +6187,33 @@ i {
   font-size: 30px;
 }
 
+.welcomeGsap {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.welcomeGsap .bird {
+  width: 10vw;
+  position: absolute;
+  bottom: 50%;
+  right: -10%;
+}
+
+.welcomeGsap .bird2 {
+  width: 10vw;
+  position: absolute;
+  bottom: 60%;
+  right: -10%;
+}
+
+.welcomeGsap .welcomeSaru {
+  width: 10vw;
+  position: absolute;
+  bottom: -17%;
+  left: 10%;
+}
+
 .container {
   margin: 10vh auto 0;
   width: 95%;
