@@ -38,7 +38,7 @@
 
 .gameOrders {
     grid-area: gameOrders;
-    p {
+    p.orderTitle {
         margin: 0;
         padding: 10px;
         text-align: center;
@@ -54,15 +54,22 @@
     }
 
     .createdItems {
-        display: grid;
-        width: 100%;
-        margin: 0 auto;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 50px;
+        // display: grid;
+        // width: 100%;
+        // margin: 0 auto;
+        // grid-template-columns: repeat(2, 1fr);
+        // grid-gap: 50px;
+        width: 30%;
+        margin: 5vh auto;
+        text-align: center;
+
+        @include tablet {
+            width: 50%;
+        }
 
         img {
             border: 5px solid #fff;
-            max-width: 50%;
+            width: 50%;
             height: auto;
         }
     }
@@ -286,6 +293,7 @@
         .elevatorOpen,
         .kikyuu,
         .koukyuu,
+        .otya,
         .saru{
             opacity: 0;
             position: absolute;
@@ -359,6 +367,23 @@
                 width: 100px;
             }
         }
+
+        .otya {
+            left:9%;
+            top: 82%;
+            width: 45px;
+
+            .favorite{
+                opacity: 0;
+                position: absolute;
+                bottom: 80%;
+                right: 6%;
+            }
+
+            @include tablet {
+                width: 33px;
+            }
+        }
     }
 }
 
@@ -395,7 +420,9 @@
             background: #fff;
         }
         .nabe {
-            padding: 10px;
+            position: relative;
+            z-index: 2;
+            padding: 0;
             border: 5px solid #fff;
 
             &.nabeMove {
@@ -421,6 +448,31 @@
         transform: rotate(360deg);
     }
 }
+
+    .itemList3 {
+        width: 90%;
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: repeat(8, 1fr);
+
+        @include tablet {
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        img {
+            cursor: $cursorChange;
+            width: 50%;
+            height: auto;
+            padding: 10px;
+            border: 5px solid #fff;
+            border-radius: 16px;
+            box-shadow: -5px 5px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        p {
+            text-align: center;
+        }
+    }
 
     .itemList {
         width: 90%;
@@ -453,9 +505,14 @@
         height: 150px;
         position: fixed;
         bottom: 5%;
-        left: 0;
+        left: 5%;
         overflow: hidden;
         grid-template-columns: repeat(3, 1fr);
+        z-index: 1;
+
+        @include tablet {
+            left: 0;
+        }
 
         img {
             background-color: #fff;

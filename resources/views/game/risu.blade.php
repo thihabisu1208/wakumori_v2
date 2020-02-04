@@ -22,6 +22,10 @@
     <created-items-component :nowgame="{{ $completedGameRisu }}" :risucreateditems="{{ $risuItems }}"></created-items-component>
 @endsection
 
+@section('forward')
+    <forward-component :completedgamerisu="{{ $gameRisu }}"></forward-component>
+@endsection
+
 @section('ifGame')
     @if ($completedGameRisu->first()->completed == 1)
     <a href="#">
@@ -57,6 +61,10 @@
         </div>
         <div class="koukyuu fly">
             <img src="/img/item/airplane_ornithopter.png" />
+        </div>
+        <div class="otya">
+            <img src="/img/item/drink_chabashira.png" alt="otya">
+            <img class="favorite" src="/img/item/heart_small.png" alt="favorite">
         </div>
     </div>
 @endsection

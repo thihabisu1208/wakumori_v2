@@ -1,0 +1,32 @@
+svg {
+    width: 100%;
+}
+
+.saruIntro{
+    #story1{
+        #saruWords{
+            opacity: 0;
+        }
+        #nabe{
+            transform-origin: center;
+        }
+    }
+
+    #story2{
+        #exclamationMark{
+            opacity: 0;
+        }
+        #usagiWords{
+            opacity: 0;
+        }
+    }
+
+    #story3{
+        #usagiWords{
+            opacity: 0;
+        }
+        #saruWords{
+            opacity: 0;
+        }
+    }
+}

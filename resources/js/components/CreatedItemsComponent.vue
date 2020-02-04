@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<!-- {{ usagicreateditems }} -->
+		<!-- Usagi -->
 		<div v-if="showItem" class="fadeIn">
 			<div class="createdItems" v-for="(createditem, index) in usagicreateditems" :key="index">
 				<a @click="completeUsagi">
@@ -8,6 +8,8 @@
 				</a>
 			</div>
 		</div>
+
+		<!-- Kuma -->
 		<div v-if="showItem2" class="fadeIn">
 			<div class="createdItems">
 				<a @click="completeKuma1">
@@ -70,6 +72,14 @@
 				</a>
 			</div>
 		</div>
+
+		<div v-if="risuShowItem7" class="fadeIn">
+			<div class="createdItems">
+				<a @click="incompleteRisu5">
+					<img src="/img/item/drink_chabashira.png" alt />
+				</a>
+			</div>
+		</div>
 		<!-- <div v-if="kumaItemModal2" class="fadeIn">
 			<div class="createdItems">
 				<a @click="completeKuma">
@@ -93,6 +103,11 @@
 						:src="'/img/item/' + createditem.path + '.png'"
 						alt
 					/>
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
 					<p class="itemtextmodal">はしごができました！</p>
 				</div>
 			</modal-component>
@@ -112,6 +127,11 @@
 						src="/img/item/kagu_cushion.png"
 						alt
 					/>
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
 					<p class="itemtextmodal">クッションができました！</p>
 				</div>
 			</modal-component>
@@ -131,7 +151,67 @@
 						src="/img/item/elevator_door_close.png"
 						alt
 					/>
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
 					<p class="itemtextmodal">エレベーターができました！</p>
+				</div>
+			</modal-component>
+		</transition>
+		<transition name="slide-fade">
+			<modal-component
+				class="modal backHasigo"
+				id="itemModal"
+				:showing="risuItemModal6"
+				v-if="risucreateditems"
+			>
+				<div class="itemModal">
+					<i @click="risuItemModal6 = !risuItemModal6" class="fas fa-times"></i>
+
+					<img
+						@click="risuItemModal6 = !risuItemModal6"
+						class="hashigo"
+						src="/img/item/airplane_ornithopter.png"
+						alt
+					/>
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
+
+					<p class="itemtextmodal">飛行機ができました！</p>
+				</div>
+			</modal-component>
+		</transition>
+
+			<transition name="slide-fade">
+			<modal-component
+				class="modal backHasigo"
+				id="itemModal"
+				:showing="risuItemModal5"
+				v-if="risucreateditems"
+			>
+				<div class="itemModal">
+					<i @click="risuItemModal5 = !risuItemModal5" class="fas fa-times"></i>
+
+					<img
+						@click="risuItemModal5 = !risuItemModal5"
+						class="hashigo"
+						src="/img/item/kikyuu.png"
+						alt
+					/>
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
+
+					<p class="itemtextmodal">気球ができました！</p>
 				</div>
 			</modal-component>
 		</transition>
@@ -245,7 +325,10 @@
 				risuShowItem3: false,
 				risuShowItem4: false,
 				risuShowItem5: false,
-				risuShowItem6: false
+				risuItemModal5: false,
+				risuShowItem6: false,
+				risuItemModal6:false,
+				risuShowItem7: false
 			};
 		},
 		created() {
@@ -277,6 +360,9 @@
 				if (this.allItems.id1 == 2 && this.allItems.id2 == 1) {
 					this.itemModal = !this.itemModal;
 					// EventBus.$emit("addedItem");
+					setTimeout(() => {
+						this.createEfect();
+					}, 1000)
 				}
 
 				if (this.allItems.id2 == 2) {
@@ -285,10 +371,16 @@
 
 				if (this.allItems.id4 == 1 && this.allItems.id5 == 1) {
 					this.kumaItemModal2 = !this.kumaItemModal2;
+					setTimeout(() => {
+						this.createEfect();
+					},2000)
 				}
 
 				if (this.allItems.id3 == 2) {
 					this.kumaItemModal1 = !this.kumaItemModal1;
+					setTimeout(() => {
+						this.createEfect();
+					},2000)
 				}
 
 				if (this.risucreateditems) {
@@ -310,10 +402,22 @@
 
 					if(this.allItems.id7 == 1 && this.allItems.id8 == 1 && this.allItems.id9 == 1) {
 						this.risuShowItem5 = !this.risuShowItem5;
+						this.risuItemModal5 = !this.risuItemModal5;
+						setTimeout(() => {
+							this.createEfect();
+						},2000)
 					}
 
 					if(this.allItems.id4 == 1 && this.allItems.id7 == 1 && this.allItems.id9 == 1) {
 						this.risuShowItem6 = !this.risuShowItem6;
+						this.risuItemModal6 = !this.risuItemModal6;
+						setTimeout(() => {
+							this.createEfect();
+						},1000)
+					}
+
+					if(this.allItems.id7 == 1 && this.allItems.id10 == 1 && this.allItems.id11 == 1) {
+						this.risuShowItem7 = !this.risuShowItem7;
 					}
 				}
 			});
@@ -363,6 +467,13 @@
 			});
 		},
 		methods: {
+			createEfect(){
+				let tl = gsap.timeline();
+				tl.to(".efect1", { duration: 0.5, opacity: 0 });
+				tl.to(".efect2", { duration: 0.5, opacity: 1 });
+				tl.to(".efect2", { duration: 0.5, opacity: 0 });
+				tl.to(".efect1", { duration: 0.5, opacity: 1 });
+			},
 			clearSelectedItems() {
 				gsap.to(".nabe", { duration: 1, border: "transparent" });
 				gsap.to(".saruBot", { duration: 1, opacity: 0 });
@@ -511,6 +622,17 @@
 				tl.to(".elevatorClose", { duration: 0, opacity: 1, zIndex: 2 });
 				tl.to(".goDown", { duration: 2, ease: "elastic.out(1.75, 0.5)", top: "70%" });
 				tl.to(".saru", { duration:1, zIndex: 2 });
+				setTimeout(() => {
+					this.unclearModal = true;
+					this.clearSelectedItems();
+				}, 5000);
+			},
+			incompleteRisu5() {
+				let tl = gsap.timeline();
+				tl.to(".otya", { duration:1, opacity: 1 });
+				tl.to(".favorite", { duration:2.5 ,ease: "power4.out", opacity: 1 ,y:-60 ,x:30});
+				tl.to(".favorite", { duration:1, opacity: 0 });
+				tl.to(".favorite", { duration:0.5 });
 				setTimeout(() => {
 					this.unclearModal = true;
 					this.clearSelectedItems();

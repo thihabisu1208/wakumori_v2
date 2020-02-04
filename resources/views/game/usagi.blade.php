@@ -22,6 +22,10 @@
     <created-items-component :nowgame="{{ $completedGameUsagi }}" :usagicreateditems="{{ $usagiCreatedItems }}"></created-items-component>
 @endsection
 
+@section('forward')
+    <forward-component :completedgameusagi="{{ $gameUsagi }}"></forward-component>
+@endsection
+
 @section('ifGame')
     @if ($completedGameUsagi->first()->completed == 0)
     <a href="/completeGame">

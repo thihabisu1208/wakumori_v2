@@ -144,11 +144,14 @@ i{
   background-repeat: no-repeat;
   background-size: cover;
     #top{
+      position: relative;
       width: 100vw;
       height: 100vh;
       background:  url('~/img/login.png') 100% center;
       background-repeat: no-repeat;
       background-size: cover;
+      z-index: 2;
+      overflow: hidden;
 
     h1 {
       font-size: 6rem;
@@ -156,7 +159,7 @@ i{
       padding: 0 0 5vh;
 
       @include tablet {
-        font-size: 4rem;
+        font-size: 3.3rem;
       }
     }
     p.buttons a{
@@ -164,7 +167,7 @@ i{
       font-size: 5rem;
 
       @include tablet {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
     }
   }
@@ -244,8 +247,13 @@ i{
     }
   }
 }
+
+@import 'welcome';
+
 @import 'game';
 
 @import 'gameContent';
 
 @import 'helloSaru';
+
+@import 'saruIntro';

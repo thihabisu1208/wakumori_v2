@@ -22,6 +22,10 @@
     <created-items-component :nowgame="{{ $completedGameKuma }}" :kumacreateditems="{{ $kumaItems }}"></created-items-component>
 @endsection
 
+@section('forward')
+    <forward-component :completedgamekuma="{{ $gameKuma }}"></forward-component>
+@endsection
+
 @section('ifGame')
     @if ($completedGameKuma->first()->completed == 1)
     <a href="#">

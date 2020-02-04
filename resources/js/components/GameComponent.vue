@@ -74,6 +74,16 @@
 				this.selectedItemList = selectedItems;
 			});
 		},
+		mounted() {
+			let itemList = document.querySelector(".itemList");
+			if(this.risuitems.length > 10) {
+				itemList.classList.remove("itemList")
+				itemList.classList.add("itemList3");
+			} else {
+				itemList.classList.remove("itemList3");
+				itemList.classList.add("itemList")
+			}
+		},
 		methods: {
 			addSelectedItems() {
 				// this.selectedItems.push(this.filteredItems)
@@ -91,13 +101,6 @@
 			selectedItemList: {
 				handler(val) {
 					EventBus.$emit("checkAddedItems");
-				},
-				deep: true
-			},
-			items: {
-				handler(val1, val2) {
-					console.log(val1);
-					console.log(val2);
 				},
 				deep: true
 			}

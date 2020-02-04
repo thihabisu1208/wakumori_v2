@@ -8,7 +8,7 @@
 		<p v-else-if="gamekuma" class="saruText">くまさんがビルの上にのぼっておりられなくなったようだ！</p>
 		<p v-else-if="gamerisu" class="saruText">
 			りすを助けよう！
-			<br /> 今回は自由にやってみよう！
+			<br />今回は自由にやってみよう！
 		</p>
 	</div>
 </template>
@@ -59,7 +59,7 @@
 
 				EventBus.$on("showKumaHint2", () => {
 					this.kumaAnimation4();
-				})
+				});
 			} else if (
 				this.gamekuma &&
 				this.kumacreateditems[3] &&
@@ -69,7 +69,7 @@
 
 				EventBus.$on("showKumaHint4", () => {
 					this.kumaAnimation6();
-				})
+				});
 			}
 
 			if (this.gamerisu) {
@@ -180,7 +180,14 @@
 				tl.to(".saruText", {
 					duration: 0,
 					delay: -1,
-					text: "ひもを２つ入れるともっと強くなるよ！"
+					text: "今ある道具じゃ、助けられるアイテムは作れないかも？"
+				});
+				tl.to(".saruText", { duration: 1, opacity: 0 });
+				tl.to(".saruText", { duration: 1, opacity: 1 });
+				tl.to(".saruText", {
+					duration: 0,
+					delay: -1,
+					text: "同じアイテムを合わせたらもっと強い道具が作れるよ！ひもで試そう"
 				});
 				return tl;
 			},
@@ -189,13 +196,13 @@
 			},
 			kumaAnimation2() {
 				let tl = gsap.timeline();
-				tl.to(".saruText", { duration: 1, opacity: 0 });
-				tl.to(".saruText", { duration: 1, opacity: 1 });
-				tl.to(".saruText", {
-					duration: 0,
-					delay: -1,
-					text: "前回と同じく鍋をクリックしてみよう！"
-				});
+				// tl.to(".saruText", { duration: 1, opacity: 0 });
+				// tl.to(".saruText", { duration: 1, opacity: 1 });
+				// tl.to(".saruText", {
+				// 	duration: 0,
+				// 	delay: -1,
+				// 	text: "同じアイテムを合わせたらもっと強い道具が作れるよ！ひもで試そう"
+				// });
 				return tl;
 			},
 			addKumaAnimation3() {
@@ -209,15 +216,15 @@
 				tl.to(".saruText", {
 					duration: 1,
 					delay: -2,
-					text: "強い縄ができたね！"
-				});
-				tl.to(".saruText", { duration: 3, opacity: 0 });
-				tl.to(".saruText", { duration: 1, opacity: 1 });
-				tl.to(".saruText", {
-					duration: 1,
-					delay: -2,
 					text: "えだもひもと同じく二つ合わせると強くなるんだよ！"
 				});
+				// tl.to(".saruText", { duration: 3, opacity: 0 });
+				// tl.to(".saruText", { duration: 1, opacity: 1 });
+				// tl.to(".saruText", {
+				// 	duration: 1,
+				// 	delay: -2,
+				// 	text: "えだもひもと同じく二つ合わせると強くなるんだよ！"
+				// });
 				return tl;
 			},
 			kumaAnimation4() {
@@ -237,9 +244,13 @@
 			},
 			kumaAnimation5() {
 				let tl = gsap.timeline();
-				tl.to(".saruBot", { duration: 1, delay: 1, opacity: 1, y: 200});
+				tl.to(".saruBot", { duration: 1, delay: 1, opacity: 1, y: 200 });
 				tl.to(".saruText", { duration: 1, opacity: 1 });
-				tl.to(".saruText", { duration: 0, delay: -1, text: "作った新しいモノ２つを混ぜてみて！"})
+				tl.to(".saruText", {
+					duration: 0,
+					delay: -1,
+					text: "作った新しいモノ２つを混ぜてみて！"
+				});
 			},
 			// Risu Game Animations
 			addRisuAnimation1() {
@@ -250,7 +261,7 @@
 				tl.to(".saruBot", { duration: 1, delay: 2, opacity: 1, y: 200 });
 				tl.to(".saruText", { duration: 1, opacity: 1 });
 				return tl;
-			},
+			}
 		}
 	};
 </script>

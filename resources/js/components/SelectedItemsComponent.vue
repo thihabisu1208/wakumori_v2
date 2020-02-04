@@ -44,17 +44,21 @@
 
 		<!-- Risu -->
 		<p v-else-if="risucreateditems">
-			<img v-if="risuIshi != true && risuNuno != true && !risucreateditems[6] && !risucreateditems[7] && !risucreateditems[8]" class="nabe" @click="createItem" src="/img/nabe.png" />
-			<a href="/createrisuitem1" v-else-if="risuIshi == true && risuNuno != true && !risucreateditems[6] && !risucreateditems[7] && !risucreateditems[8]">
+			<img v-if="risuIshi != true && risuNuno != true && !risucreateditems[8] && !risucreateditems[9] && !risucreateditems[10]" class="nabe" @click="createItem" src="/img/nabe.png" />
+
+			<a href="/createrisuitem1" v-else-if="risuIshi == true && risuNuno != true && !risucreateditems[8] && !risucreateditems[9] && !risucreateditems[10]">
 				<img class="nabe" src="/img/nabe.png" />
 			</a>
-			<a href="/createrisuitem2" v-else-if="risuIshi != true && risuNuno != true && risucreateditems[6] && !risucreateditems[7] && !risucreateditems[8]">
+
+			<a href="/createrisuitem2" v-else-if="risuIshi != true && risuNuno != true && risucreateditems[8] && !risucreateditems[9] && !risucreateditems[10]">
 				<img class="nabe" src="/img/nabe.png" />
 			</a>
-			<a href="/createrisuitem3" v-else-if="risuIshi != true && risuNuno == true && risucreateditems[6] && risucreateditems[7] && !risucreateditems[8]">
+
+			<a href="/createrisuitem3" v-else-if="risuIshi != true && risuNuno == true && risucreateditems[8] && risucreateditems[9] && !risucreateditems[10]">
 				<img class="nabe" src="/img/nabe.png" />
 			</a>
-			<img v-if="risuIshi != true && risuNuno != true && risucreateditems[6] && risucreateditems[7]" class="nabe" @click="createItem" src="/img/nabe.png" />
+
+			<img v-if="risuIshi != true && risuNuno != true && risucreateditems[8] && risucreateditems[9]" class="nabe" @click="createItem" src="/img/nabe.png" />]
 		</p>
 	</div>
 </template>
@@ -96,6 +100,7 @@
 			clearSelectedItems() {
 				this.selectedItems = [];
 				EventBus.$emit("clearSelectedItem", this.selectedItems);
+				location.reload();
 			},
 			createItem() {
 				EventBus.$emit("createItem", "ok");

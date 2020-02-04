@@ -3,6 +3,11 @@ require("./bootstrap");
 window.Vue = require("vue");
 
 Vue.component(
+    "welcome-component",
+    require("./components/WelcomeComponent.vue").default
+);
+
+Vue.component(
     "modal-component",
     require("./components/ModalComponent.vue").default
 );

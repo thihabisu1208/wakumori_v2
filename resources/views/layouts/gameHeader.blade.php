@@ -14,5 +14,6 @@
         {{-- <p class="moveBtn buttons">
             @yield('ifGame')
         </p> --}}
-        <forward-component :completedgameusagi="{{ $completedGameUsagi }}" :completedgamekuma="{{ $completedGameKuma }}"  :completedgamerisu="{{ $completedGameRisu }}" ></forward-component>
+
+        @yield('forward')
 @endsection

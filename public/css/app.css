@@ -6063,11 +6063,14 @@ i {
 }
 
 .backgroundPng #top {
+  position: relative;
   width: 100vw;
   height: 100vh;
   background: url("/img/login.png") 100% center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: 2;
+  overflow: hidden;
 }
 
 .backgroundPng #top h1 {
@@ -6078,7 +6081,7 @@ i {
 
 @media (max-width: 1024px) {
   .backgroundPng #top h1 {
-    font-size: 4rem;
+    font-size: 3.3rem;
   }
 }
 
@@ -6089,7 +6092,7 @@ i {
 
 @media (max-width: 1024px) {
   .backgroundPng #top p.buttons a {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -6187,6 +6190,40 @@ i {
   font-size: 30px;
 }
 
+.welcomeGsap {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: -1;
+}
+
+.welcomeGsap .bird {
+  width: 10vw;
+  position: absolute;
+  bottom: 50%;
+  right: -10%;
+}
+
+.welcomeGsap .bird2 {
+  width: 10vw;
+  position: absolute;
+  bottom: 60%;
+  right: -10%;
+}
+
+.welcomeGsap .welcomeSaru {
+  width: 10vw;
+  position: absolute;
+  bottom: -25%;
+  left: 10%;
+}
+
+@media (max-width: 1024px) {
+  .welcomeGsap .welcomeSaru {
+    bottom: -18%;
+  }
+}
+
 .container {
   margin: 10vh auto 0;
   width: 95%;
@@ -6274,10 +6311,16 @@ img {
   border-right: 3px solid #e0e0e0;
   border-left: 3px solid #e0e0e0;
   border-top: 3px solid #e0e0e0;
+  border-bottom: 3px solid #e0e0e0;
+}
+
+#contentGames .contentGamesContent .contentGame.contentGame1:hover {
+  border-bottom: transparent;
 }
 
 @media (max-width: 1024px) {
   #contentGames .contentGamesContent .contentGame.contentGame1 {
+    border-bottom: transparent;
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
   }
@@ -6364,6 +6407,10 @@ img {
   font-size: 1.4rem;
 }
 
+.itemtextmodal {
+  text-align: center;
+}
+
 .backHasigo {
   position: absolute;
   top: 0;
@@ -6401,6 +6448,48 @@ img {
   color: #000;
   border-radius: 15px;
   background-color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.itemModal {
+  position: relative;
+}
+
+.itemModal .kirakira1 {
+  width: 20%;
+  position: absolute;
+  right: 7%;
+  top: 20%;
+}
+
+.itemModal .kirakira2 {
+  width: 20%;
+  position: absolute;
+  left: 7%;
+  bottom: 20%;
+}
+
+.itemModal .kirakira3 {
+  width: 20%;
+  position: absolute;
+  right: 7%;
+  bottom: 20%;
+}
+
+.itemModal .kirakira4 {
+  width: 20%;
+  position: absolute;
+  left: 7%;
+  top: 20%;
+}
+
+.itemModal .efect1 {
+  opacity: 1;
+}
+
+.itemModal .efect2 {
+  opacity: 0;
 }
 
 #gameContent {
@@ -6449,7 +6538,7 @@ img {
   grid-area: gameOrders;
 }
 
-.gameOrders p {
+.gameOrders p.orderTitle {
   margin: 0;
   padding: 10px;
   text-align: center;
@@ -6466,16 +6555,20 @@ img {
 }
 
 .gameOrders .createdItems {
-  display: grid;
-  width: 100%;
-  margin: 0 auto;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 50px;
+  width: 30%;
+  margin: 5vh auto;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .gameOrders .createdItems {
+    width: 50%;
+  }
 }
 
 .gameOrders .createdItems img {
   border: 5px solid #fff;
-  max-width: 50%;
+  width: 50%;
   height: auto;
 }
 
@@ -6731,6 +6824,7 @@ img {
 .gameData .gameRisu .elevatorOpen,
 .gameData .gameRisu .kikyuu,
 .gameData .gameRisu .koukyuu,
+.gameData .gameRisu .otya,
 .gameData .gameRisu .saru {
   opacity: 0;
   position: absolute;
@@ -6819,6 +6913,25 @@ img {
   }
 }
 
+.gameData .gameRisu .otya {
+  left: 9%;
+  top: 82%;
+  width: 45px;
+}
+
+.gameData .gameRisu .otya .favorite {
+  opacity: 0;
+  position: absolute;
+  bottom: 80%;
+  right: 6%;
+}
+
+@media (max-width: 1024px) {
+  .gameData .gameRisu .otya {
+    width: 33px;
+  }
+}
+
 .gameItems {
   width: 100%;
   position: relative;
@@ -6853,7 +6966,9 @@ img {
 }
 
 .gameItems .selectItem .nabe {
-  padding: 10px;
+  position: relative;
+  z-index: 2;
+  padding: 0;
   border: 5px solid #fff;
 }
 
@@ -6916,6 +7031,33 @@ img {
   }
 }
 
+.gameItems .itemList3 {
+  width: 90%;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .gameItems .itemList3 {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+.gameItems .itemList3 img {
+  cursor: url("/img/saruFace22.png"), pointer;
+  width: 50%;
+  height: auto;
+  padding: 10px;
+  border: 5px solid #fff;
+  border-radius: 16px;
+  box-shadow: -5px 5px 3px rgba(0, 0, 0, 0.25);
+}
+
+.gameItems .itemList3 p {
+  text-align: center;
+}
+
 .gameItems .itemList {
   width: 90%;
   display: grid;
@@ -6948,9 +7090,16 @@ img {
   height: 150px;
   position: fixed;
   bottom: 5%;
-  left: 0;
+  left: 5%;
   overflow: hidden;
   grid-template-columns: repeat(3, 1fr);
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .gameItems .itemList2 {
+    left: 0;
+  }
 }
 
 .gameItems .itemList2 img {
@@ -7042,5 +7191,34 @@ img {
 
 .elseSaruHello {
   display: none;
+}
+
+svg {
+  width: 100%;
+}
+
+.saruIntro #story1 #saruWords {
+  opacity: 0;
+}
+
+.saruIntro #story1 #nabe {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.saruIntro #story2 #exclamationMark {
+  opacity: 0;
+}
+
+.saruIntro #story2 #usagiWords {
+  opacity: 0;
+}
+
+.saruIntro #story3 #usagiWords {
+  opacity: 0;
+}
+
+.saruIntro #story3 #saruWords {
+  opacity: 0;
 }
 
