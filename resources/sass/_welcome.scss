@@ -1,24 +1,43 @@
 
 .welcomeGsap{
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        z-index: -1;
+        .bird{
+            width: 12vw;
+            position: absolute;
+            bottom: 50%;
+            right: -12%;
+        }
+        .bird2{
+            width: 12vw;
+            position: absolute;
+            bottom: 60%;
+            right: -12%;
+        }
+        .welcomeSaru{
+            width: 10vw;
+            position: absolute;
+            bottom: -17%;
+            left: 10%;
+        }
+    }
+.welcomeBackgroundGsap{
     width: 100vw;
     height: 100vh;
-    position: relative;
-    .bird{
-        width: 10vw;
+    position: absolute;
+    top: 0;
+    .WelcomeKumo{
+        width: 15vw;
         position: absolute;
-        bottom: 50%;
-        right: -10%;
+        top: 15%;
+        left: -15%;
     }
-    .bird2{
-        width: 10vw;
+    .WelcomeKumo2{
+        width: 17vw;
         position: absolute;
-        bottom: 60%;
-        right: -10%;
-    }
-    .welcomeSaru{
-        width: 10vw;
-        position: absolute;
-        bottom: -17%;
-        left: 10%;
+        top: 17%;
+        right: -17%;
     }
 }

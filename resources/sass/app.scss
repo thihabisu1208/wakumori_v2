@@ -143,12 +143,16 @@ i{
   background:  url('~/img/bg_login.png') 100% center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
     #top{
       width: 100vw;
       height: 100vh;
       background:  url('~/img/login.png') 100% center;
       background-repeat: no-repeat;
       background-size: cover;
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
 
     h1 {
       font-size: 6rem;

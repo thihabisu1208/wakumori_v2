@@ -31,6 +31,8 @@
                     </div>
                     <welcome-component></welcome-component>
                 </div>
+                <welcome-background-component></welcome-background-component>
+
              </div>
         </div>
     </body>

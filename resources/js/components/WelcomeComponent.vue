@@ -1,11 +1,10 @@
 <template>
   <div class="welcomeGsap">
 
-    <img class="bird" src="/img/item/hato_olive.png" alt="">
-    <img class="bird2" src="/img/item/hato_olive.png" alt="">
+    <img class="bird" src="/img/hato_mure.png" alt="とり">
+    <img class="bird2" src="/img/hato_mure.png" alt="とり">
 
-
-    <img class="welcomeSaru" src="/img/saru.png" alt="">
+    <img class="welcomeSaru" src="/img/saru.png" alt="さる">
 
   </div>
 </template>
@@ -20,10 +19,12 @@ export default {
             setTimeout(() => {
                 var tlbird = gsap.timeline();
                     tlbird.to(".bird", {duration:7, y:-1000, x:-1800});
-                    tlbird.to(".bird2", {duration:7, delay: -7, y:-900, x:-2500});
+                    tlbird.to(".bird2", {duration:14, delay: -7, y:-900, x:-2800});
+
                     setTimeout(() => {
                             tlbird.repeat(-1);
-                            }, 10000);
+                            tlbird2.repeat(-1);
+                            }, 8000);
                     }, 2000);
             setTimeout(() => {
                 var tlsaru = gsap.timeline({repeat:1, yoyo:true});
@@ -32,7 +33,6 @@ export default {
 
 
                     }, 5000);
-
 
 
         }

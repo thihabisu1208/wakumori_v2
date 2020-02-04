@@ -7,6 +7,10 @@ Vue.component(
     "welcome-component",
     require("./components/WelcomeComponent.vue").default
 );
+Vue.component(
+    "welcome-background-component",
+    require("./components/WelcomeBackgroundComponent.vue").default
+);
 
 Vue.component(
     "modal-component",

@@ -6060,6 +6060,7 @@ i {
   background: url("/img/bg_login.png") 100% center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 .backgroundPng #top {
@@ -6068,6 +6069,9 @@ i {
   background: url("/img/login.png") 100% center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
 }
 
 .backgroundPng #top h1 {
@@ -6191,20 +6195,21 @@ i {
   width: 100vw;
   height: 100vh;
   position: relative;
+  z-index: -1;
 }
 
 .welcomeGsap .bird {
-  width: 10vw;
+  width: 12vw;
   position: absolute;
   bottom: 50%;
-  right: -10%;
+  right: -12%;
 }
 
 .welcomeGsap .bird2 {
-  width: 10vw;
+  width: 12vw;
   position: absolute;
   bottom: 60%;
-  right: -10%;
+  right: -12%;
 }
 
 .welcomeGsap .welcomeSaru {
@@ -6212,6 +6217,27 @@ i {
   position: absolute;
   bottom: -17%;
   left: 10%;
+}
+
+.welcomeBackgroundGsap {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+
+.welcomeBackgroundGsap .WelcomeKumo {
+  width: 15vw;
+  position: absolute;
+  top: 15%;
+  left: -15%;
+}
+
+.welcomeBackgroundGsap .WelcomeKumo2 {
+  width: 17vw;
+  position: absolute;
+  top: 17%;
+  right: -17%;
 }
 
 .container {
