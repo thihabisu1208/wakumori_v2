@@ -2681,6 +2681,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["completedgameusagi", "completedgamekuma", "completedgamerisu"],
@@ -3603,16 +3619,30 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     welcome: function welcome() {
       var tlkumo = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline();
-      tlkumo.to(".WelcomeKumo", {
-        duration: 25,
-        x: 1800
-      });
-      tlkumo.to(".WelcomeKumo2", {
-        duration: 25,
-        x: -1800
-      });
-      setTimeout(function () {
-        tlkumo.repeat(-1);
+
+      if (window.innerWidth > 1024) {
+        tlkumo.to(".WelcomeKumo", {
+          duration: 20,
+          x: window.innerWidth + 500
+        });
+        tlkumo.to(".WelcomeKumo2", {
+          duration: 20,
+          delay: -7,
+          x: -window.innerWidth - 500
+        });
+      } else if (window.innerWidth <= 1024) {
+        tlkumo.to(".WelcomeKumo", {
+          duration: 20,
+          x: window.innerWidth + 400
+        });
+        tlkumo.to(".WelcomeKumo2", {
+          duration: 20,
+          delay: -7,
+          x: -window.innerWidth - 400
+        });
+      }
+
+      setTimeout(function () {// tlkumo.repeat(-1);
       }, 1000);
     }
   },
@@ -3665,7 +3695,6 @@ __webpack_require__.r(__webpack_exports__);
         });
         setTimeout(function () {
           tlbird.repeat(-1);
-          tlbird2.repeat(-1);
         }, 8000);
       }, 2000);
       setTimeout(function () {
@@ -3676,12 +3705,12 @@ __webpack_require__.r(__webpack_exports__);
         tlsaru.to(".welcomeSaru", {
           duration: 0.7,
           ease: "back.out(3)",
-          y: -100
+          y: -200
         });
         tlsaru.to(".welcomeSaru", {
           duration: 3,
           ease: "back.out(3)",
-          y: -100
+          y: -200
         });
       }, 5000);
     }
@@ -49904,29 +49933,50 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("p", { staticClass: "moveBtn buttons" }, [
-    _vm.completedUsagi == true
-      ? _c("a", { attrs: { href: "/completeGame" } }, [
-          _vm._v("\n\t\tすすむ\n\t\t"),
-          _c("i", {
-            staticClass: "fas fa-arrow-right",
-            staticStyle: { "padding-left": "10px" }
-          })
+    _vm.completedgameusagi
+      ? _c("span", [
+          _vm.completedUsagi == true
+            ? _c("a", { attrs: { href: "/home" } }, [
+                _vm._v("\n\t\t\tすすむ\n\t\t\t"),
+                _c("i", {
+                  staticClass: "fas fa-arrow-right",
+                  staticStyle: { "padding-left": "10px" }
+                })
+              ])
+            : _c("span", [
+                _c("i", { staticClass: "fas fa-hammer" }),
+                _vm._v("作れるもの : 1 ")
+              ])
         ])
-      : _vm.completedKuma == true
-      ? _c("a", { attrs: { href: "/completeGame1" } }, [
-          _vm._v("\n\t\tすすむ\n\t\t"),
-          _c("i", {
-            staticClass: "fas fa-arrow-right",
-            staticStyle: { "padding-left": "10px" }
-          })
+      : _vm.completedgamekuma
+      ? _c("span", [
+          _vm.completedKuma == true
+            ? _c("a", { attrs: { href: "/home" } }, [
+                _vm._v("\n\t\t\tすすむ\n\t\t\t"),
+                _c("i", {
+                  staticClass: "fas fa-arrow-right",
+                  staticStyle: { "padding-left": "10px" }
+                })
+              ])
+            : _c("span", [
+                _c("i", { staticClass: "fas fa-hammer" }),
+                _vm._v("作れるもの : 2 ")
+              ])
         ])
-      : _vm.completedRisu == true
-      ? _c("a", { attrs: { href: "/completeGame2" } }, [
-          _vm._v("\n\t\tすすむ\n\t\t"),
-          _c("i", {
-            staticClass: "fas fa-arrow-right",
-            staticStyle: { "padding-left": "10px" }
-          })
+      : _vm.completedgamerisu
+      ? _c("span", [
+          _vm.completedRisu == true
+            ? _c("a", { attrs: { href: "/home" } }, [
+                _vm._v("\n\t\t\tすすむ\n\t\t\t"),
+                _c("i", {
+                  staticClass: "fas fa-arrow-right",
+                  staticStyle: { "padding-left": "10px" }
+                })
+              ])
+            : _c("span", [
+                _c("i", { staticClass: "fas fa-hammer" }),
+                _vm._v("作れるもの : 探してみよう")
+              ])
         ])
       : _vm._e()
   ])

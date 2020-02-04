@@ -1,17 +1,33 @@
 <template>
 	<p class="moveBtn buttons">
-		<a href="/completeGame" v-if="completedUsagi == true">
-			すすむ
-			<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
-		</a>
-		<a href="/completeGame1" v-else-if="completedKuma == true">
-			すすむ
-			<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
-		</a>
-		<a href="/completeGame2" v-else-if="completedRisu == true">
-			すすむ
-			<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
-		</a>
+
+		<!-- Usagi Forward -->
+		<span v-if="completedgameusagi">
+			<a href="/home" v-if="completedUsagi == true">
+				すすむ
+				<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
+			</a>
+			
+			<span v-else="completedUsagi == false"><i class="fas fa-hammer"></i>作れるもの : 1 </span>
+		</span>
+
+		<!-- Kuma Forward -->
+		<span v-else-if="completedgamekuma">
+			<a href="/home" v-if="completedKuma == true">
+				すすむ
+				<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
+			</a>
+			<span v-else="completedKuma == false"><i class="fas fa-hammer"></i>作れるもの : 2 </span>
+		</span>
+
+		<!-- Risu Forward -->
+		<span v-else-if="completedgamerisu">
+			<a href="/home" v-if="completedRisu == true">
+				すすむ
+				<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
+			</a>
+			<span v-else="completedRisu == false"><i class="fas fa-hammer"></i>作れるもの : 探してみよう</span>
+		</span>
 	</p>
 </template>
 

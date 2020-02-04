@@ -19,7 +19,7 @@
         .welcomeSaru{
             width: 10vw;
             position: absolute;
-            bottom: -17%;
+            bottom: -25%;
             left: 10%;
         }
     }
@@ -28,10 +28,11 @@
     height: 100vh;
     position: absolute;
     top: 0;
+    overflow: hidden;
     .WelcomeKumo{
         width: 15vw;
         position: absolute;
-        top: 15%;
+        top: 13%;
         left: -15%;
     }
     .WelcomeKumo2{

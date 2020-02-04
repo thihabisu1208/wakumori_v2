@@ -6215,7 +6215,7 @@ i {
 .welcomeGsap .welcomeSaru {
   width: 10vw;
   position: absolute;
-  bottom: -17%;
+  bottom: -25%;
   left: 10%;
 }
 
@@ -6224,12 +6224,13 @@ i {
   height: 100vh;
   position: absolute;
   top: 0;
+  overflow: hidden;
 }
 
 .welcomeBackgroundGsap .WelcomeKumo {
   width: 15vw;
   position: absolute;
-  top: 15%;
+  top: 13%;
   left: -15%;
 }
 
@@ -6463,6 +6464,10 @@ img {
 
 .itemModal .efect2 {
   opacity: 0;
+}
+
+.fa-hammer {
+  padding-right: 10px;
 }
 
 #gameContent {

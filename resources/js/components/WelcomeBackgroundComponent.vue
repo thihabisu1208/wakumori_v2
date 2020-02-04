@@ -16,10 +16,15 @@ export default {
         welcome(){
 
             var tlkumo = gsap.timeline();
-                tlkumo.to(".WelcomeKumo", {duration:25, x:1800});
-                tlkumo.to(".WelcomeKumo2", {duration:25, x:-1800});
+            if( window.innerWidth > 1024 ){
+                tlkumo.to(".WelcomeKumo", {duration:20, x:window.innerWidth + 500});
+                tlkumo.to(".WelcomeKumo2", {duration:20, delay:-7, x:-window.innerWidth - 500});
+                }else if(window.innerWidth <= 1024){
+                tlkumo.to(".WelcomeKumo", {duration:20, x:window.innerWidth + 400});
+                tlkumo.to(".WelcomeKumo2", {duration:20, delay:-7, x:-window.innerWidth - 400});
+                }
                 setTimeout(() => {
-                            tlkumo.repeat(-1);
+                            // tlkumo.repeat(-1);
                             }, 1000);
         }
 

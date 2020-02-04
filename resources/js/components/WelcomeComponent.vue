@@ -23,13 +23,12 @@ export default {
 
                     setTimeout(() => {
                             tlbird.repeat(-1);
-                            tlbird2.repeat(-1);
                             }, 8000);
                     }, 2000);
             setTimeout(() => {
                 var tlsaru = gsap.timeline({repeat:1, yoyo:true});
-                    tlsaru.to(".welcomeSaru", { duration: 0.7, ease: "back.out(3)", y: -100 });
-                    tlsaru.to(".welcomeSaru", { duration: 3, ease: "back.out(3)", y: -100 });
+                    tlsaru.to(".welcomeSaru", { duration: 0.7, ease: "back.out(3)", y: -200 });
+                    tlsaru.to(".welcomeSaru", { duration: 3, ease: "back.out(3)", y: -200 });
 
 
                     }, 5000);

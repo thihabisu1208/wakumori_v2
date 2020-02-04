@@ -33,7 +33,7 @@
                 </div>
                 <welcome-background-component></welcome-background-component>
 
-             </div>
+            </div>
         </div>
     </body>
 </html>
