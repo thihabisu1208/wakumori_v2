@@ -96,18 +96,18 @@
 				v-if="usagicreateditems"
 			>
 				<div class="itemModal" v-for="(createditem, index) in usagicreateditems" :key="index">
-					<i @click="itemModal = !itemModal" class="fas fa-times"></i>
+					<!-- <i @click="itemModal = !itemModal" class="fas fa-times"></i> -->
 					<img
 						@click="itemModal = !itemModal; showUsagiHint3(); "
 						class="hashigo"
 						:src="'/img/item/' + createditem.path + '.png'"
 						alt
 					/>
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1" />
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1" />
 
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2" />
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2" />
 					<p class="itemtextmodal">はしごができました！</p>
 				</div>
 			</modal-component>
@@ -120,18 +120,18 @@
 				v-if="kumacreateditems"
 			>
 				<div class="itemModal">
-					<i @click="kumaItemModal1 = !kumaItemModal1" class="fas fa-times"></i>
+					<!-- <i @click="kumaItemModal1 = !kumaItemModal1" class="fas fa-times"></i> -->
 					<img
 						@click="kumaItemModal1 = !kumaItemModal1; showKumaHint3(); "
 						class="hashigo"
 						src="/img/item/kagu_cushion.png"
 						alt
 					/>
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1" />
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1" />
 
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2" />
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2" />
 					<p class="itemtextmodal">クッションができました！</p>
 				</div>
 			</modal-component>
@@ -144,18 +144,18 @@
 				v-if="kumacreateditems"
 			>
 				<div class="itemModal">
-					<i @click="kumaItemModal2 = !kumaItemModal2" class="fas fa-times"></i>
+					<!-- <i @click="kumaItemModal2 = !kumaItemModal2" class="fas fa-times"></i> -->
 					<img
 						@click="kumaItemModal2 = !kumaItemModal2; showKumaHint4(); "
 						class="hashigo"
 						src="/img/item/elevator_door_close.png"
 						alt
 					/>
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1" />
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1" />
 
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2" />
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2" />
 					<p class="itemtextmodal">エレベーターができました！</p>
 				</div>
 			</modal-component>
@@ -168,7 +168,7 @@
 				v-if="risucreateditems"
 			>
 				<div class="itemModal">
-					<i @click="risuItemModal6 = !risuItemModal6" class="fas fa-times"></i>
+					<!-- <i @click="risuItemModal6 = !risuItemModal6" class="fas fa-times"></i> -->
 
 					<img
 						@click="risuItemModal6 = !risuItemModal6"
@@ -177,18 +177,18 @@
 						alt
 					/>
 
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1" />
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1" />
 
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2" />
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2" />
 
 					<p class="itemtextmodal">飛行機ができました！</p>
 				</div>
 			</modal-component>
 		</transition>
 
-			<transition name="slide-fade">
+		<transition name="slide-fade">
 			<modal-component
 				class="modal backHasigo"
 				id="itemModal"
@@ -196,20 +196,15 @@
 				v-if="risucreateditems"
 			>
 				<div class="itemModal">
-					<i @click="risuItemModal5 = !risuItemModal5" class="fas fa-times"></i>
+					<!-- <i @click="risuItemModal5 = !risuItemModal5" class="fas fa-times"></i> -->
 
-					<img
-						@click="risuItemModal5 = !risuItemModal5"
-						class="hashigo"
-						src="/img/item/kikyuu.png"
-						alt
-					/>
+					<img @click="risuItemModal5 = !risuItemModal5" class="hashigo" src="/img/item/kikyuu.png" alt />
 
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1">
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira1 efect1" />
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira2 efect1" />
 
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2">
-					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2">
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira3 efect2" />
+					<img src="/img/kirakira1.png" alt="きらきら" class="kirakira4 efect2" />
 
 					<p class="itemtextmodal">気球ができました！</p>
 				</div>
@@ -290,6 +285,16 @@
 				</div>
 			</modal-component>
 		</transition>
+		<transition name="slide-fade">
+			<modal-component class="modal" :showing="errorModal">
+				<div class="modalData">
+					<h1>これは合わせられないよ</h1>
+					<p class="buttons" style="margin-top: 50px;">
+						<a @click="reload">やり直す</a>
+					</p>
+				</div>
+			</modal-component>
+		</transition>
 	</div>
 </template>
 
@@ -327,8 +332,9 @@
 				risuShowItem5: false,
 				risuItemModal5: false,
 				risuShowItem6: false,
-				risuItemModal6:false,
-				risuShowItem7: false
+				risuItemModal6: false,
+				risuShowItem7: false,
+				errorModal: false
 			};
 		},
 		created() {
@@ -357,77 +363,103 @@
 			});
 
 			EventBus.$on("createItem", () => {
-				if (this.allItems.id1 == 2 && this.allItems.id2 == 1) {
-					this.itemModal = !this.itemModal;
-					// EventBus.$emit("addedItem");
-					setTimeout(() => {
-						this.createEfect();
-					}, 1000)
+				if(this.usagicreateditems) {
+					if (this.allItems.id1 == 2 && this.allItems.id2 == 1) {
+						this.itemModal = !this.itemModal;
+						// EventBus.$emit("addedItem");
+						setTimeout(() => {
+							this.createEfect();
+						}, 1000);
+					} 
+					else {
+						this.errorModal = true;
+					}
 				}
 
-				if (this.allItems.id2 == 2) {
-					EventBus.$emit("createKumaItem1");
+				if(this.kumacreateditems) {
+					if (this.allItems.id2 == 2) {
+						EventBus.$emit("createKumaItem1");
+					}
+
+					else if (this.allItems.id4 == 1 && this.allItems.id5 == 1) {
+						this.kumaItemModal2 = !this.kumaItemModal2;
+						setTimeout(() => {
+							this.createEfect();
+						}, 2000);
+					}
+
+					else if (this.allItems.id3 == 2) {
+						this.kumaItemModal1 = !this.kumaItemModal1;
+						setTimeout(() => {
+							this.createEfect();
+						}, 2000);
+					} 
+					else {
+						this.errorModal = true;
+					}
 				}
 
-				if (this.allItems.id4 == 1 && this.allItems.id5 == 1) {
-					this.kumaItemModal2 = !this.kumaItemModal2;
-					setTimeout(() => {
-						this.createEfect();
-					},2000)
-				}
-
-				if (this.allItems.id3 == 2) {
-					this.kumaItemModal1 = !this.kumaItemModal1;
-					setTimeout(() => {
-						this.createEfect();
-					},2000)
-				}
 
 				if (this.risucreateditems) {
-					if(this.allItems.id1 == 2 && this.allItems.id2 == 1) {
+					if (this.allItems.id1 == 2 && this.allItems.id2 == 1) {
 						this.risuShowItem1 = !this.risuShowItem1;
 					}
 
-					if(this.allItems.id3 == 2) {
+					else if (this.allItems.id3 == 2) {
 						this.risuShowItem2 = !this.risuShowItem2;
 					}
 
-					if(this.allItems.id4 == 1 && this.allItems.id5 == 1) {
+					else if (this.allItems.id4 == 1 && this.allItems.id5 == 1) {
 						this.risuShowItem3 = !this.risuShowItem3;
 					}
 
-					if(this.allItems.id2 == 2 && this.allItems.id3 == 1) {
+					else if (this.allItems.id2 == 2 && this.allItems.id3 == 1) {
 						this.risuShowItem4 = !this.risuShowItem4;
 					}
 
-					if(this.allItems.id7 == 1 && this.allItems.id8 == 1 && this.allItems.id9 == 1) {
+					else if (
+						this.allItems.id7 == 1 &&
+						this.allItems.id10 == 1 &&
+						this.allItems.id3 == 1
+					) {
 						this.risuShowItem5 = !this.risuShowItem5;
 						this.risuItemModal5 = !this.risuItemModal5;
 						setTimeout(() => {
 							this.createEfect();
-						},2000)
+						}, 2000);
 					}
 
-					if(this.allItems.id4 == 1 && this.allItems.id7 == 1 && this.allItems.id9 == 1) {
+					else if (
+						this.allItems.id4 == 1 &&
+						this.allItems.id7 == 1 &&
+						this.allItems.id3 == 1
+					) {
 						this.risuShowItem6 = !this.risuShowItem6;
 						this.risuItemModal6 = !this.risuItemModal6;
 						setTimeout(() => {
 							this.createEfect();
-						},1000)
+						}, 1000);
 					}
 
-					if(this.allItems.id7 == 1 && this.allItems.id10 == 1 && this.allItems.id11 == 1) {
+					else if (
+						this.allItems.id7 == 1 &&
+						this.allItems.id8 == 1 &&
+						this.allItems.id9 == 1
+					) {
 						this.risuShowItem7 = !this.risuShowItem7;
+					}
+					else {
+						this.errorModal = true;
 					}
 				}
 			});
 
 			EventBus.$on("checkAddedItems", () => {
-				let nabe = document.querySelector('.nabe');
-				nabe.classList.add('nabeMove');
+				let nabe = document.querySelector(".nabe");
+				nabe.classList.add("nabeMove");
 				setTimeout(() => {
-					nabe.classList.remove('nabeMove');
-				}, 500)
+					nabe.classList.remove("nabeMove");
+				}, 500);
 
 				if (this.usagicreateditems) {
 					if (this.allItems.id2 == 1) {
@@ -444,10 +476,12 @@
 				if (this.kumacreateditems) {
 					if (this.allItems.id2 == 2) {
 						EventBus.$emit("showKumaHint1");
+						EventBus.$emit("showRope");
 					}
 
 					if (this.allItems.id1 == 2) {
 						EventBus.$emit("showKumaHint2");
+						EventBus.$emit("showIta");
 					}
 
 					if (this.allItems.id3 == 2) {
@@ -456,18 +490,25 @@
 				}
 
 				if (this.risucreateditems) {
-					if (this.allItems.id6 == 2) {
-						EventBus.$emit("ishi");
-					}
-
 					if (this.allItems.id3 == 3) {
 						EventBus.$emit("bignuno");
+					}
+
+					else if (this.allItems.id5 == 2) {
+						EventBus.$emit("ita");
+					}
+
+					else if (this.allItems.id6 == 2) {
+						EventBus.$emit("ishi");
 					}
 				}
 			});
 		},
 		methods: {
-			createEfect(){
+			reload() {
+				location.reload();
+			},
+			createEfect() {
 				let tl = gsap.timeline();
 				tl.to(".efect1", { duration: 0.5, opacity: 0 });
 				tl.to(".efect2", { duration: 0.5, opacity: 1 });
@@ -496,13 +537,14 @@
 					}, 3000);
 				}, 6000);
 
-				axios.post('/completeUsagiGame', 1)
+				axios
+					.post("/completeUsagiGame", 1)
 					.then(response => {
-						console.log(response)
+						console.log(response);
 					})
 					.catch(error => {
 						console.log(error);
-					})
+					});
 			},
 			showUsagiHint3() {
 				this.showItem = !this.showItem;
@@ -524,7 +566,6 @@
 						this.unclearModal = false;
 					}, 3000);
 				}, 6000);
-
 			},
 			completeKuma1() {
 				let tl = gsap.timeline();
@@ -532,8 +573,8 @@
 				tl.to(".cushion", { duration: 1, opacity: 1 });
 				tl.to(".saru", { duration: 2, left: "65%" });
 				tl.to("#kuma", { duration: 1, scaleX: -1 });
-				tl.to("#kuma", { duration: 0.5, top: "-50px"});
-				tl.to("#kuma", { duration: 1.5, right: "-10%", top: "200px"});
+				tl.to("#kuma", { duration: 0.5, top: "-50px" });
+				tl.to("#kuma", { duration: 1.5, right: "-10%", top: "140px" });
 				setTimeout(() => {
 					this.clearModal2 = true;
 					this.clearSelectedItems();
@@ -543,13 +584,14 @@
 					}, 3000);
 				}, 6000);
 
-				axios.post('/completeKumaGame', 1)
+				axios
+					.post("/completeKumaGame", 1)
 					.then(response => {
-						console.log(response)
+						console.log(response);
 					})
 					.catch(error => {
 						console.log(error);
-					})
+					});
 			},
 			completeKuma2() {
 				let tl = gsap.timeline();
@@ -557,12 +599,12 @@
 				tl.to(".elevatorOpen", { duration: 1, opacity: 1 });
 				tl.to(".saru", { duration: 2, left: "50%" });
 				tl.to(".elevatorOpen", { duration: 0, opacity: 0 });
-				tl.to(".saru", { duration:0, zIndex: 1 });
+				tl.to(".saru", { duration: 0, zIndex: 1 });
 				tl.to(".elevatorClose", { duration: 0, opacity: 1, zIndex: 2 });
 				tl.to(".goUp", { duration: 1.5, top: "40%" });
 				tl.to(".elevatorClose", { duration: 0, opacity: 0 });
 				tl.to(".elevatorOpen", { duration: 0, opacity: 1, zIndex: 1 });
-				tl.to(".saru", { duration:1, zIndex: 2 });
+				tl.to(".saru", { duration: 1, zIndex: 2 });
 				setTimeout(() => {
 					this.clearModal2 = true;
 					this.clearSelectedItems();
@@ -572,13 +614,14 @@
 					}, 3000);
 				}, 6000);
 
-				axios.post('/completeKumaGame', 1)
+				axios
+					.post("/completeKumaGame", 1)
 					.then(response => {
-						console.log(response)
+						console.log(response);
 					})
 					.catch(error => {
 						console.log(error);
-					})
+					});
 			},
 			showKumaHint3() {
 				this.showItem2 = !this.showItem2;
@@ -618,10 +661,14 @@
 				tl.to(".elevatorOpen", { duration: 1, opacity: 1 });
 				tl.to(".saru", { duration: 2, left: "45%" });
 				tl.to(".elevatorOpen", { duration: 0, opacity: 0 });
-				tl.to(".saru", { duration:0, zIndex: 1 });
+				tl.to(".saru", { duration: 0, zIndex: 1 });
 				tl.to(".elevatorClose", { duration: 0, opacity: 1, zIndex: 2 });
-				tl.to(".goDown", { duration: 2, ease: "elastic.out(1.75, 0.5)", top: "70%" });
-				tl.to(".saru", { duration:1, zIndex: 2 });
+				tl.to(".goDown", {
+					duration: 2,
+					ease: "elastic.out(1.75, 0.5)",
+					top: "70%"
+				});
+				tl.to(".saru", { duration: 1, zIndex: 2 });
 				setTimeout(() => {
 					this.unclearModal = true;
 					this.clearSelectedItems();
@@ -629,10 +676,16 @@
 			},
 			incompleteRisu5() {
 				let tl = gsap.timeline();
-				tl.to(".otya", { duration:1, opacity: 1 });
-				tl.to(".favorite", { duration:2.5 ,ease: "power4.out", opacity: 1 ,y:-60 ,x:30});
-				tl.to(".favorite", { duration:1, opacity: 0 });
-				tl.to(".favorite", { duration:0.5 });
+				tl.to(".otya", { duration: 1, opacity: 1 });
+				tl.to(".favorite", {
+					duration: 2.5,
+					ease: "power4.out",
+					opacity: 1,
+					y: -60,
+					x: 30
+				});
+				tl.to(".favorite", { duration: 1, opacity: 0 });
+				tl.to(".favorite", { duration: 0.5 });
 				setTimeout(() => {
 					this.unclearModal = true;
 					this.clearSelectedItems();
@@ -653,6 +706,15 @@
 						this.clearModal3 = false;
 					}, 3000);
 				}, 6000);
+
+				axios
+					.post("/completeRisuGame", 1)
+					.then(response => {
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
 			},
 			completeRisu2() {
 				let tl = gsap.timeline();
@@ -669,6 +731,15 @@
 						this.clearModal3 = false;
 					}, 3000);
 				}, 6000);
+
+				axios
+					.post("/completeRisuGame", 1)
+					.then(response => {
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
 			},
 			refresh() {
 				window.location.reload();

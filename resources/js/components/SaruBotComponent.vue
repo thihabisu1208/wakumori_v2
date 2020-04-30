@@ -3,7 +3,7 @@
 		<img src="/img/saru.png" alt="saruBot" />
 		<p v-if="gameusagi" class="saruText">
 			うさぎを助けよう！
-			<br />まずはひもを鍋に追加しよう〜
+			<br />まずはひもを鍋のしたに追加しよう〜
 		</p>
 		<p v-else-if="gamekuma" class="saruText">くまさんがビルの上にのぼっておりられなくなったようだ！</p>
 		<p v-else-if="gamerisu" class="saruText">
@@ -19,7 +19,7 @@
 	import { EventBus } from "../eventBus.js";
 
 	export default {
-		props: ["gameusagi", "gamekuma", "gamerisu", "kumacreateditems"],
+		props: ["gameusagi", "gamekuma", "gamerisu", "kumacreateditems", "risucreateditems"],
 		created() {
 			gsap.registerPlugin(TextPlugin);
 		},
@@ -75,17 +75,13 @@
 			if (this.gamerisu) {
 				this.addRisuAnimation1();
 
-				// EventBus.$on("showUsagiHint1", () => {
-				// 	this.addUsagiAnimation2();
-				// });
+				setTimeout(() => {
+					this.addRisuAnimation2();
 
-				// EventBus.$on("showUsagiHint2", () => {
-				// 	this.addUsagiAnimation3();
-				// });
-
-				// EventBus.$on("showUsagiHint3", () => {
-				// 	this.addUsagiAnimation4();
-				// });
+					if(this.risucreateditems[6].name == "honou") {
+						this.addRisuAnimation3();
+					}
+				}, 15000);
 			}
 		},
 		data() {
@@ -261,6 +257,24 @@
 				tl.to(".saruBot", { duration: 1, delay: 2, opacity: 1, y: 200 });
 				tl.to(".saruText", { duration: 1, opacity: 1 });
 				return tl;
+			},
+			addRisuAnimation2() {
+				this.saruBot.add(this.risuAnimation2());
+			},
+			risuAnimation2() {
+				let tl = gsap.timeline();
+				tl.to(".saruText", { duration: 1, opacity: 0 });
+				tl.to(".saruText", { duration: 1, text: "石で火が作れるよ！" });
+				tl.to(".saruText", { duration: 1, opacity: 1 });
+			},
+			addRisuAnimation3() {
+				this.saruBot.add(this.risuAnimation3());
+			},
+			risuAnimation3() {
+				let tl = gsap.timeline();
+				tl.to(".saruText", { duration: 1, opacity: 0 });
+				tl.to(".saruText", { duration: 1, text: "気球ってどういう組み合わせで作れるのかな？" });
+				tl.to(".saruText", { duration: 1, opacity: 1 });
 			}
 		}
 	};

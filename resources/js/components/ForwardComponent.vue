@@ -1,13 +1,14 @@
 <template>
 	<p class="moveBtn buttons">
-
 		<!-- Usagi Forward -->
 		<span v-if="completedgameusagi">
 			<a href="/home" v-if="completedUsagi == true">
 				すすむ
 				<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
 			</a>
-			<span v-else="completedUsagi == false">作れるもの : 1 <br> 正しいもの : 1</span>
+			<span v-else="completedUsagi == false">
+				<i class="fas fa-hammer"></i>作れるもの : 1
+			</span>
 		</span>
 
 		<!-- Kuma Forward -->
@@ -16,7 +17,9 @@
 				すすむ
 				<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
 			</a>
-			<span v-else="completedKuma == false">作れるもの : 2 <br> 正しいもの : 2</span>
+			<span v-else="completedKuma == false">
+				<i class="fas fa-hammer"></i>作れるもの : 2
+			</span>
 		</span>
 
 		<!-- Risu Forward -->
@@ -25,7 +28,9 @@
 				すすむ
 				<i class="fas fa-arrow-right" style="padding-left: 10px;"></i>
 			</a>
-			<span v-else="completedRisu == false">作れるもの : 想像次第 <br> 正しいもの : 2</span>
+			<span v-else="completedRisu == false">
+				<i class="fas fa-hammer"></i>作れるもの : 探してみよう
+			</span>
 		</span>
 	</p>
 </template>
@@ -49,6 +54,10 @@
 
 			EventBus.$on("completedKuma", () => {
 				this.completedKuma = true;
+			});
+
+			EventBus.$on("completedRisu", () => {
+				this.completedRisu = true;
 			});
 		}
 	};

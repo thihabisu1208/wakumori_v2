@@ -15,6 +15,7 @@
             <p>
                 <a style="color: #000; text-decoration: none;" href="{{ url('/home') }}">{{ config('app.name', 'Laravel') }}</a>
             </p>
+            <reset-component></reset-component>
         </div>
 
         <main class="container" id="teacher">

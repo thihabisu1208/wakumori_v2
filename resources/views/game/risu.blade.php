@@ -37,7 +37,7 @@
 
 @section('game')
     <div class="gameRisu gameAll">
-        <sarubot-component :gamerisu="{{ $gameRisu }}"></sarubot-component>
+        <sarubot-component :risucreateditems="{{ $risuItems }}" :gamerisu="{{ $gameRisu }}"></sarubot-component>
         <div class="hashigoTop">
             <img src="/img/item/hashigo_wood.png" />
         </div>

@@ -26,3 +26,23 @@
         }
     }
 }
+
+.welcomeBackgroundGsap{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    .WelcomeKumo{
+        width: 15vw;
+        position: absolute;
+        top: 13%;
+        left: -15%;
+    }
+    .WelcomeKumo2{
+        width: 17vw;
+        position: absolute;
+        top: 17%;
+        right: -17%;
+    }
+}

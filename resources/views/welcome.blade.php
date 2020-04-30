@@ -21,6 +21,8 @@
     </head>
     <body>
         <div id="game">
+            <iframe src="backgroundMusic.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+            </iframe> 
             <div class="backgroundPng">
                 <div id="top">
                     <div id="welcome">
@@ -31,6 +33,7 @@
                     </div>
                 <welcome-component></welcome-component>
                 </div>
+                <welcome-background-component></welcome-background-component>
              </div>
         </div>
     </body>

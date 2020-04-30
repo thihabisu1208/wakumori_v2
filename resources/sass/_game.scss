@@ -75,6 +75,7 @@ img {
                 border-left: 3px solid $gray;
                 border-top: 3px solid $gray;
                 border-bottom: 3px solid $gray;
+                overflow: hidden;
 
                 &:hover {
                     border-bottom: transparent;
@@ -85,9 +86,9 @@ img {
                     transform: translateY(0px);
                 }
 
-                img {
-                    border-radius: 15px 15px 0 0;
-                }
+                // img {
+                //     border-radius: 15px 15px 0 0;
+                // }
 
                 .contentGameContent {
                     transition: 0.5s;
@@ -203,38 +204,66 @@ img {
     }
 }
 
-.itemModal{
+.itemModal {
     position: relative;
-        .kirakira1{
-            width: 20%;
-            position: absolute;
-            right: 7%;
-            top: 20%;
-        }
-        .kirakira2{
-            width: 20%;
-            position: absolute;
-            left: 7%;
-            bottom: 20%;
-        }
+    .kirakira1 {
+        width: 20%;
+        position: absolute;
+        right: 7%;
+        top: 20%;
+    }
+    .kirakira2 {
+        width: 20%;
+        position: absolute;
+        left: 7%;
+        bottom: 20%;
+    }
 
-        .kirakira3{
-            width: 20%;
-            position: absolute;
-            right: 7%;
-            bottom: 20%;
-        }
-        .kirakira4{
-            width: 20%;
-            position: absolute;
-            left: 7%;
-            top: 20%;
-        }
+    .kirakira3 {
+        width: 20%;
+        position: absolute;
+        right: 7%;
+        bottom: 20%;
+    }
+    .kirakira4 {
+        width: 20%;
+        position: absolute;
+        left: 7%;
+        top: 20%;
+    }
 
-        .efect1{
-            opacity: 1;
-        }
-        .efect2{
-            opacity: 0;
-        }
+    .efect1 {
+        opacity: 1;
+    }
+    .efect2 {
+        opacity: 0;
+    }
+}
+
+.moveBtn {
+    .fa-hammer,
+    .fa-check-circle {
+        padding-right: 10px;
+    }
+}
+
+.endbutton {
+        position: absolute;
+        top: 50%;
+        right: 35%;
+        z-index: 20;
+        opacity: 0;
+    .buttons {
+        text-align: center;
+        cursor: pointer;
+        margin: 0 10px;
+        background: $buttonColor;
+        border: 1px solid $buttonColor;
+        padding: 10px 30px;
+        border-radius: 10px;
+        transition: 0.3s;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
 }

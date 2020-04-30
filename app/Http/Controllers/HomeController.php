@@ -85,6 +85,13 @@ class HomeController extends Controller
         return redirect('/home');
     }
 
+    public function completeRisuGame(Game $game)
+    {
+        Game::where('id', '=', 3)->update(['completed' => 1]);
+
+        return redirect('/home');
+    }
+
     public function completeGame1()
     {
         $games = Game::all();
@@ -116,13 +123,7 @@ class HomeController extends Controller
 
     public function createrisuitem2()
     {
-        Item::where('id', '=', 8)->update(['created' => 1]);
-        return back();
-    }
-
-    public function createrisuitem3()
-    {
-        Item::where('id', '=', 9)->update(['created' => 1]);
+        Item::where('id', '=', 10)->update(['created' => 1]);
         return back();
     }
 
@@ -131,5 +132,19 @@ class HomeController extends Controller
         request()->has('created') ? $createditem->create() : $createditem->notcreate();
         
         return back();
+    }
+
+    public function restartGame(Game $game)
+    {
+        Game::where('id', '=', 1)->update(['completed' => 0]);
+        Game::where('id', '=', 2)->update(['completed' => 0]);
+        Game::where('id', '=', 3)->update(['completed' => 0]);
+        Item::where('id', '=', 3)->update(['created' => 0]);
+        Item::where('id', '=', 4)->update(['created' => 0]);
+        Item::where('id', '=', 5)->update(['created' => 0]);
+        Item::where('id', '=', 7)->update(['created' => 0]);
+        Item::where('id', '=', 10)->update(['created' => 0]);
+
+        return redirect('/');
     }
 }

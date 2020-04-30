@@ -8,6 +8,11 @@ Vue.component(
 );
 
 Vue.component(
+    "welcome-background-component",
+    require("./components/WelcomeBackgroundComponent.vue").default
+);
+
+Vue.component(
     "modal-component",
     require("./components/ModalComponent.vue").default
 );
@@ -50,6 +55,11 @@ Vue.component(
 Vue.component(
     "hello-saru-component",
     require("./components/HelloSaruComponent.vue").default
+);
+
+Vue.component(
+    "reset-component",
+    require("./components/ResetComponent.vue").default
 );
 
 const game = new Vue({
